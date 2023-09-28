@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-09-28T00:05:44.202Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="Jyu5rJbt1MELIp6YhayG" version="21.8.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-28T00:14:17.395Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="MwM65APOUqtCx6b5Ugc9" version="21.8.2" type="github">
   <diagram name="Página-1" id="Z7LSm5HWZqEUJkI3TfCg">
-    <mxGraphModel dx="903" dy="2783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="810" dy="2749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -164,6 +164,9 @@
         <mxCell id="krdt0gxx7XLF9q-CUn_L-18" value="&lt;font color=&quot;#636363&quot; style=&quot;font-size: 9px;&quot;&gt;Não recebeu nenhum código?&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
           <mxGeometry x="370" y="-1467" width="134" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="tWc4xuuW74gezJHSD0tG-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="krdt0gxx7XLF9q-CUn_L-27" target="tWc4xuuW74gezJHSD0tG-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="krdt0gxx7XLF9q-CUn_L-27" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" parent="1" vertex="1">
           <mxGeometry x="584" y="-1777" width="200" height="390" as="geometry" />
         </mxCell>
@@ -297,6 +300,15 @@
         </mxCell>
         <mxCell id="tWc4xuuW74gezJHSD0tG-60" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=none;arcSize=6;align=left;gradientColor=#E3E3E3;" vertex="1" parent="1">
           <mxGeometry x="917.25" y="-1511" width="165.5" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="tWc4xuuW74gezJHSD0tG-64" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" vertex="1" parent="1">
+          <mxGeometry x="1226" y="-1777" width="200" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="tWc4xuuW74gezJHSD0tG-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.003;entryY=0.575;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="tWc4xuuW74gezJHSD0tG-23" target="tWc4xuuW74gezJHSD0tG-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tWc4xuuW74gezJHSD0tG-69" value="" style="shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=0;image=img/clipart/Gear_128x128.png" vertex="1" parent="1">
+          <mxGeometry x="1260" y="-1712.5" width="50" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
