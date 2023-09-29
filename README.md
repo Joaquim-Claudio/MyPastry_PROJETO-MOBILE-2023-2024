@@ -20,6 +20,7 @@ ___
 
  
 ## DESCRIÇÃO
+
 MyPastry App é uma proposta de uma aplicação para dispositivos móveis com suporte no Sistema Operativo Android, que será desenvolvida no âmbito da cadeira de Projeto de Desenvolvimento Móvel.
 
 A ideia do projeto é desenvolver uma aplicação para uma Pastelaria, que seja capaz de criar uma melhor interação entre os clientes e a loja, o que servirá como 'hipótese' de solução para alguns problemas operacionais que identificamos durante o nosso estudo de campo, que será melhor detalhado nas secções seguintes.
@@ -38,7 +39,12 @@ Através de um estudo de campo, foi possível levantar os seguintes problemas op
 - Lista de produtos (ou 'cardápio') inacessível: a pastelaria não possui nenhuma das formas típicas de apresentação dos seus produtos, o que pode ser inconveniente no momento da escolha dos produtos, principalmente para novos clientes que desconhecem os seus produtos.
 
 
+## HIPÓTESE
+
+Para solucionar os diversos problemas anteriormente citados, propomos a implementação de uma aplicação móvel denominada **'MyPastry'** que, dentre outros objetivos, permitirá aos gestores e funcionarios da loja, proporcionar aos seus clientes uma melhor experiência ao usufruir dos seus serviços.
+
 ## OBJETIVOS
+
 A proposta desta aplicação surgiu para alcançar os seguintes objetivos:
 - Realizar pedidos previamente com a finalidade de encurtar o tempo de espera no espaço físico da loja;
 
