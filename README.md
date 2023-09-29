@@ -6,24 +6,28 @@
 
 **Integrantes do Grupo:**
 
-20220631 – Joaquim Cláudio
+> **20220631** – Joaquim  Manuel Igreja Cláudio
 
-20220481 – Laís Ferreira
+> **20220481** – Laís da Silva Ferreira
 
 
-Volume 1
-
+- [x] **Volume 1 - PROPOSTA**
+- [ ] Volume 2 - PROTÓTIPO
+- [ ] Volume 3 - PRODUTO
+___
 
 
 
 
  
-1.	DESCRIÇÃO
+### DESCRIÇÃO
 MyPastry App é uma proposta de uma aplicação para dispositivos móveis com suporte no Sistema Operativo Android, que será desenvolvida no âmbito da cadeira de Projeto de Desenvolvimento Móvel.
-A ideia do projeto é desenvolver uma aplicação para uma Pastelaria que seja capaz de criar uma melhor interação entre os clientes e a loja utilizando como base a aplicação McDonalds. 
+
+A ideia do projeto é desenvolver uma aplicação para uma Pastelaria, que seja capaz de criar uma melhor interação entre os clientes e a loja, o que servirá como 'hipótese' de solução para alguns problemas operacionais que identificamos durante o nosso estudo de campo, que será melhor detalhado nas secções seguintes.
+
 A aplicação terá seu público alvo voltado à vizinhança da freguesia de Benfica onde está localizado o restaurante Império dos Pastéis.
 
-2.	OBJETIVOS
+### OBJETIVOS
 A proposta desta aplicação surgiu para alcançar os seguintes objetivos:
 - Realizar pedidos previamente com a finalidade de encurtar o tempo de espera no espaço físico da loja;
 
