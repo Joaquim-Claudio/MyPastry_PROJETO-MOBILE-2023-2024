@@ -1,13 +1,10 @@
 
 
-# Projeto de Desenvolvimento Mobile
-
-
+# PROJETO DE DESENVOLVIMENTO MÓVEL
 
 ## MyPastry App
 
-PROJETO DE DESENVOLVIMENTO MÓVEL
-
+**Integrantes do Grupo:**
 
 20220631 – Joaquim Cláudio
 
