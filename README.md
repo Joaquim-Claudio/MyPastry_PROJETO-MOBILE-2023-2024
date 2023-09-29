@@ -22,6 +22,8 @@ ___
 - [Problemática](#problemática)
 - [Hipótese](#hipótese)
 - [Objetivos](#objetivos)
+  - [Geral](#geral)
+  - [Específicos](#específicos)
  
 ## DESCRIÇÃO
 
@@ -37,27 +39,43 @@ Por serem, tipicamente, jovens os clientes que mais frequentam a pastelaria, def
 ## PROBLEMÁTICA
 
 Através de um estudo de campo, foi possível levantar os seguintes problemas operacionais e geográficos que representam grandes desafios para o desempenho das atividades comerciais daquela pastelaria:
-- Estabelecimento com pequenas dimensões: limita significativamente o número de clientes que é possível prestar atendimento simultaneamente, e como as únicas formas de atendimento são o atendimento presencial e as encomendas feitas mediante chamada telefônica, isso acaba por afetar, negativamente, o volume de vendas;
-- Formas de atendimento ineficientes: a pastelaria realiza apenas atendimento presencial ou por encomenda mediante chamada telefônica, o que resulta na perda da clientela que prefere outras formas de atendimento mais cômodas, rápidas e seguras;
-- Demora no atendimento e preparação dos pedidos: a grande maioria dos clientes daquela pastelaria realizam os seus pedidos de forma presencial, o que acaba aumentando significativamente o tempo de espera por parte dos clientes.
-- Lista de produtos (ou 'cardápio') inacessível: a pastelaria não possui nenhuma das formas típicas de apresentação dos seus produtos, o que pode ser inconveniente no momento da escolha dos produtos, principalmente para novos clientes que desconhecem os seus produtos.
+
+1. **Estabelecimento com pequenas dimensões:** limita significativamente o número de clientes que é possível prestar atendimento em simultâneo, e como as únicas formas de atendimento são o atendimento presencial e as encomendas feitas mediante chamada telefônica, isso acaba por afetar, negativamente, o volume de vendas;
+
+2. **Formas de atendimento ineficientes:** a pastelaria realiza apenas atendimento presencial ou por encomenda mediante chamada telefônica, o que resulta na perda da clientela que prefere outras formas de atendimento mais cômodas, rápidas e seguras;
+
+3. **Demora no atendimento e preparação dos pedidos:** a grande maioria dos clientes daquela pastelaria realizam os seus pedidos de forma presencial, o que acaba aumentando significativamente o tempo de espera por parte dos clientes;
+
+4. **Lista de produtos (cardápio) inacessível:** a pastelaria não possui nenhuma das formas típicas de apresentação dos seus produtos, o que pode ser inconveniente no momento da escolha dos produtos, principalmente para novos clientes que desconhecem os seus produtos.
 
 
 ## HIPÓTESE
 
-Para solucionar os diversos problemas anteriormente citados, propomos a implementação de uma aplicação móvel denominada **'MyPastry'** que, dentre outros objetivos, permitirá aos gestores e funcionarios da loja, proporcionar aos seus clientes uma melhor experiência ao usufruir dos seus serviços.
+Para solucionar os diversos problemas anteriormente citados, apresentamos a aplicação móvel **'MyPastry'** que servirá de ferramenta para aplicar as seguintes soluções:
+
+1. **Dimensões do estabelecimento:** o cliente terá a possibilidade de realizar o seu pedido pela aplicação, aderindo a uma das duas ***novas*** formas de atendimento:
+   - ***Pedido Delivery:*** Poderá realizar o seu pedido na App e recebê-lo no conforto da sua residência ou nalgum outro endereço que indicar.
+   - ***Pedido Mobile:*** Poderá realizar o seu pedido na App antes mesmo de chegar no restaurante, o que permite reduzir o tempo que uma mesa ou um lugar fica ocupado.
+     
+2. **Atendimento ineficiente:** com a implementação da App espara-se que a pastelaria consiga incluir a sua 'lista de clientes' as pessoas que preferem comprar produtos pela internet com a segurança de usarem o seu próprio *smatphone* e poder ter um melhor controlo e registo das suas compras.
+
+3. **Atendimento demorado:** com a possibilidade dos clientes poderem realizar os seus pedidos pela App e levantar no restaurante - ***Pedido Mobile*** - o restaurante ganha mais tempo para preparar esses pedidos enquanto o cliente não chega ao restaurante.
+
+4. **Lista de produtos (cardápio):** além das funcionalidades citadas anteriormente, o cliente poderá ainda usar a App apenas para aceder a lista de produtos que aquela pastelaria comercializa.
+   
 
 ## OBJETIVOS
 
-A proposta desta aplicação surgiu para alcançar os seguintes objetivos:
-- Realizar pedidos previamente com a finalidade de encurtar o tempo de espera no espaço físico da loja;
+### Geral
 
-- Levantar dados refente as preferências dos clientes e qualidade dos serviços prestados;
+Implementar uma aplicação móvel denominada **'MyPastry'** que, dentre outras funcionalidades, permitirá aos gestores e funcionarios da loja, proporcionar aos seus clientes uma melhor experiência ao usufruir dos seus serviços.
 
-- Possibilitar o acumulo de pontos a cada pedido realizado permitindo que o usuário possa trocar estes pontos com outros produtos da loja;
+### Específicos
 
-- Auxiliar o restaurante na gestão dos pedidos online;
-
+A proposta desta aplicação propõe-se a alcançar os seguintes objetivos:
+- Melhorar a interação entre o cliente e o restaurante;
+- Implementar formas de atendimento mais eficientes e cômodas;
+- Proporcionar uma melhor experiência de serviço ao cliente;
+- Reduzir o tempo de atendimento e, consequentemente, o tempo que o cliente passa dentro do restaurante;
+- Permitir que os clientes consigam acumular pontos sempre que realizarem pedidos pela App, servindo também como um incentivo para que os clientes utilizem a App;
 - Permitir ao administrador levantar dados estatísticos referente as preferências dos clientes que realizam pedidos pela app.
-
-
