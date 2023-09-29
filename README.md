@@ -1,8 +1,6 @@
-# MyPastry_PROJETO-MOBILE-2023-2024
-Projeto de Desenvolvimento Mobile
+# Projeto de Desenvolvimento Mobile
 
-
-MyPastry App
+## MyPastry App
 
 PROJETO DE DESENVOLVIMENTO MÓVEL
 
