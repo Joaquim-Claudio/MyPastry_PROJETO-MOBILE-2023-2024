@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-30T02:17:58.564Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="T2BcJo3NYWvn-B7FaUzT" version="22.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-30T02:18:08.233Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="rZv1BdHKNtThKunnV9lR" version="22.0.0" type="github">
   <diagram name="Página-1" id="Z7LSm5HWZqEUJkI3TfCg">
     <mxGraphModel dx="600" dy="2643" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -293,7 +293,7 @@
           <mxGeometry x="970.13" y="-1445" width="12.25" height="11" as="geometry" />
         </mxCell>
         <mxCell id="tWc4xuuW74gezJHSD0tG-57" value="&lt;font color=&quot;#36393d&quot; style=&quot;font-size: 4px;&quot;&gt;Pedidos&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontFamily=Helvetica;fontColor=default;" parent="1" vertex="1">
-          <mxGeometry x="966.13" y="-1440" width="22.25" height="15" as="geometry" />
+          <mxGeometry x="965.13" y="-1440" width="22.25" height="15" as="geometry" />
         </mxCell>
         <mxCell id="tWc4xuuW74gezJHSD0tG-58" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#36393D;fillColor=#36393D;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.user;rounded=0;glass=0;fontFamily=Helvetica;fontSize=12;strokeWidth=0;" parent="1" vertex="1">
           <mxGeometry x="923.5" y="-1445" width="12.25" height="11" as="geometry" />
