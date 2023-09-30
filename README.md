@@ -29,7 +29,7 @@ ___
 
 MyPastry App é uma proposta de uma aplicação para dispositivos móveis com suporte no Sistema Operativo Android, que será desenvolvida no âmbito da cadeira de Projeto de Desenvolvimento Móvel.
 
-A ideia do projeto é desenvolver uma aplicação para uma Pastelaria, que seja capaz de criar uma melhor interação entre os clientes e a loja, o que servirá como 'hipótese' de solução para alguns problemas operacionais que identificamos durante o nosso estudo de campo, que será melhor detalhado nas secções seguintes.
+A ideia do projeto é desenvolver uma aplicação para uma Pastelaria, que seja capaz de criar uma melhor interação entre os clientes e a loja, o que servirá como 'hipótese' de solução para alguns problemas operacionais que identificamos durante o nosso estudo de campo, que será mais bem detalhado nas secções seguintes.
 
 Para implementar a nossa aplicação escolhemos uma pastelaria situada no concelho de Benfica - Lisboa, conhecida por **Petiscos de Boteco**, que comercializa tipicamente produtos originários do Brasil, de diferentes tipos e categorias, visitada maioritariamente por jovens da vizinhança. Pretendemos, com isso, diversificar a forma como aquela pastelaria atende e interage com o seus clientes.
 
