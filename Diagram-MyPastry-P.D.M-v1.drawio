@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-03T00:32:32.025Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="7vMvauep98VAiOdsaEjX" version="22.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-03T00:37:59.546Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="GGLqjULqY1N6zYYePrbV" version="22.0.0" type="github">
   <diagram name="Página-1" id="Z7LSm5HWZqEUJkI3TfCg">
-    <mxGraphModel dx="875" dy="2783" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2625" dy="3673" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -141,7 +141,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="krdt0gxx7XLF9q-CUn_L-8" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.action_bar_landscape;strokeWidth=2;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="66.5" y="-1724" width="171" height="23.5" as="geometry" />
+          <mxGeometry x="66.5" y="-1722" width="171" height="23.5" as="geometry" />
         </mxCell>
         <mxCell id="krdt0gxx7XLF9q-CUn_L-9" value="&lt;pre style=&quot;line-height: 60%; font-size: 11px;&quot;&gt;&lt;font face=&quot;Verdana&quot; color=&quot;#585a5e&quot; style=&quot;font-weight: normal; font-size: 11px;&quot;&gt;Por favor, digite o código&lt;/font&gt;&lt;/pre&gt;&lt;pre style=&quot;line-height: 60%; font-size: 11px;&quot;&gt;&lt;font face=&quot;Verdana&quot; color=&quot;#585a5e&quot; style=&quot;font-weight: normal; font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;que&amp;nbsp;&lt;/font&gt;enviamos para:&lt;/font&gt;&lt;/pre&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=12;fontStyle=1;verticalAlign=middle;align=center;fontFamily=Helvetica;fontColor=default;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="344.90999999999997" y="-1705" width="150.18" height="59" as="geometry" />
@@ -186,7 +186,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="krdt0gxx7XLF9q-CUn_L-43" value="" style="strokeWidth=1;html=1;shadow=0;dashed=0;shape=mxgraph.android.action_bar_landscape;strokeWidth=2;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="618" y="-2267.5" width="171" height="23.5" as="geometry" />
+          <mxGeometry x="618" y="-2263.5" width="171" height="23.5" as="geometry" />
         </mxCell>
         <mxCell id="krdt0gxx7XLF9q-CUn_L-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.001;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="L57hU3vJhA9-MwYrpEn6-87" target="krdt0gxx7XLF9q-CUn_L-27" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -773,6 +773,39 @@
         </mxCell>
         <mxCell id="yyvwbcUJ6gvw3NXGh1xO-129" value="&lt;h6 style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-weight: normal; font-size: 11px;&quot; face=&quot;Courier New&quot; color=&quot;#545454&quot;&gt;Levante no balcão dentro de &lt;i&gt;7 minutos&lt;/i&gt;.&lt;/font&gt;&lt;/h6&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="2267.99" y="-1719" width="163" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-131" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="2261.7" y="-1791" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-132" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="2261" y="-2289" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-133" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1974" y="-2289" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-134" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1688" y="-2289" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-135" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1441" y="-1763" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-136" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1119" y="-1763" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-137" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="1118" y="-2283" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-139" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="612.91" y="-2283" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-140" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="331.99999999999994" y="-2284" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-141" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="332.99999999999994" y="-1741" width="175.09" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-142" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="62.45999999999992" y="-1739" width="175.09" height="19" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
