@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-03T01:55:00.719Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="bV3kvpunrbvVvMYzKWg5" version="22.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-03T01:57:13.001Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="8iAJ7Y5i1Yckyw9PKrze" version="22.0.0" type="github">
   <diagram name="Página-1" id="Z7LSm5HWZqEUJkI3TfCg">
-    <mxGraphModel dx="808" dy="2749" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4200" dy="4474" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1125,6 +1125,9 @@
         </mxCell>
         <mxCell id="yyvwbcUJ6gvw3NXGh1xO-239" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.tab2;strokeColor=#c0c0c0;direction=north;fillColor=default;" vertex="1" parent="1">
           <mxGeometry x="2497.9" y="-1164" width="686" height="472" as="geometry" />
+        </mxCell>
+        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-275" value="&lt;font color=&quot;#66cc00&quot; size=&quot;1&quot; style=&quot;&quot; face=&quot;Courier New&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;i style=&quot;font-size: 25px;&quot;&gt;&lt;u&gt;INTERNET&lt;/u&gt;&lt;/i&gt;&lt;/b&gt;&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1943.5" y="-1701" width="199" height="119" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
