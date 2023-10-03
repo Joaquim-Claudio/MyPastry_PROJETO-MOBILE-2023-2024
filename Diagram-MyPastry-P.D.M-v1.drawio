@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-03T01:50:47.705Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="UK8rDar6bjNY9x0kK_yY" version="22.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-03T01:51:23.288Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="_MLYSMadmTSBlcNrplCf" version="22.0.0" type="github">
   <diagram name="Página-1" id="Z7LSm5HWZqEUJkI3TfCg">
-    <mxGraphModel dx="4200" dy="4474" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1050" dy="2872" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -967,12 +967,6 @@
         </mxCell>
         <mxCell id="yyvwbcUJ6gvw3NXGh1xO-208" value="" style="strokeWidth=0;html=1;shadow=0;dashed=0;shape=mxgraph.android.statusBar;align=center;fontSize=10;sketch=0;opacity=40;" vertex="1" parent="1">
           <mxGeometry x="2824.7" y="-1791" width="175.09" height="19" as="geometry" />
-        </mxCell>
-        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-210" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#267a38;strokeWidth=3;" vertex="1" parent="1">
-          <mxGeometry x="660.5" y="-1654.28" width="67" height="67" as="geometry" />
-        </mxCell>
-        <mxCell id="yyvwbcUJ6gvw3NXGh1xO-211" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=#267a38;shadow=0;align=center;fillColor=#2D9C5E;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.check" vertex="1" parent="1">
-          <mxGeometry x="672.3800000000001" y="-1639.28" width="46.25" height="37" as="geometry" />
         </mxCell>
         <mxCell id="yyvwbcUJ6gvw3NXGh1xO-212" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#267a38;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="2877.5" y="-1604.72" width="67" height="67" as="geometry" />
