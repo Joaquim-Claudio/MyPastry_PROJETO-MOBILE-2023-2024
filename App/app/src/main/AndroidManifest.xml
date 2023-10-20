@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyPastry"
         tools:targetApi="31">
         <activity
+            android:name="pt.iade.mypastry.InitialPage"
+            android:exported="false" />
+        <activity
             android:name="pt.iade.mypastry.OpeningPage"
             android:exported="false" />
         <activity
