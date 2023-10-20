@@ -13,6 +13,15 @@
         android:theme="@style/Theme.MyPastry"
         tools:targetApi="31">
         <activity
+            android:name="pt.iade.mypastry.OpeningPage"
+            android:exported="false" />
+        <activity
+            android:name=".OpeningPage"
+            android:exported="false" />
+        <activity
+            android:name=".opening_page"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
