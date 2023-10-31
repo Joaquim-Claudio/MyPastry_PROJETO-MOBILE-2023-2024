@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mypastry"
+    namespace = "pt.iade.mypastry"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.mypastry"
+        applicationId = "pt.iade.mypastry"
         minSdk = 28
         targetSdk = 33
         versionCode = 1
