@@ -16,5 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="20sp"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:background="@drawable/costum_button"
+        android:textAllCaps="false"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
