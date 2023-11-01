@@ -2,6 +2,10 @@
     <string name="app_name">MyPastry</string>
     <string name="login_activity_loginButton">Entrar</string>
     <string name="login_activity_registerButton">Registar</string>
+
+    <string name="register_activity_mainLabel">Criar Conta</string>
+
+
     <string name="home_page_points">89 pontos</string>
     <string name="home_page_menus_button">Menus</string>
     <string name="home_page_spices_button">Especiarias</string>
