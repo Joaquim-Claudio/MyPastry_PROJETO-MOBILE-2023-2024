@@ -9,6 +9,12 @@
     <string name="register_activity_RegisteredTextView">Já tem uma conta?</string>
     <string name="register_activity_loginButton">Entrar</string>
 
+    <string name="email_confirmation_activity_mainTextView">Por favor, digite o código que enviamos para:</string>
+    <string name="email_confirmation_activity_userEmail">example@yahoo.com</string>
+    <string name="email_confirmation_activity_confirmButon">Confirmar</string>
+    <string name="email_confirmation_activity_resendTextView">Não recebeu nenhum código?</string>
+    <string name="email_confirmation_activity_resendButton">Reenviar</string>
+
     <string name="sign_in_activity_mainTextView">Bem vindo ao MyPastry</string>
     <string name="sign_in_activity_loginButton">Entrar</string>
     <string name="sign_in_activity_notRegisteredTextView">Ainda não tem uma conta?</string>
