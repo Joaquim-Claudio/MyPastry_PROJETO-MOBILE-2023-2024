@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".SignInActivity">
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_activity_mainTextView"
+        android:layout_marginTop="5dp"
+        android:text="@string/sign_in_activity_mainTextView"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
@@ -50,32 +51,18 @@
         app:srcCompat="@drawable/google_icon" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputLayout"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:drawableStart="@drawable/baseline_person_icon_24"
-        android:hint="Name"
-        android:textSize="18sp"
-        android:includeFontPadding="false"
-        android:inputType="text|textPersonName|textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
-
-    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputLayout2"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:drawableStart="@drawable/baseline_message_icon_24"
         android:hint="Email"
         android:textSize="18sp"
         android:includeFontPadding="false"
         android:inputType="text|textEmailAddress|textAutoComplete"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputLayout3"
@@ -99,7 +86,7 @@
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
-        android:text="@string/register_activity_registerButton"
+        android:text="@string/sign_in_activity_loginButton"
         android:textSize="18sp"
         android:textStyle="bold"
         android:background="@drawable/costum_button"
@@ -135,19 +122,19 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/register_activity_RegisteredTextView"
+        android:layout_marginTop="100dp"
         android:textStyle="bold"
+        android:text="@string/sign_in_activity_notRegisteredTextView"
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/costum_button"
-        android:text="@string/register_activity_loginButton"
+        android:text="@string/sign_in_activity_registerButton"
         app:backgroundTint="@color/button_color_red"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
