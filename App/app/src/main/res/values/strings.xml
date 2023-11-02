@@ -3,8 +3,9 @@
     <string name="login_activity_loginButton">Entrar</string>
     <string name="login_activity_registerButton">Registar</string>
 
-    <string name="register_activity_mainLabel">Criar Conta</string>
-
+    <string name="register_activity_mainTextView">Criar Conta</string>
+    <string name="register_activity_privacyPolicyTextView">Ao clicar em Register, concorda com a nossa Política de Privacidade</string>
+    <string name="register_activity_registerButton">Registar</string>
 
     <string name="home_page_points">89 pontos</string>
     <string name="home_page_menus_button">Menus</string>
