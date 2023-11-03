@@ -50,11 +50,11 @@
     <Button
         android:id="@+id/button"
         android:layout_width="350dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/costum_button"
         android:text="@string/email_confirmation_activity_confirmButon"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:backgroundTint="@color/button_color_black"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
