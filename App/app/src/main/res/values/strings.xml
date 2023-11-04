@@ -22,15 +22,19 @@
     <string name="sign_in_activity_notRegisteredTextView">Ainda não tem uma conta?</string>
     <string name="sign_in_activity_registerButton">Registe-se</string>
 
-    <string name="home_page_points">89 pontos</string>
-    <string name="home_page_menus_button">Menus</string>
-    <string name="home_page_spices_button">Especiarias</string>
-    <string name="home_page_drinks_button">Bebidas</string>
-    <string name="home_page_dessert_button">Sobremesas</string>
-    <string name="home_page_conviniences_button">Conveniências</string>
-    <string name="home_page_seeAll_button">Ver tudo</string>
-    <string name="home_page_exempleMenu1_button">Menu de exemplo 1</string>
-    <string name="home_page_exempleMenu2_button">Menu de exemplo 2</string>
+    <string name="home_activity_points">89 pontos</string>
+    <string name="home_activity_menus_button">Menus</string>
+    <string name="home_activity_spices_button">Especiarias</string>
+    <string name="home_activity_drinks_button">Bebidas</string>
+    <string name="home_activity_dessert_button">Sobremesas</string>
+    <string name="home_activity_conviniences_button">Conveniências</string>
+    <string name="home_activity_see_all_button">Ver tudo</string>
+    <string name="home_activity_product_promo_1">Pastel de Carne</string>
+    <string name="home_activity_product_promo_2">Menu Cachorro Quente</string>
+    <string name="home_activity_home_button">Página inicial</string>
+    <string name="home_activity_order_list_button">Pedidos</string>
+    <string name="home_activity_cart_button">Carrinho</string>
+    <string name="home_activity_account_button">Conta</string>
 
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
 </resources>
