@@ -16,7 +16,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void login (View view){
-        EditText emailInputText = (EditText) findViewById(R.id.register_textInput_email);
+        EditText emailInputText = (EditText) findViewById(R.id.sign_in_textInput_email);
         String email = emailInputText.getText().toString();
 
         EditText passInputText = (EditText) findViewById(R.id.sign_in_textInput_password);
