@@ -20,19 +20,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/email_confirm_textView_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:text="@string/email_confirmation_activity_userEmail"
+        android:hint="@string/email_confirmation_activity_userEmail"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/email_confirm_textInput_pin"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginTop="70dp"
@@ -42,13 +43,13 @@
         android:includeFontPadding="false"
         android:inputType="number"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintEnd_toEndOf="@+id/email_confirm_textView_email"
+        app:layout_constraintStart_toStartOf="@+id/email_confirm_textView_email"
+        app:layout_constraintTop_toBottomOf="@+id/email_confirm_textView_email" />
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/email_confirm_button_confirm"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -57,9 +58,10 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:backgroundTint="@color/button_color_black"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintEnd_toEndOf="@+id/email_confirm_textInput_pin"
+        app:layout_constraintStart_toStartOf="@+id/email_confirm_textInput_pin"
+        app:layout_constraintTop_toBottomOf="@+id/email_confirm_textInput_pin"
+        android:onClick="confirmEmail"/>
 
     <TextView
         android:id="@+id/textView10"
@@ -68,11 +70,11 @@
         android:layout_marginTop="130dp"
         android:text="@string/email_confirmation_activity_resendTextView"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/email_confirm_button_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/email_confirm_button_confirm" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/email_confirm_button_resend"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -80,5 +82,6 @@
         android:text="@string/email_confirmation_activity_resendButton"
         app:backgroundTint="@color/button_color_grey"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        android:onClick="reSendPin"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

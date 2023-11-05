@@ -24,7 +24,7 @@
             app:srcCompat="@drawable/logo" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/login_button_login"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
@@ -36,10 +36,11 @@
             app:backgroundTint="@color/button_color_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:onClick="callSignInActivity"/>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/login_button_register"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
@@ -51,7 +52,8 @@
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
+            app:layout_constraintTop_toBottomOf="@+id/login_button_login"
+            android:onClick="callRegisterActivity"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

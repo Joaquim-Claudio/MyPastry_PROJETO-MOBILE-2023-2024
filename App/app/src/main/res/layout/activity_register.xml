@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/google_icon" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputLayout"
+        android:id="@+id/register_textInput_name"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/register_textInput_email"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -73,14 +73,14 @@
         android:drawableTint="#2C2C32"
         android:hint="Email"
         android:includeFontPadding="false"
-        android:inputType="text|textEmailAddress|textAutoComplete"
+        android:inputType="text|textEmailAddress"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/register_textInput_name"
+        app:layout_constraintStart_toStartOf="@+id/register_textInput_name"
+        app:layout_constraintTop_toBottomOf="@+id/register_textInput_name" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/register_textInput_password"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -92,12 +92,12 @@
         android:inputType="text|textPassword"
         android:lineHeight="5dp"
         android:textAlignment="inherit"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintEnd_toEndOf="@+id/register_textInput_email"
+        app:layout_constraintStart_toStartOf="@+id/register_textInput_email"
+        app:layout_constraintTop_toBottomOf="@+id/register_textInput_email" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/register_button_register"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
@@ -108,13 +108,14 @@
         app:backgroundTint="@color/button_color_green"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        android:onClick="register"/>
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="153dp"
         android:layout_height="131dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -129,9 +130,9 @@
         android:textAlignment="center"
         android:textColor="#b6b6b8"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintEnd_toEndOf="@+id/register_textInput_password"
+        app:layout_constraintStart_toStartOf="@+id/register_textInput_password"
+        app:layout_constraintTop_toBottomOf="@+id/register_textInput_password" />
 
     <TextView
         android:id="@+id/textView10"
@@ -140,11 +141,11 @@
         android:layout_marginTop="50dp"
         android:text="@string/register_activity_RegisteredTextView"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/register_button_register"
+        app:layout_constraintTop_toBottomOf="@+id/register_button_register" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/register_button_login"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
@@ -152,6 +153,7 @@
         android:text="@string/register_activity_loginButton"
         app:backgroundTint="@color/button_color_red"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        android:onClick="callSignInActivity"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
