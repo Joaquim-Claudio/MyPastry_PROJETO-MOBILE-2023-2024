@@ -26,9 +26,11 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
+            android:launchMode="singleTop"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
+            android:launchMode="singleTop"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
