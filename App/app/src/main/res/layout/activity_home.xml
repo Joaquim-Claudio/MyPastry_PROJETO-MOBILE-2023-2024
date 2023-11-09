@@ -65,7 +65,8 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="176dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/box_button">
+                        android:background="@drawable/box_button"
+                        android:onClick="callMenuActiviy">
 
                         <ImageView
                             android:id="@+id/imageView18"
