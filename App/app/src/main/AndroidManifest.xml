@@ -16,7 +16,7 @@
             android:name=".AdminHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
@@ -39,7 +39,7 @@
             android:exported="false"
             android:launchMode="singleTop" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
