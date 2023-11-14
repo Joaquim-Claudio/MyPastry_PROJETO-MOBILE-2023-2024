@@ -162,7 +162,8 @@
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="80dp"
                                 android:layout_height="70dp"
-                                android:background="@drawable/box_button">
+                                android:background="@drawable/box_button"
+                                android:onClick="callBeveragesListActivity">
 
                                 <ImageView
                                     android:id="@+id/imageView21"

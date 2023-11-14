@@ -20,10 +20,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu_constraintLayout_return"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:onClick="returnToHomeActivity"
         android:scrollbarSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -96,7 +97,7 @@
                     android:id="@+id/imageView15"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/cheese_pastel"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -151,8 +152,7 @@
                     android:id="@+id/imageView14"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:scrollbarTrackVertical="@drawable/como_fazer_pastel_de_carne_1600x900"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/meat_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -207,7 +207,7 @@
                     android:id="@+id/imageView16"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/chicken_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -229,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Pastel de Frango + Bebida + Sobrmesaa"
+                    android:text="Pastel de Frango + Bebida + Sobrmesa"
                     app:layout_constraintStart_toEndOf="@+id/imageView16"
                     app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
@@ -261,7 +261,7 @@
                     android:id="@+id/imageView17"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/pizza_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -272,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Pastel Misto"
+                    android:text="Menu Pastel de Pizza"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/imageView17"
@@ -295,7 +295,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Pastel Misto + Bebida + Sobremesa"
+                    android:text="Pastel de Pizza + Bebida + Sobremesa"
                     app:layout_constraintStart_toEndOf="@+id/imageView17"
                     app:layout_constraintTop_toBottomOf="@+id/textView32" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -338,7 +338,7 @@
                     android:id="@+id/imageView20"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/hot_dog_promo_mini"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -392,7 +392,7 @@
                     android:id="@+id/imageView23"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/hamburguer_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -446,7 +446,7 @@
                     android:id="@+id/imageView26"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/xtudo_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -500,7 +500,7 @@
                     android:id="@+id/imageView27"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pastel"
+                    android:src="@drawable/xpicanha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -579,7 +579,7 @@
                     android:id="@+id/imageView8"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@tools:sample/avatars"
+                    android:src="@drawable/coxinha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -633,7 +633,7 @@
                     android:id="@+id/imageView28"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@tools:sample/avatars"
+                    android:src="@drawable/kibe_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -688,7 +688,7 @@
                     android:id="@+id/imageView29"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@tools:sample/avatars"
+                    android:src="@drawable/esfiha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
