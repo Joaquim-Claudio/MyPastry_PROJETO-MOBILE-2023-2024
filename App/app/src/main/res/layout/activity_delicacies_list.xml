@@ -100,7 +100,7 @@
                     android:id="@+id/imageView31"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/guarana_image"
+                    android:src="@drawable/acai_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -154,7 +154,7 @@
                     android:id="@+id/imageView32"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/coca_cola_image"
+                    android:src="@drawable/pamonha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -209,7 +209,7 @@
                     android:id="@+id/imageView33"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/fanta_image"
+                    android:src="@drawable/mungunza_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -220,7 +220,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Munguzá/Canjica"
+                    android:text="Mungunzá/Canjica"
                     android:textSize="17dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/imageView33"
@@ -259,36 +259,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/textView67"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Sumos Naturais"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider20"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
 
     <ImageView
         android:id="@+id/imageView34"
         android:layout_width="86dp"
         android:layout_height="63dp"
-        android:src="@drawable/orange_juice_image"
+        android:src="@drawable/acaraje_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -342,7 +318,7 @@ android:layout_height="wrap_content">
     android:id="@+id/imageView35"
     android:layout_width="86dp"
     android:layout_height="63dp"
-    android:src="@drawable/guava_juice_image"
+    android:src="@drawable/boloderolo_image"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -396,7 +372,7 @@ android:layout_height="wrap_content">
     android:id="@+id/imageView36"
     android:layout_width="86dp"
     android:layout_height="63dp"
-    android:src="@drawable/mango_juice_image"
+    android:src="@drawable/calabresa_image"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -407,7 +383,7 @@ android:layout_height="wrap_content">
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
-        android:text="Torresmo"
+        android:text="Calabresa Acebolada"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView36"
@@ -442,31 +418,7 @@ android:layout_height="3dp"
 android:layout_marginVertical="10dp"
 android:background="?android:attr/listDivider" />
 
-<androidx.constraintlayout.widget.ConstraintLayout
-android:layout_width="match_parent"
-android:layout_height="wrap_content">
-
-<TextView
-    android:id="@+id/textView77"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:text="Bebidas Alcólicas"
-    android:textSize="20sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-<View
-android:id="@+id/divider24"
-android:layout_width="match_parent"
-android:layout_height="3dp"
-android:layout_marginVertical="10dp"
-android:background="?android:attr/listDivider" />
-
-<androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
 android:layout_width="match_parent"
 android:layout_height="wrap_content">
 
@@ -474,7 +426,7 @@ android:layout_height="wrap_content">
     android:id="@+id/imageView37"
     android:layout_width="86dp"
     android:layout_height="63dp"
-    android:src="@drawable/superbock_image"
+    android:src="@drawable/cuscuz_image"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -528,7 +480,7 @@ android:layout_height="wrap_content">
     android:id="@+id/imageView38"
     android:layout_width="86dp"
     android:layout_height="63dp"
-    android:src="@drawable/heineken_image"
+    android:src="@drawable/tapioca_images"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -582,21 +534,21 @@ android:layout_height="match_parent">
     android:id="@+id/imageView39"
     android:layout_width="86dp"
     android:layout_height="63dp"
-    android:src="@drawable/somersby_image"
+    android:src="@drawable/coalhocheese_image"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:id="@+id/textView84"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="20dp"
-    android:text="Somersby"
-    android:textSize="17sp"
-    android:textStyle="bold"
-    app:layout_constraintStart_toEndOf="@+id/imageView39"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView84"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Queijo Coalho"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView39"
+        app:layout_constraintTop_toTopOf="parent" />
 
 <TextView
     android:id="@+id/textView85"
