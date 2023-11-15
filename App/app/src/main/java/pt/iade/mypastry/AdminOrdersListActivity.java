@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class AdminHomeActivity extends AppCompatActivity {
+public class AdminOrdersListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_activity_home);
+        setContentView(R.layout.admin_activity_orders_list);
     }
 
-    public void callAdminSettingsActivity(View view){
+    public void returnToAdminSettingsActivity(View view){
         Intent intent = new Intent(this, AdminSettingsActivity.class);
         startActivity(intent);
     }

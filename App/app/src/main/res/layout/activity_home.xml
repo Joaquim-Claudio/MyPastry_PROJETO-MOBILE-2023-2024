@@ -37,7 +37,7 @@
                     android:layout_height="40dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/box_button_points" />
+                    app:srcCompat="@drawable/points_button" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -56,7 +56,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/box_button_points"
+                    android:background="@drawable/points_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView9" />
@@ -82,7 +82,7 @@
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="176dp"
                                 android:layout_height="match_parent"
-                                android:background="@drawable/box_button"
+                                android:background="@drawable/constraint_button"
                                 android:onClick="callMenuActiviy">
 
                                 <ImageView
@@ -111,7 +111,7 @@
                                 android:layout_width="176dp"
                                 android:layout_height="100dp"
                                 android:layout_marginStart="18dp"
-                                android:background="@drawable/box_button">
+                                android:background="@drawable/constraint_button">
 
                                 <TextView
                                     android:id="@+id/textView6"
@@ -163,8 +163,8 @@
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="80dp"
                                 android:layout_height="70dp"
-                                android:background="@drawable/box_button"
-                                android:onClick="callBeveragesListActivity">
+                                android:onClick="callBeveragesListActivity"
+                                android:background="@drawable/constraint_button">
 
                                 <ImageView
                                     android:id="@+id/imageView21"
@@ -181,7 +181,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="16dp"
-                                android:background="@drawable/box_button">
+                                android:background="@drawable/constraint_button">
 
                                 <ImageView
                                     android:id="@+id/imageView22"
@@ -198,7 +198,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="18dp"
-                                android:background="@drawable/box_button">
+                                android:background="@drawable/constraint_button">
 
                                 <ImageView
                                     android:id="@+id/imageView24"
@@ -215,7 +215,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="16dp"
-                                android:background="@drawable/box_button">
+                                android:background="@drawable/constraint_button">
 
                                 <ImageView
                                     android:id="@+id/imageView25"
@@ -334,7 +334,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/box_button"
+                    android:background="@drawable/constraint_button"
                     app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
                     app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
@@ -361,7 +361,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="370dp"
                             android:layout_height="200dp"
-                            android:background="@drawable/box_button"
+                            android:background="@drawable/constraint_button"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/divider3">
@@ -419,7 +419,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="370dp"
                             android:layout_height="200dp"
-                            android:background="@drawable/box_button"
+                            android:background="@drawable/constraint_button"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/divider3">
@@ -489,7 +489,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="80dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/border_background">
+                    android:background="@drawable/top_radius_background">
 
                     <ImageView
                         android:id="@+id/imageView10"
@@ -506,7 +506,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="17dp"
-                    android:background="@drawable/border_background">
+                    android:background="@drawable/top_radius_background">
 
                     <ImageView
                         android:id="@+id/imageView11"
@@ -523,7 +523,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="17dp"
-                    android:background="@drawable/border_background">
+                    android:background="@drawable/top_radius_background">
 
                     <ImageView
                         android:id="@+id/imageView12"
@@ -540,7 +540,7 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/border_background">
+                    android:background="@drawable/top_radius_background">
 
                     <ImageView
                         android:id="@+id/imageView13"

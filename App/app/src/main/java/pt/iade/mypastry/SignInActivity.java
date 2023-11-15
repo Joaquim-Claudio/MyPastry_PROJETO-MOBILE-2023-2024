@@ -22,7 +22,14 @@ public class SignInActivity extends AppCompatActivity {
         EditText passInputText = (EditText) findViewById(R.id.sign_in_textInput_password);
         String password = passInputText.getText().toString();
 
-        if (!email.equals("") && !password.equals("")){
+        if (email.equals("adminLogin") && password.equals("adminPassword")){
+            Intent intent = new Intent(this, AdminHomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            SignInActivity.this.finish();
+        }
+
+        else if (!email.equals("") && !password.equals("")){
             Intent intent = new Intent(this, WelcomeActivity.class);
             startActivity(intent);
         }

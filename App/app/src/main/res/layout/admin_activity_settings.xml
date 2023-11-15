@@ -21,61 +21,36 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:text="Cozinha   |   Pedidos"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-=======
-        android:text="@string/admin_home_activity_title"
-        android:textAlignment="center"
+        android:text="@string/admin_settings_activity_title"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
->>>>>>> 6670225227d8ab2cbb802be69dcf1e9bbdfd111c
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-<<<<<<< HEAD
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-=======
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
->>>>>>> 6670225227d8ab2cbb802be69dcf1e9bbdfd111c
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/image_button_background"
+        android:layout_width="52dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="56dp"
-            android:layout_height="46dp"
-=======
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="callAdminSettingsActivity">
+        android:onClick="returnToAdminHomeActivity">
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="26dp"
-            android:layout_height="27dp"
-            android:layout_margin="5dp"
->>>>>>> 6670225227d8ab2cbb802be69dcf1e9bbdfd111c
-            android:src="@drawable/settings_icon"
+            android:layout_width="33dp"
+            android:layout_height="16dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/back_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-<<<<<<< HEAD
-=======
 
     <ImageView
         android:id="@+id/imageView35"
@@ -96,5 +71,4 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView35"
         app:layout_constraintStart_toStartOf="@+id/imageView35"
         app:layout_constraintTop_toBottomOf="@+id/imageView35" />
->>>>>>> 6670225227d8ab2cbb802be69dcf1e9bbdfd111c
 </androidx.constraintlayout.widget.ConstraintLayout>

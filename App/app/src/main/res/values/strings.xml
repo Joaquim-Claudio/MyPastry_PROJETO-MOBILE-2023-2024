@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyPastry</string>
+    <string name="app_name" translatable="false">MyPastry</string>
 
     <string name="login_activity_loginButton">Entrar</string>
     <string name="login_activity_registerButton">Registar</string>
@@ -37,5 +37,25 @@
     <string name="home_activity_account_button">Conta</string>
 
 
+<<<<<<< HEAD
+=======
+    <string name="admin_portrait_activities_instruction">Por favor, incline o seu dispositivo.</string>
+
+    <string name="admin_home_activity_title">Cozinha | Pedidos</string>
+
+    <string name="admin_settings_activity_title">Definições</string>
+    <string name="admin_settings_activity_header">Como pretende ver os seus pedidos?</string>
+    <string name="admin_settings_activity_orders_filtered_button_title">Ver pedidos por estado</string>
+    <string name="admin_settings_activity_orders_filtered_button_description">Faça a gestão de pedidos através do seu restaurante.
+        \nPara transposição de pedidos e volumes maiores.</string>
+    <string name="admin_settings_activity_orders_button_title">Ver todos os pedidos</string>
+    <string name="admin_settings_activity_orders_button_description">Todos os pedidos numa vista deslocável.
+        \nPara uma visão geral e rápida dos seus pedidos MyPastry.</string>
+    <string name="admin_settings_activity_company_info_button">Informação da Empresa</string>
+    <string name="admin_settings_activity_order_reciepts_button">Impressão do recibo</string>
+    <string name="admin_settings_activity_software_license_button">Licensas de software</string>
+    <string name="admin_settings_activity_log_out_button">Terminar sessão</string>
+
+>>>>>>> 6670225227d8ab2cbb802be69dcf1e9bbdfd111c
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
 </resources>

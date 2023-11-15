@@ -21,8 +21,6 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void callRegisterActivity(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-        LoginActivity.this.finish();
     }
 }
