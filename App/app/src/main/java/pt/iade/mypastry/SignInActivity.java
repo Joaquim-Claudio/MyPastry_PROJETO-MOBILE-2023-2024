@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 
 public class SignInActivity extends AppCompatActivity {
+
+    public final static String EXTRA_POINTS_KEY = "pt.iade.mypastry.POINTS";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class SignInActivity extends AppCompatActivity {
 
         else if (!email.equals("") && !password.equals("")){
             Intent intent = new Intent(this, WelcomeActivity.class);
+            intent.putExtra(EXTRA_POINTS_KEY, 89);
             startActivity(intent);
         }
     }

@@ -15,10 +15,10 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Intent intent = getIntent();
-        int points = intent.getIntExtra(WelcomeActivity.EXTRA_POINTS_KEY, 0);
+        int points = intent.getIntExtra(WelcomeActivity.EXTRA_POINTS_KEY_2, 0);
 
-        TextView pointsTextView = (TextView) findViewById(R.id.home_textView_points);
-        pointsTextView.setText(points + " pontos");
+        TextView home_textView_points = (TextView) findViewById(R.id.home_textView_points);
+        home_textView_points.setText(points + " pontos");
     }
 
     public void callMenuActiviy(View view){
