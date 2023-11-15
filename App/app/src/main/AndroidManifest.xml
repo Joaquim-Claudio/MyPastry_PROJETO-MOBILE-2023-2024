@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyPastry"
         tools:targetApi="31">
         <activity
+            android:name=".DessertsListActivity"
+            android:exported="false" />
+        <activity
             android:name=".BeverageListActivity"
             android:exported="false" />
         <activity
