@@ -118,7 +118,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
-                                    android:text="@string/home_activity_spices_button"
+                                    android:text="Iguarias"
                                     android:textSize="16sp"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
