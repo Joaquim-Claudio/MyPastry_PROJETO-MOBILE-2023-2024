@@ -40,10 +40,10 @@
                     app:srcCompat="@drawable/points_button" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/home_textView_points"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_activity_points"
+                    android:hint="@string/home_activity_points"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView9"

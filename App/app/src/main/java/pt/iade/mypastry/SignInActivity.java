@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 
 public class SignInActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
