@@ -24,7 +24,7 @@
 
     <string name="home_activity_points">89 pontos</string>
     <string name="home_activity_menus_button">Menus</string>
-    <string name="home_activity_spices_button">Especiarias</string>
+    <string name="home_activity_delicacies_button">Iguarias</string>
     <string name="home_activity_drinks_button">Bebidas</string>
     <string name="home_activity_dessert_button">Sobremesas</string>
     <string name="home_activity_conviniences_button">Conveniências</string>
@@ -37,8 +37,6 @@
     <string name="home_activity_account_button">Conta</string>
 
 
-<<<<<<< HEAD
-=======
     <string name="admin_portrait_activities_instruction">Por favor, incline o seu dispositivo.</string>
 
     <string name="admin_home_activity_title">Cozinha | Pedidos</string>
@@ -56,6 +54,6 @@
     <string name="admin_settings_activity_software_license_button">Licensas de software</string>
     <string name="admin_settings_activity_log_out_button">Terminar sessão</string>
 
->>>>>>> 6670225227d8ab2cbb802be69dcf1e9bbdfd111c
+
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
 </resources>
