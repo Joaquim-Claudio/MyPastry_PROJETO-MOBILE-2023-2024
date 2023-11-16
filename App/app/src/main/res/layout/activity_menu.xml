@@ -91,19 +91,21 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="410dp"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:onClick="callProductDetailsActivity">
 
                 <ImageView
-                    android:id="@+id/imageView15"
+                    android:id="@+id/menu_product_imageView1"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
                     android:src="@drawable/cheese_pastel"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/menu_product_name_textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -111,29 +113,32 @@
                     android:text="Menu Pastel de Queijo"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView15"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/menu_product_price_textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="5,00 €"
+                    android:text="5.00"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/menu_product_description_textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="Pastel de Queijo + Bebida + Sobremesa"
-                    app:layout_constraintStart_toEndOf="@+id/imageView15"
-                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView1"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView1"
+                    tools:ignore="DuplicateIds" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -149,16 +154,17 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView14"
+                    android:id="@+id/menu_product_imageView"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
                     android:src="@drawable/meat_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/menu_product_name_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -166,20 +172,22 @@
                     android:text="Menu Pastel de Carne"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView14"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/menu_product_description_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="Pastel de Carne + Bebida + Sobremesa"
-                    app:layout_constraintStart_toEndOf="@+id/imageView14"
-                    app:layout_constraintTop_toBottomOf="@+id/textView20" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/menu_product_price_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -188,7 +196,8 @@
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -204,16 +213,17 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView16"
+                    android:id="@+id/menu_product_imageView"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
                     android:src="@drawable/chicken_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView29"
+                    android:id="@+id/menu_product_name_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -221,20 +231,22 @@
                     android:text="Menu Pastel de Frango"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView16"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView30"
+                    android:id="@+id/menu_product_description_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="Pastel de Frango + Bebida + Sobrmesa"
-                    app:layout_constraintStart_toEndOf="@+id/imageView16"
-                    app:layout_constraintTop_toBottomOf="@+id/textView29" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/menu_product_price_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -243,7 +255,8 @@
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
@@ -258,16 +271,17 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/menu_product_imageView"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
                     android:src="@drawable/pizza_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView32"
+                    android:id="@+id/menu_product_name_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -275,11 +289,12 @@
                     android:text="Menu Pastel de Pizza"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView17"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView34"
+                    android:id="@+id/menu_product_price_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -288,16 +303,18 @@
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
 
                 <TextView
-                    android:id="@+id/textView33"
+                    android:id="@+id/menu_product_description_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:text="Pastel de Pizza + Bebida + Sobremesa"
-                    app:layout_constraintStart_toEndOf="@+id/imageView17"
-                    app:layout_constraintTop_toBottomOf="@+id/textView32" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView"
+                    tools:ignore="DuplicateIds" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
