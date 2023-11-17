@@ -28,8 +28,7 @@
                 android:id="@+id/constraintLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:onClick="callDessertsListActivity">
+                android:layout_margin="20dp">
 
                 <ImageView
                     android:id="@+id/imageView9"
@@ -182,7 +181,8 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="16dp"
-                                android:background="@drawable/constraint_button">
+                                android:background="@drawable/constraint_button"
+                                android:onClick="callDessertsListActivity">
 
                                 <ImageView
                                     android:id="@+id/imageView22"
@@ -199,8 +199,8 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="18dp"
-                                android:onClick="callConveniencesListActivity"
-                                android:background="@drawable/constraint_button">
+                                android:background="@drawable/constraint_button"
+                                android:onClick="callConveniencesListActivity">
 
                                 <ImageView
                                     android:id="@+id/imageView24"

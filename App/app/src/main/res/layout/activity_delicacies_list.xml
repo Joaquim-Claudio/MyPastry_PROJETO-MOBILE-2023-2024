@@ -28,7 +28,8 @@
         android:scrollbarSize="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="returnToHomeActivity">
 
         <ImageView
             android:id="@+id/imageView30"
