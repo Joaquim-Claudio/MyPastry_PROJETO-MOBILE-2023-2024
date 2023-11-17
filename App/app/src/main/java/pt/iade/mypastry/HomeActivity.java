@@ -41,4 +41,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ConveniencesListActivity.class);
         startActivity(intent);
     }
+
+    public void callDelicaciesListActivity(View view){
+        Intent intent = new Intent(this, DelicaciesListActivity.class);
+        startActivity(intent);
+    }
 }

@@ -111,7 +111,8 @@
                                 android:layout_width="176dp"
                                 android:layout_height="100dp"
                                 android:layout_marginStart="18dp"
-                                android:background="@drawable/constraint_button">
+                                android:background="@drawable/constraint_button"
+                                android:onClick="callDelicaciesListActivity">
 
                                 <TextView
                                     android:id="@+id/textView6"
