@@ -198,6 +198,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="18dp"
+                                android:onClick="callConveniencesListActivity"
                                 android:background="@drawable/constraint_button">
 
                                 <ImageView
