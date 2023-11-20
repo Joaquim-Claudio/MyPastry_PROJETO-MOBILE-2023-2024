@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import pt.iade.mypastry.models.Product;
+import pt.iade.mypastry.repositories.ProductRepository;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
@@ -18,20 +19,17 @@ public class ProductDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_details);
 
         Intent intent = getIntent();
-        Product product = (Product) intent.getSerializableExtra(MenuActivity.EXTRA_PRODUCT_KEY);
-
-        //ImageView productImage = (ImageView) findViewById(R.id.product_image);
-        //productImage.setImageDrawable(product.getSrcImage());
+        Product product = ProductRepository.getProduct(intent.getIntExtra("product_id", 0));
 
         TextView productName = (TextView) findViewById(R.id.product_name_textView);
-        productName.setText(product.getName());
-
         TextView productDescription = (TextView) findViewById(R.id.product_description_textView);
-        productDescription.setText(product.getDescription());
-
         TextView productPrice = (TextView) findViewById(R.id.product_price_textView);
-        productPrice.setText(product.getPrice().toString());
+        ImageView productImage = (ImageView) findViewById(R.id.product_image);
 
+        productName.setText(product.getName());
+        productDescription.setText(product.getDescription());
+        productPrice.setText(String.format("%.2f", product.getPrice()) + " €");
+        productImage.setImageResource(product.getSrcImage());
 
     }
 

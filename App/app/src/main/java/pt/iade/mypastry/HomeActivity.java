@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import pt.iade.mypastry.repositories.ProductRepository;
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void callMenuActiviy(View view){
         Intent intent = new Intent(this, MenuActivity.class);
+        ProductRepository.populate();
         startActivity(intent);
     }
 

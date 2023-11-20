@@ -1,22 +1,30 @@
 package pt.iade.mypastry;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import pt.iade.mypastry.enums.ProductType;
 import pt.iade.mypastry.models.Product;
+import pt.iade.mypastry.repositories.ProductRepository;
 
 public class MenuActivity extends AppCompatActivity {
-    public final static String EXTRA_PRODUCT_KEY = "pt.iade.mypastry.PRODUCT";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        for (Product p : ProductRepository.getProducts()) {
+            if (p.getType() == ProductType.MENU){
+                setListElement(p);
+            }
+        }
+
     }
 
     public void returnToHomeActivity(View view){
@@ -24,29 +32,28 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void callProductDetailsActivity(View view){
-        Intent intent = new Intent(this, ProductDetailsActivity.class);
-
-        ImageView imageView = (ImageView) findViewById(R.id.menu_product_imageView1);
-        Drawable productImage = imageView.getDrawable();
-
-        TextView name_textView = (TextView) findViewById(R.id.menu_product_name_textView1);
-        String productName = name_textView.getText().toString();
-
-        TextView description_textView = (TextView) findViewById(R.id.menu_product_description_textView1);
-        String productDescription = description_textView.getText().toString();
-
-        TextView price_textView = (TextView) findViewById(R.id.menu_product_price_textView1);
-        Float productPrice = Float.valueOf(price_textView.getText().toString());
-
-        Product product = new Product();
-        product.setName(productName);
-        //product.setSrcImage(productImage);
-        product.setDescription(productDescription);
-        product.setPrice(productPrice);
 
 
-        intent.putExtra(EXTRA_PRODUCT_KEY, product);
-        startActivity(intent);
+
+    private void setListElement(Product product){
+        String defaultId = "menu_product_";
+
+        ConstraintLayout menuProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId + product.getId(), "id", getPackageName()));
+        menuProduct.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, ProductDetailsActivity.class);
+            intent.putExtra("product_id", product.getId());
+            startActivity(intent);
+        });
+
+
+        TextView productName = (TextView) findViewById(getResources().getIdentifier(defaultId+"name_textView_"+product.getId(), "id", getPackageName()));
+        TextView productDescription = (TextView) findViewById(getResources().getIdentifier(defaultId+"description_textView_"+product.getId(), "id", getPackageName()));
+        TextView productPrice = (TextView) findViewById(getResources().getIdentifier(defaultId+"price_textView_"+product.getId(), "id", getPackageName()));
+        ImageView productImage = (ImageView) findViewById(getResources().getIdentifier(defaultId+"imageView_"+product.getId(), "id", getPackageName()));
+
+        productName.setText(product.getName());
+        productDescription.setText(product.getDescription());
+        productPrice.setText(String.format("%.2f", product.getPrice()) + " €");
+        productImage.setImageResource(product.getSrcImage());
     }
 }

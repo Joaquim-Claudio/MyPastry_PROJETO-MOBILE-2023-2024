@@ -43,7 +43,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu"
+        android:text="@string/menu_activity_title"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -90,55 +90,50 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_1"
                 android:layout_width="410dp"
-                android:layout_height="match_parent"
-                android:onClick="callProductDetailsActivity">
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/menu_product_imageView1"
+                    android:id="@+id/menu_product_imageView_1"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/cheese_pastel"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_name_textView1"
+                    android:id="@+id/menu_product_name_textView_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Pastel de Queijo"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_1"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_price_textView1"
+                    android:id="@+id/menu_product_price_textView_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="5.00"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_description_textView1"
+                    android:id="@+id/menu_product_description_textView_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Pastel de Queijo + Bebida + Sobremesa"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView1"
-                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView1"
-                    tools:ignore="DuplicateIds" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_1"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_1"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -150,54 +145,50 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/menu_product_imageView"
+                    android:id="@+id/menu_product_imageView_2"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/meat_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_name_textView"
+                    android:id="@+id/menu_product_name_textView_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Pastel de Carne"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_2"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_description_textView"
+                    android:id="@+id/menu_product_description_textView_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Pastel de Carne + Bebida + Sobremesa"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView"
-                    tools:ignore="DuplicateIds" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_2"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_2"/>
 
                 <TextView
-                    android:id="@+id/menu_product_price_textView"
+                    android:id="@+id/menu_product_price_textView_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="5,00 €"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -209,54 +200,50 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/menu_product_imageView"
+                    android:id="@+id/menu_product_imageView_3"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/chicken_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_name_textView"
+                    android:id="@+id/menu_product_name_textView_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Pastel de Frango"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_3"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_description_textView"
+                    android:id="@+id/menu_product_description_textView_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Pastel de Frango + Bebida + Sobrmesa"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView"
-                    tools:ignore="DuplicateIds" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_3"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_3"/>
 
                 <TextView
-                    android:id="@+id/menu_product_price_textView"
+                    android:id="@+id/menu_product_price_textView_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="5,00 €"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
@@ -267,54 +254,50 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/menu_product_imageView"
+                    android:id="@+id/menu_product_imageView_4"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pizza_pastel_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/menu_product_name_textView"
+                    android:id="@+id/menu_product_name_textView_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Pastel de Pizza"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_4"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_price_textView"
+                    android:id="@+id/menu_product_price_textView_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="5,00€"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="DuplicateIds" />
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
-                    android:id="@+id/menu_product_description_textView"
+                    android:id="@+id/menu_product_description_textView_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Pastel de Pizza + Bebida + Sobremesa"
-                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView"
-                    tools:ignore="DuplicateIds" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/menu_product_imageView_4"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_4"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
@@ -348,46 +331,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView20"
+                    android:id="@+id/menu_product_imageView_5"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/hot_dog_promo_mini"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView36"
+                    android:id="@+id/menu_product_name_textView_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Cachorro"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView20"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_5"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView37"
+                    android:id="@+id/menu_product_description_textView_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Cachorro + Bebida + Batata"
-                    app:layout_constraintStart_toEndOf="@+id/imageView20"
-                    app:layout_constraintTop_toBottomOf="@+id/textView36" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_5"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_5" />
 
                 <TextView
-                    android:id="@+id/textView38"
+                    android:id="@+id/menu_product_price_textView_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="7,00 €"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -402,46 +385,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView23"
+                    android:id="@+id/menu_product_imageView_6"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/hamburguer_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView39"
+                    android:id="@+id/menu_product_name_textView_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Hamburguer"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView23"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_6"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView40"
+                    android:id="@+id/menu_product_description_textView_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Hamburguer + Bebida + Batata"
-                    app:layout_constraintStart_toEndOf="@+id/imageView23"
-                    app:layout_constraintTop_toBottomOf="@+id/textView39" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_6"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_6" />
 
                 <TextView
-                    android:id="@+id/textView41"
+                    android:id="@+id/menu_product_price_textView_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="8,00€"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -456,46 +439,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView26"
+                    android:id="@+id/menu_product_imageView_7"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/xtudo_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView42"
+                    android:id="@+id/menu_product_name_textView_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu X-Tudo"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView26"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_7"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView43"
+                    android:id="@+id/menu_product_description_textView_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="X-Tudo + Bebida + Batata"
-                    app:layout_constraintStart_toEndOf="@+id/imageView26"
-                    app:layout_constraintTop_toBottomOf="@+id/textView42" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_7"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_7" />
 
                 <TextView
-                    android:id="@+id/textView44"
+                    android:id="@+id/menu_product_price_textView_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="10,00€"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -510,46 +493,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView27"
+                    android:id="@+id/menu_product_imageView_8"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/xpicanha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView45"
+                    android:id="@+id/menu_product_name_textView_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu X-Picanha"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView27"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_8"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/menu_product_description_textView_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="X-Picanha + Bebida + Batata"
-                    app:layout_constraintStart_toEndOf="@+id/imageView27"
-                    app:layout_constraintTop_toBottomOf="@+id/textView45" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_8"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_8" />
 
                 <TextView
-                    android:id="@+id/textView47"
+                    android:id="@+id/menu_product_price_textView_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="11,00€"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -589,46 +572,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/menu_product_imageView_9"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/coxinha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView50"
+                    android:id="@+id/menu_product_name_textView_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Coxinha"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_9"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView51"
+                    android:id="@+id/menu_product_description_textView_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Coxinha + Bebida"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8"
-                    app:layout_constraintTop_toBottomOf="@+id/textView50" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_9"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_9" />
 
                 <TextView
-                    android:id="@+id/textView52"
+                    android:id="@+id/menu_product_price_textView_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="4,00 €"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -643,51 +626,50 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView28"
+                    android:id="@+id/menu_product_imageView_10"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/kibe_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView54"
+                    android:id="@+id/menu_product_name_textView_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Kibe"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView28"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_10"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView55"
+                    android:id="@+id/menu_product_description_textView_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Kibe + Bebida"
-                    app:layout_constraintStart_toEndOf="@+id/imageView28"
-                    app:layout_constraintTop_toBottomOf="@+id/textView54" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_10"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_10" />
 
                 <TextView
-                    android:id="@+id/textView56"
+                    android:id="@+id/menu_product_price_textView_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="4,00 €"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
@@ -698,46 +680,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/menu_product_11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView29"
+                    android:id="@+id/menu_product_imageView_11"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/esfiha_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView57"
+                    android:id="@+id/menu_product_name_textView_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Menu Esfiha"
+                    android:hint="@string/menu_activity_product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView29"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_11"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView58"
+                    android:id="@+id/menu_product_description_textView_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Esfiha + Bebida"
-                    app:layout_constraintStart_toEndOf="@+id/imageView29"
-                    app:layout_constraintTop_toBottomOf="@+id/textView57" />
+                    android:hint="@string/menu_activity_product_description_hint"
+                    app:layout_constraintStart_toEndOf="@id/menu_product_imageView_11"
+                    app:layout_constraintTop_toBottomOf="@+id/menu_product_name_textView_11" />
 
                 <TextView
-                    android:id="@+id/textView59"
+                    android:id="@+id/menu_product_price_textView_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="4,00 €"
+                    android:hint="@string/menu_activity_product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
