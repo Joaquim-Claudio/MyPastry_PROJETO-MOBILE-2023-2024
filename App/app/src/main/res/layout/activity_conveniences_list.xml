@@ -28,7 +28,9 @@
         android:scrollbarSize="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="returnToHomeActivity">
+
 
         <ImageView
             android:id="@+id/imageView30"
@@ -100,7 +102,7 @@
                     android:id="@+id/imageView31"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/acai_image"
+                    android:src="@drawable/flocao_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -122,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 33cl"
+                    android:text="500g"
                     app:layout_constraintStart_toEndOf="@+id/imageView31"
                     app:layout_constraintTop_toBottomOf="@+id/textView48" />
 
@@ -154,7 +156,7 @@
                     android:id="@+id/imageView32"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pamonha_image"
+                    android:src="@drawable/flour_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -176,7 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 33cl"
+                    android:text="500g"
                     app:layout_constraintStart_toEndOf="@+id/imageView32"
                     app:layout_constraintTop_toBottomOf="@+id/textView61" />
 
@@ -209,7 +211,7 @@
                     android:id="@+id/imageView33"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/mungunza_image"
+                    android:src="@drawable/polvilho_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -220,7 +222,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Povilho Azedo"
+                    android:text="Polvilho Azedo"
                     android:textSize="17dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/imageView33"
@@ -231,7 +233,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 33cl"
+                    android:text="500g"
                     app:layout_constraintStart_toEndOf="@+id/imageView33"
                     app:layout_constraintTop_toBottomOf="@+id/textView64" />
 
@@ -264,7 +266,7 @@
                     android:id="@+id/imageView34"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/acaraje_image"
+                    android:src="@drawable/rice_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -286,7 +288,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
+                    android:text="1kg"
                     app:layout_constraintStart_toEndOf="@+id/imageView34"
                     app:layout_constraintTop_toBottomOf="@+id/textView68" />
 
@@ -296,7 +298,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:text="2,00 €"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -342,7 +344,7 @@
                     android:id="@+id/imageView35"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/boloderolo_image"
+                    android:src="@drawable/pacoquita_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -364,7 +366,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
+                    android:text="1 unidade"
                     app:layout_constraintStart_toEndOf="@+id/imageView35"
                     app:layout_constraintTop_toBottomOf="@+id/textView71" />
 
@@ -374,7 +376,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:text="1,00 €"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -396,7 +398,7 @@
                     android:id="@+id/imageView36"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/calabresa_image"
+                    android:src="@drawable/tortuguita_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -418,7 +420,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
+                    android:text="1 unidade"
                     app:layout_constraintStart_toEndOf="@+id/imageView36"
                     app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
@@ -428,7 +430,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:text="1,00 €"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -450,7 +452,7 @@
                     android:id="@+id/imageView37"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/cuscuz_image"
+                    android:src="@drawable/goiabada_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -472,7 +474,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Garrafa 33cl"
+                    android:text="300g"
                     app:layout_constraintStart_toEndOf="@+id/imageView37"
                     app:layout_constraintTop_toBottomOf="@+id/textView78" />
 
@@ -482,7 +484,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:text="3,00 €"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -504,7 +506,7 @@
                     android:id="@+id/imageView38"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/tapioca_images"
+                    android:src="@drawable/rapadura_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -526,7 +528,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Garrafa 33cl"
+                    android:text="200g"
                     app:layout_constraintStart_toEndOf="@+id/imageView38"
                     app:layout_constraintTop_toBottomOf="@+id/textView81" />
 
@@ -536,7 +538,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:text="4,00 €"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -558,7 +560,7 @@
                     android:id="@+id/textView94"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Outro"
+                    android:text="Outros"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"

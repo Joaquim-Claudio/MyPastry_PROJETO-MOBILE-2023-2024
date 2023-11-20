@@ -110,7 +110,8 @@
                                 android:layout_width="176dp"
                                 android:layout_height="100dp"
                                 android:layout_marginStart="18dp"
-                                android:background="@drawable/constraint_button">
+                                android:background="@drawable/constraint_button"
+                                android:onClick="callDelicaciesListActivity">
 
                                 <TextView
                                     android:id="@+id/textView6"
@@ -198,7 +199,8 @@
                                 android:layout_width="80dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="18dp"
-                                android:background="@drawable/constraint_button">
+                                android:background="@drawable/constraint_button"
+                                android:onClick="callConveniencesListActivity">
 
                                 <ImageView
                                     android:id="@+id/imageView24"
@@ -550,7 +552,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:onClick="callAccountActivity"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </TableRow>
 
