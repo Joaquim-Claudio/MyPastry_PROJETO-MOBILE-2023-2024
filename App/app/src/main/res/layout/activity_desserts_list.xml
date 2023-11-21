@@ -94,46 +94,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView31"
+                    android:id="@+id/dessert_product_imageView_22"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/carrot_cake_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView48"
+                    android:id="@+id/dessert_product_name_textView_22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Bolo de Cenoura"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_22"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/dessert_product_description_textView_22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Fatia de bolo"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
-                    app:layout_constraintTop_toBottomOf="@+id/textView48" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_22"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_22" />
 
                 <TextView
-                    android:id="@+id/textView60"
+                    android:id="@+id/dessert_product_price_textView_22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -141,108 +141,107 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider17"
+                android:id="@+id/divider3"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView32"
+                    android:id="@+id/dessert_product_imageView_23"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/chocolate_cake_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView61"
+                    android:id="@+id/dessert_product_name_textView_23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Bolo de Chocolate"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView32"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_23"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView62"
+                    android:id="@+id/dessert_product_description_textView_23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Fatia de Bolo"
-                    app:layout_constraintStart_toEndOf="@+id/imageView32"
-                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_23"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_23" />
 
                 <TextView
-                    android:id="@+id/textView63"
+                    android:id="@+id/dessert_product_price_textView_23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider18"
+                android:id="@+id/divider4"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView33"
+                    android:id="@+id/dessert_product_imageView_24"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/fuba_cake_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView64"
+                    android:id="@+id/dessert_product_name_textView_24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Bolo de Fubá"
-                    android:textSize="17dp"
+                    android:hint="@string/product_title_hint"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView33"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_24"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView65"
+                    android:id="@+id/dessert_product_description_textView_24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Fatia de Bolo"
-                    app:layout_constraintStart_toEndOf="@+id/imageView33"
-                    app:layout_constraintTop_toBottomOf="@+id/textView64" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_24"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_24" />
 
                 <TextView
-                    android:id="@+id/textView66"
+                    android:id="@+id/dessert_product_price_textView_24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -250,7 +249,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider19"
+                android:id="@+id/divider5"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
@@ -274,53 +273,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider20"
+                android:id="@+id/divider6"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView34"
+                    android:id="@+id/dessert_product_imageView_25"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/lemon_mousse_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView68"
+                    android:id="@+id/dessert_product_name_textView_25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Mousse de Lima"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView34"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_25"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView69"
+                    android:id="@+id/dessert_product_description_textView_25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Embalagem 25cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView34"
-                    app:layout_constraintTop_toBottomOf="@+id/textView68" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_25"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_25" />
 
                 <TextView
-                    android:id="@+id/textView70"
+                    android:id="@+id/dessert_product_price_textView_25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -328,53 +327,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider21"
+                android:id="@+id/divider7"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView35"
+                    android:id="@+id/dessert_product_imageView_26"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/passionfruit_mousse_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView71"
+                    android:id="@+id/dessert_product_name_textView_26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Mousse de Maracujá"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView35"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_26"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView72"
+                    android:id="@+id/dessert_product_description_textView_26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Embalagem 25cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView35"
-                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_26"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_26" />
 
                 <TextView
-                    android:id="@+id/textView73"
+                    android:id="@+id/dessert_product_price_textView_26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -382,107 +381,107 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider22"
+                android:id="@+id/divider8"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView40"
+                    android:id="@+id/dessert_product_imageView_27"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pudding_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView87"
+                    android:id="@+id/dessert_product_name_textView_27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Pudim"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView40"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_27"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView88"
+                    android:id="@+id/dessert_product_description_textView_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_27"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_27" />
+
+                <TextView
+                    android:id="@+id/dessert_product_price_textView_27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView89"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="Embalagem 25cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView40"
-                    app:layout_constraintTop_toBottomOf="@+id/textView87" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider27"
+                android:id="@+id/divider9"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dessert_product_28"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView36"
+                    android:id="@+id/dessert_product_imageView_28"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/babacamelo_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView74"
+                    android:id="@+id/dessert_product_name_textView_28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Baba de Camelo"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView36"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_28"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView75"
+                    android:id="@+id/dessert_product_description_textView_28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Embalagem 25cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView36"
-                    app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/dessert_product_imageView_28"
+                    app:layout_constraintTop_toBottomOf="@+id/dessert_product_name_textView_28" />
 
                 <TextView
-                    android:id="@+id/textView76"
+                    android:id="@+id/dessert_product_price_textView_28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"

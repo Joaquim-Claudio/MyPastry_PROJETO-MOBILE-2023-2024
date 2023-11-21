@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:hint="Menu Pastel de -"
+            android:hint="@string/product_title_hint"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
             android:id="@+id/product_description_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Pastel de - + Bebida"
+            android:hint="@string/product_description_hint"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="@+id/product_name_textView"
             app:layout_constraintTop_toBottomOf="@+id/product_name_textView" />
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
-            android:text="- €"
+            android:hint="@string/product_price_hint"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="Selecione a quantidade"
+            android:text="@string/product_details_activity_quantity_textView"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="Obrigatório"
+                android:text="@string/product_details_activity_required_textView"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -133,14 +133,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/product_details_add_button"
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/costum_button"
-        android:text="Adicionar ao carrinho - "
+        android:text="@string/product_details_activity_add_product_button"
         android:textSize="20sp"
         android:textStyle="bold"
         app:backgroundTint="@color/button_color_green"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout11"
+            android:id="@+id/product_details_decrease_quant"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -182,15 +182,15 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout12"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout11"
+            app:layout_constraintEnd_toStartOf="@+id/product_details_increase_quant"
+            app:layout_constraintStart_toEndOf="@+id/product_details_decrease_quant"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView101"
+                android:id="@+id/product_details_quant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2"
+                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -200,7 +200,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout12"
+            android:id="@+id/product_details_increase_quant"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"

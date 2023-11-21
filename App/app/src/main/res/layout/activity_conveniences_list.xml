@@ -88,6 +88,60 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginVertical="10dp"
+                android:background="?android:attr/listDivider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/conven_product_imageView_38"
+                    android:layout_width="86dp"
+                    android:layout_height="63dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/conven_product_name_textView_38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/product_title_hint"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_38"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/conven_product_description_textView_38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_38"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_38" />
+
+                <TextView
+                    android:id="@+id/conven_product_price_textView_38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/product_price_hint"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
@@ -95,46 +149,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_39"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView31"
+                    android:id="@+id/conven_product_imageView_39"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/flocao_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView48"
+                    android:id="@+id/conven_product_name_textView_39"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Flocão"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_39"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/conven_product_description_textView_39"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="500g"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
-                    app:layout_constraintTop_toBottomOf="@+id/textView48" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_39"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_39" />
 
                 <TextView
-                    android:id="@+id/textView60"
+                    android:id="@+id/conven_product_price_textView_39"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,80 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -142,108 +196,107 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider17"
+                android:id="@+id/divider3"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_40"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView32"
+                    android:id="@+id/conven_product_imageView_40"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/flour_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView61"
+                    android:id="@+id/conven_product_name_textView_40"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Farinha de Mandioca"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView32"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_40"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView62"
+                    android:id="@+id/conven_product_description_textView_40"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="500g"
-                    app:layout_constraintStart_toEndOf="@+id/imageView32"
-                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_40"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_40" />
 
                 <TextView
-                    android:id="@+id/textView63"
+                    android:id="@+id/conven_product_price_textView_40"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,80 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider18"
+                android:id="@+id/divider4"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView33"
+                    android:id="@+id/conven_product_imageView_41"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/polvilho_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView64"
+                    android:id="@+id/conven_product_name_textView_41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Polvilho Azedo"
-                    android:textSize="17dp"
+                    android:hint="@string/product_title_hint"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView33"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_41"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView65"
+                    android:id="@+id/conven_product_description_textView_41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="500g"
-                    app:layout_constraintStart_toEndOf="@+id/imageView33"
-                    app:layout_constraintTop_toBottomOf="@+id/textView64" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_41"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_41" />
 
                 <TextView
-                    android:id="@+id/textView66"
+                    android:id="@+id/conven_product_price_textView_41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,80€"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -251,62 +304,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider19"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <ImageView
-                    android:id="@+id/imageView34"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    android:src="@drawable/rice_image"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView68"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Arroz Branco"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView34"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView69"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="1kg"
-                    app:layout_constraintStart_toEndOf="@+id/imageView34"
-                    app:layout_constraintTop_toBottomOf="@+id/textView68" />
-
-                <TextView
-                    android:id="@+id/textView70"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider21"
+                android:id="@+id/divider5"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
@@ -330,53 +328,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider29"
+                android:id="@+id/divider6"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView35"
+                    android:id="@+id/conven_product_imageView_42"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/pacoquita_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView71"
+                    android:id="@+id/conven_product_name_textView_42"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Paçoca"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView35"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_42"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView72"
+                    android:id="@+id/conven_product_description_textView_42"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="1 unidade"
-                    app:layout_constraintStart_toEndOf="@+id/imageView35"
-                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_42"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_42" />
 
                 <TextView
-                    android:id="@+id/textView73"
+                    android:id="@+id/conven_product_price_textView_42"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -384,53 +382,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider22"
+                android:id="@+id/divider7"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView36"
+                    android:id="@+id/conven_product_imageView_43"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/tortuguita_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView74"
+                    android:id="@+id/conven_product_name_textView_43"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Tortuguita"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView36"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_43"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView75"
+                    android:id="@+id/conven_product_description_textView_43"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="1 unidade"
-                    app:layout_constraintStart_toEndOf="@+id/imageView36"
-                    app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_43"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_43" />
 
                 <TextView
-                    android:id="@+id/textView76"
+                    android:id="@+id/conven_product_price_textView_43"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -438,53 +436,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider23"
+                android:id="@+id/divider8"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_44"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView37"
+                    android:id="@+id/conven_product_imageView_44"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/goiabada_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView78"
+                    android:id="@+id/conven_product_name_textView_44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Goiabada"
-                    android:textSize="17dp"
+                    android:hint="@string/product_title_hint"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView37"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_44"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView79"
+                    android:id="@+id/conven_product_description_textView_44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="300g"
-                    app:layout_constraintStart_toEndOf="@+id/imageView37"
-                    app:layout_constraintTop_toBottomOf="@+id/textView78" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_44"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_44" />
 
                 <TextView
-                    android:id="@+id/textView80"
+                    android:id="@+id/conven_product_price_textView_44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -492,53 +490,53 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider25"
+                android:id="@+id/divider9"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView38"
+                    android:id="@+id/conven_product_imageView_45"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/rapadura_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView81"
+                    android:id="@+id/conven_product_name_textView_45"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Rapadura"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView38"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_45"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView82"
+                    android:id="@+id/conven_product_description_textView_45"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="200g"
-                    app:layout_constraintStart_toEndOf="@+id/imageView38"
-                    app:layout_constraintTop_toBottomOf="@+id/textView81" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_45"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_45" />
 
                 <TextView
-                    android:id="@+id/textView83"
+                    android:id="@+id/conven_product_price_textView_45"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="4,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -546,7 +544,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider26"
+                android:id="@+id/divider10"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
@@ -569,87 +567,62 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
-                android:id="@+id/divider31"
+                android:id="@+id/divider11"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_marginVertical="10dp"
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/conven_product_46"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView39"
+                    android:id="@+id/conven_product_imageView_46"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/coalhocheese_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView84"
+                    android:id="@+id/conven_product_name_textView_46"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Queijo Coalho"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView39"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_46"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView85"
+                    android:id="@+id/conven_product_description_textView_46"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 50cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView39"
-                    app:layout_constraintTop_toBottomOf="@+id/textView84" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/conven_product_imageView_46"
+                    app:layout_constraintTop_toBottomOf="@+id/conven_product_name_textView_46" />
 
                 <TextView
-                    android:id="@+id/textView86"
+                    android:id="@+id/conven_product_price_textView_46"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:id="@+id/divider30"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imageView42"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/coalhocheese_image"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView93"
-                    android:layout_width="61dp"
-                    android:layout_height="14dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toEndOf="@+id/imageView42"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="100dp" />
 
         </LinearLayout>
     </ScrollView>

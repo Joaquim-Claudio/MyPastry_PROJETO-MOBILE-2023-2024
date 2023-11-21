@@ -56,6 +56,16 @@ public class ProductRepository {
         products.add(new Product(36, ProductType.DELICACY,"Tapioca", "Pote 100g", 3f, R.drawable.tapioca_images));
         products.add(new Product(37, ProductType.DELICACY,"Queijo Coalho", "Pote 100g", 3f, R.drawable.coalhocheese_image));
 
+        //  Populating Conviniences Products
+        products.add(new Product(38, ProductType.CONVINIENCE,"Flocão", "500g", 1.8f, R.drawable.flocao_image));
+        products.add(new Product(39, ProductType.CONVINIENCE,"Farinha de Mandioca", "500g", 1.8f, R.drawable.flour_image));
+        products.add(new Product(40, ProductType.CONVINIENCE,"Polvilho Azedo", "500g", 1.8f, R.drawable.polvilho_image));
+        products.add(new Product(41, ProductType.CONVINIENCE,"Arroz Branco", "1Kg", 2f, R.drawable.rice_image));
+        products.add(new Product(42, ProductType.CONVINIENCE,"Paçoca", "1 unidade", 1f, R.drawable.pacoquita_image));
+        products.add(new Product(43, ProductType.CONVINIENCE,"Tortuguita", "1 unidade", 1f, R.drawable.tortuguita_image));
+        products.add(new Product(44, ProductType.CONVINIENCE,"Goiabada", "300g", 3f, R.drawable.goiabada_image));
+        products.add(new Product(45, ProductType.CONVINIENCE,"Rapadura", "200g", 4f, R.drawable.rapadura_image));
+        products.add(new Product(46, ProductType.CONVINIENCE,"Quejo Coalho", "3 unidades", 3f, R.drawable.coalhocheese_image));
     }
 
     public static ArrayList<Product> getProducts(){

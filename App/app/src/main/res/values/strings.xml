@@ -37,12 +37,14 @@
     <string name="home_activity_account_button">Conta</string>
 
     <string name="menu_activity_title">Menu</string>
+
     <string name="product_title_hint">Nome do produto</string>
     <string name="product_description_hint">Descrição do produto</string>
     <string name="product_price_hint">0.00 €</string>
 
-
-
+    <string name="product_details_activity_quantity_textView">Selecione a quantidade</string>
+    <string name="product_details_activity_required_textView">Obrigatório</string>
+    <string name="product_details_activity_add_product_button">Adicionar ao carrinho - </string>
 
 
     <string name="admin_portrait_activities_instruction">Por favor, incline o seu dispositivo.</string>
