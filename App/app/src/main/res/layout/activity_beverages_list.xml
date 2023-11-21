@@ -94,46 +94,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView31"
+                    android:id="@+id/bever_product_imageView_12"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/guarana_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView48"
+                    android:id="@+id/bever_product_name_textView_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Guaraná Antártica"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_12"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView53"
+                    android:id="@+id/bever_product_description_textView_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 33cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView31"
-                    app:layout_constraintTop_toBottomOf="@+id/textView48" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_12"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_12" />
 
                 <TextView
-                    android:id="@+id/textView60"
+                    android:id="@+id/bever_product_price_textView_12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,80 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -148,51 +148,50 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView32"
+                    android:id="@+id/bever_product_imageView_13"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/coca_cola_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView61"
+                    android:id="@+id/bever_product_name_textView_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Coca-Cola"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView32"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_13"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView62"
+                    android:id="@+id/bever_product_description_textView_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 33cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView32"
-                    app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_13"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_13" />
 
                 <TextView
-                    android:id="@+id/textView63"
+                    android:id="@+id/bever_product_price_textView_13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,80 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
@@ -203,46 +202,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView33"
+                    android:id="@+id/bever_product_imageView_14"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/fanta_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView64"
+                    android:id="@+id/bever_product_name_textView_14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Fanta Laranja"
-                    android:textSize="17dp"
+                    android:hint="@string/product_title_hint"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView33"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_14"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView65"
+                    android:id="@+id/bever_product_description_textView_14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 33cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView33"
-                    app:layout_constraintTop_toBottomOf="@+id/textView64" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_14"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_14" />
 
                 <TextView
-                    android:id="@+id/textView66"
+                    android:id="@+id/bever_product_price_textView_14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="1,80 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -281,46 +280,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_15"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView44"
+                    android:id="@+id/bever_product_imageView_15"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/canejuice_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView90"
+                    android:id="@+id/bever_product_name_textView_15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Caldo de Cana"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView44"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_15"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView91"
+                    android:id="@+id/bever_product_description_textView_15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView44"
-                    app:layout_constraintTop_toBottomOf="@+id/textView90" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_15"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_15" />
 
                 <TextView
-                    android:id="@+id/textView92"
+                    android:id="@+id/bever_product_price_textView_15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -335,46 +334,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView34"
+                    android:id="@+id/bever_product_imageView_16"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/orange_juice_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView68"
+                    android:id="@+id/bever_product_name_textView_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Sumo de Laranja"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView34"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_16"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView69"
+                    android:id="@+id/bever_product_description_textView_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView34"
-                    app:layout_constraintTop_toBottomOf="@+id/textView68" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_16"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_16" />
 
                 <TextView
-                    android:id="@+id/textView70"
+                    android:id="@+id/bever_product_price_textView_16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -389,46 +388,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView35"
+                    android:id="@+id/bever_product_imageView_17"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/guava_juice_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView71"
+                    android:id="@+id/bever_product_name_textView_17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Sumo de Goiaba"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView35"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_17"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView72"
+                    android:id="@+id/bever_product_description_textView_17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView35"
-                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_17"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_17" />
 
                 <TextView
-                    android:id="@+id/textView73"
+                    android:id="@+id/bever_product_price_textView_17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -443,46 +442,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView36"
+                    android:id="@+id/bever_product_imageView_18"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/mango_juice_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView74"
+                    android:id="@+id/bever_product_name_textView_18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Sumo de Manga"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView36"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_18"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView75"
+                    android:id="@+id/bever_product_description_textView_18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Copo 40cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView36"
-                    app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_18"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_18" />
 
                 <TextView
-                    android:id="@+id/textView76"
+                    android:id="@+id/bever_product_price_textView_18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -521,46 +520,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView37"
+                    android:id="@+id/bever_product_imageView_19"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/superbock_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView78"
+                    android:id="@+id/bever_product_name_textView_19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Super Bock"
-                    android:textSize="17dp"
+                    android:hint="@string/product_title_hint"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView37"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_19"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView79"
+                    android:id="@+id/bever_product_description_textView_19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Garrafa 33cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView37"
-                    app:layout_constraintTop_toBottomOf="@+id/textView78" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_19"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_19" />
 
                 <TextView
-                    android:id="@+id/textView80"
+                    android:id="@+id/bever_product_price_textView_19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -575,46 +574,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView38"
+                    android:id="@+id/bever_product_imageView_20"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/heineken_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView81"
+                    android:id="@+id/bever_product_name_textView_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:text="Heineken"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView38"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_20"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView82"
+                    android:id="@+id/bever_product_description_textView_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Garrafa 33cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView38"
-                    app:layout_constraintTop_toBottomOf="@+id/textView81" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_20"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_20" />
 
                 <TextView
-                    android:id="@+id/textView83"
+                    android:id="@+id/bever_product_price_textView_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="2,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -629,45 +628,46 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bever_product_21"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView39"
+                    android:id="@+id/bever_product_imageView_21"
                     android:layout_width="86dp"
                     android:layout_height="63dp"
-                    android:src="@drawable/somersby_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView84"
+                    android:id="@+id/bever_product_name_textView_21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Somersby"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/product_title_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/imageView39"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_21"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView85"
+                    android:id="@+id/bever_product_description_textView_21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Lata 50cl"
-                    app:layout_constraintStart_toEndOf="@+id/imageView39"
-                    app:layout_constraintTop_toBottomOf="@+id/textView84" />
+                    android:hint="@string/product_description_hint"
+                    app:layout_constraintStart_toEndOf="@+id/bever_product_imageView_21"
+                    app:layout_constraintTop_toBottomOf="@+id/bever_product_name_textView_21" />
 
                 <TextView
-                    android:id="@+id/textView86"
+                    android:id="@+id/bever_product_price_textView_21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="3,00 €"
+                    android:hint="@string/product_price_hint"
                     android:textSize="17sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"

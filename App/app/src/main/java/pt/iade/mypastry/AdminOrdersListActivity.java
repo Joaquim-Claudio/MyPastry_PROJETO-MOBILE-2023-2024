@@ -15,7 +15,6 @@ public class AdminOrdersListActivity extends AppCompatActivity {
     }
 
     public void returnToAdminSettingsActivity(View view){
-        Intent intent = new Intent(this, AdminSettingsActivity.class);
-        startActivity(intent);
+        finish();
     }
 }

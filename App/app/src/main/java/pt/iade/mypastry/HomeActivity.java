@@ -21,11 +21,12 @@ public class HomeActivity extends AppCompatActivity {
 
         TextView home_textView_points = (TextView) findViewById(R.id.home_textView_points);
         home_textView_points.setText(points + " pontos");
+
+        ProductRepository.populate();
     }
 
     public void callMenuActiviy(View view){
         Intent intent = new Intent(this, MenuActivity.class);
-        ProductRepository.populate();
         startActivity(intent);
     }
 

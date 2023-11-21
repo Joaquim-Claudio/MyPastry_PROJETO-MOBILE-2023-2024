@@ -15,8 +15,7 @@ public class AdminSettingsActivity extends AppCompatActivity {
     }
 
     public void returnToAdminHomeActivity(View view){
-        Intent intent = new Intent(this, AdminHomeActivity.class);
-        startActivity(intent);
+        finish();
     }
 
     public void callAdminOrdersListActivity(View view){

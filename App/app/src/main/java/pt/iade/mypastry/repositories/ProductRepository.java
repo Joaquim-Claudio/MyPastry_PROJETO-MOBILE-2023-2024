@@ -56,7 +56,6 @@ public class ProductRepository {
         products.add(new Product(36, ProductType.DELICACY,"Tapioca", "Pote 100g", 3f, R.drawable.tapioca_images));
         products.add(new Product(37, ProductType.DELICACY,"Queijo Coalho", "Pote 100g", 3f, R.drawable.coalhocheese_image));
 
-
     }
 
     public static ArrayList<Product> getProducts(){

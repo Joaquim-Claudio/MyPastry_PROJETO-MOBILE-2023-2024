@@ -15,7 +15,6 @@ public class ConveniencesListActivity extends AppCompatActivity {
     }
 
     public void returnToHomeActivity(View view){
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+        finish();
     }
 }

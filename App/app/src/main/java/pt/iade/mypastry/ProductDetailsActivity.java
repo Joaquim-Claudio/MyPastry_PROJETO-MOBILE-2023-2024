@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.repositories.ProductRepository;
 
@@ -33,8 +35,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     }
 
-    public void returnToMenuActivity(View view){
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
+    public void returnToCallingActivity(View view){
+        finish();
     }
 }

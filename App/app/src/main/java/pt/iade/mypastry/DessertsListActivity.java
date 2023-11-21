@@ -14,7 +14,6 @@ public class DessertsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_desserts_list);
     }
     public void returnToHomeActivity(View view){
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+        finish();
     }
 }
