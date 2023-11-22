@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        android:onClick="login"/>
+        android:onClick="signIn"/>
 
     <ImageView
         android:id="@+id/imageView3"

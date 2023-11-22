@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import pt.iade.mypastry.models.User;
+
 public class RegisterActivity extends AppCompatActivity {
-    public final static String EXTRA_EMAIL_KEY = "pt.iade.mypastry.EMAIL";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (!name.equals("") && !email.equals("")&& !password.equals("")){
             Intent intent = new Intent(this, EmailConfirmationActivity.class);
-            intent.putExtra(EXTRA_EMAIL_KEY, email);
+            String key = "000000";
+            intent.putExtra("user_name", name);
+            intent.putExtra("user_email", email);
+            intent.putExtra("confirm_key", key);
             startActivity(intent);
         }
     }

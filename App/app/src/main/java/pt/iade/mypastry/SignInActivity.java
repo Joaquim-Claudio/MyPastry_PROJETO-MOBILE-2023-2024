@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class SignInActivity extends AppCompatActivity {
+import pt.iade.mypastry.models.User;
+import pt.iade.mypastry.repositories.UserRepository;
 
-    public final static String EXTRA_POINTS_KEY = "pt.iade.mypastry.POINTS";
+public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
     }
 
-    public void login (View view){
+    public void signIn (View view){
         EditText emailInputText = (EditText) findViewById(R.id.sign_in_textInput_email);
         String email = emailInputText.getText().toString();
 
@@ -29,11 +30,22 @@ public class SignInActivity extends AppCompatActivity {
             startActivity(intent);
             SignInActivity.this.finish();
         }
-
+    /*
         else if (!email.equals("") && !password.equals("")){
             Intent intent = new Intent(this, WelcomeActivity.class);
             intent.putExtra(EXTRA_POINTS_KEY, 89);
             startActivity(intent);
+        }
+
+     */
+        else{
+            for (User user : UserRepository.getUsers()) {
+                if (user.getEmail().equals(email)) {
+                    Intent intent = new Intent(this, WelcomeActivity.class);
+                    intent.putExtra("user_id", user.getId());
+                    startActivity(intent);
+                }
+            }
         }
     }
 

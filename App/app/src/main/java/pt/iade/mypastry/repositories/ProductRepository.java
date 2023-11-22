@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import pt.iade.mypastry.R;
 import pt.iade.mypastry.enums.ProductType;
+import pt.iade.mypastry.models.Menu;
 import pt.iade.mypastry.models.Product;
 
 public class ProductRepository {
@@ -12,17 +13,17 @@ public class ProductRepository {
     public static void populate() {
 
         //  Populating Menu Products
-        products.add(new Product(1, ProductType.MENU,"Menu Pastel de Queijo", "Pastel de Queijo + Bebida + Sobremesa", 5f, R.drawable.pastel));
-        products.add(new Product(2, ProductType.MENU,"Menu Pastel de Carne", "Pastel de Carne + Bebida + Sobremesa", 5f, R.drawable.meat_pastel_image));
-        products.add(new Product(3, ProductType.MENU,"Menu Pastel de Frango", "Pastel de Frango + Bebida + Sobremesa", 5f, R.drawable.chicken_pastel_image));
-        products.add(new Product(4, ProductType.MENU,"Menu Pastel de Pizza", "Pastel de Pizza + Bebida + Sobremesa", 5f, R.drawable.pizza_pastel_image));
-        products.add(new Product(5, ProductType.MENU,"Menu Cachorro", "Cachorro + Bebida + Sobremesa", 7f, R.drawable.hot_dog_promo));
-        products.add(new Product(6, ProductType.MENU,"Menu Hamburger", "Hamburger + Bebida + Sobremesa", 10f, R.drawable.hamburguer_image));
-        products.add(new Product(7, ProductType.MENU,"Menu X-Tudo", "X-Tudo + Bebida + Sobremesa", 10f, R.drawable.xtudo_image));
-        products.add(new Product(8, ProductType.MENU,"Menu X-Picanha", "X-Picanha + Bebida + Sobremesa", 11f, R.drawable.xpicanha_image));
-        products.add(new Product(9, ProductType.MENU,"Menu Coxinha", "Coxinha + Bebida", 4f, R.drawable.coxinha_image));
-        products.add(new Product(10, ProductType.MENU,"Menu Kibe", "Kibe + Bebida", 4f, R.drawable.kibe_image));
-        products.add(new Product(11, ProductType.MENU,"Menu Esfiha", "Esfiha + Bebida", 4f, R.drawable.esfiha_image));
+        products.add(new Menu(1,"Menu Pastel de Queijo", "Pastel de Queijo + Bebida + Sobremesa", 5f, R.drawable.pastel, 0, 0));
+        products.add(new Menu(2,"Menu Pastel de Carne", "Pastel de Carne + Bebida + Sobremesa", 5f, R.drawable.meat_pastel_image, 0, 0));
+        products.add(new Menu(3,"Menu Pastel de Frango", "Pastel de Frango + Bebida + Sobremesa", 5f, R.drawable.chicken_pastel_image, 0, 0));
+        products.add(new Menu(4,"Menu Pastel de Pizza", "Pastel de Pizza + Bebida + Sobremesa", 5f, R.drawable.pizza_pastel_image, 0, 0));
+        products.add(new Menu(5,"Menu Cachorro", "Cachorro + Bebida + Sobremesa", 7f, R.drawable.hot_dog_promo, 0, 0));
+        products.add(new Menu(6,"Menu Hamburger", "Hamburger + Bebida + Sobremesa", 10f, R.drawable.hamburguer_image, 0, 0));
+        products.add(new Menu(7,"Menu X-Tudo", "X-Tudo + Bebida + Sobremesa", 10f, R.drawable.xtudo_image, 0, 0));
+        products.add(new Menu(8,"Menu X-Picanha", "X-Picanha + Bebida + Sobremesa", 11f, R.drawable.xpicanha_image, 0, 0));
+        products.add(new Menu(9,"Menu Coxinha", "Coxinha + Bebida", 4f, R.drawable.coxinha_image, 0, 0));
+        products.add(new Menu(10,"Menu Kibe", "Kibe + Bebida", 4f, R.drawable.kibe_image, 0, 0));
+        products.add(new Menu(11,"Menu Esfiha", "Esfiha + Bebida", 4f, R.drawable.esfiha_image, 0, 0));
 
         //  Populating Drink Products
         products.add(new Product(12, ProductType.DRINK,"Guaraná Antártica", "Lata 33cl", 1.8f, R.drawable.guarana_image));
