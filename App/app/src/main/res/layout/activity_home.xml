@@ -525,7 +525,8 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="17dp"
-                    android:background="@drawable/top_radius_background">
+                    android:background="@drawable/top_radius_background"
+                    android:onClick="callCartActivity">
 
                     <ImageView
                         android:id="@+id/imageView12"
@@ -542,7 +543,8 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
-                    android:background="@drawable/top_radius_background">
+                    android:background="@drawable/top_radius_background"
+                    android:onClick="callAccountActivity">
 
                     <ImageView
                         android:id="@+id/imageView13"
@@ -552,8 +554,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:onClick="callAccountActivity"/>
+                        app:layout_constraintTop_toTopOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </TableRow>
 

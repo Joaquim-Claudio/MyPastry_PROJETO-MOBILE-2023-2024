@@ -15,10 +15,14 @@ import pt.iade.mypastry.repositories.ProductRepository;
 
 public class DessertsListActivity extends AppCompatActivity {
 
+    int userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desserts_list);
+
+        Intent intent = getIntent();
+        userId = intent.getIntExtra("user_id", 0);
 
         for (Product p : ProductRepository.getProducts()) {
             if (p.getType() == ProductType.DESSERT){
@@ -38,6 +42,7 @@ public class DessertsListActivity extends AppCompatActivity {
         ConstraintLayout menuProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId + product.getId(), "id", getPackageName()));
         menuProduct.setOnClickListener(v -> {
             Intent intent = new Intent(DessertsListActivity.this, ProductDetailsActivity.class);
+            intent.putExtra("user_id", userId);
             intent.putExtra("product_id", product.getId());
             startActivity(intent);
         });

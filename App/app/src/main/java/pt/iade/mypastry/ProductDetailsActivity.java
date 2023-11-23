@@ -9,12 +9,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Objects;
-
+import pt.iade.mypastry.models.Cart;
+import pt.iade.mypastry.models.CartProduct;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
 import pt.iade.mypastry.repositories.ProductRepository;
@@ -33,7 +32,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         Product product = ProductRepository.getProduct(intent.getIntExtra("product_id", 0));
 
 
-        //  Getting all the View elements
+        //  Taking all the View elements
         TextView productName = (TextView) findViewById(R.id.product_name_textView);
         TextView productDescription = (TextView) findViewById(R.id.product_description_textView);
         TextView productPrice = (TextView) findViewById(R.id.product_price_textView);
@@ -47,7 +46,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productImage.setImageResource(product.getSrcImage());
 
 
-        //  Getting the quantity button Views
+        //  Taking the quantity button Views
         TextView quantityTextView = (TextView) findViewById(R.id.product_details_quant);
         ConstraintLayout decreaseQuant = (ConstraintLayout) findViewById(R.id.product_details_decrease_quant);
         ConstraintLayout increaseQuant = (ConstraintLayout) findViewById(R.id.product_details_increase_quant);
@@ -66,7 +65,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 Integer quantity = parseInt(quantityTextView.getText().toString()) + 1;
                 quantityTextView.setText(quantity.toString());
 
-                Float newSubTotal = product.getPrice() * valueOf(quantityTextView.getText().toString());
+                Float newSubTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
                 subTotalTextView.setText(String.format("%.2f", newSubTotal) + " €");
             }
         });
@@ -80,9 +79,28 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     quantity--;
                     quantityTextView.setText(quantity.toString());
 
-                    Float newSubTotal = product.getPrice() * valueOf(quantityTextView.getText().toString());
+                    Float newSubTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
                     subTotalTextView.setText(String.format("%.2f", newSubTotal) + " €");
                 }
+            }
+        });
+
+        //  Taking the Add Product button and Setting onClick Listener
+        ConstraintLayout addButton = (ConstraintLayout) findViewById(R.id.product_details_add_button);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int quantity = parseInt(quantityTextView.getText().toString());
+                CartProduct cartProduct = new CartProduct(product.getId(), quantity);
+
+                Cart cart = user.getCart();
+                if (cart.getCartProducts().size() < 4){
+                    cart.addCartProduct(cartProduct);
+                }
+
+                Intent intent = new Intent(ProductDetailsActivity.this, CartActivity.class);
+                intent.putExtra("user_id", user.getId());
+                startActivity(intent);
             }
         });
 

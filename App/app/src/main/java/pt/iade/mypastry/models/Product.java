@@ -8,7 +8,7 @@ import pt.iade.mypastry.enums.ProductType;
 
 public class Product implements java.io.Serializable {
 
-    private int id;
+    private final int id;
     private ProductType type;
     private String name;
     private String description;

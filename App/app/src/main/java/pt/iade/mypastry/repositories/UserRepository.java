@@ -2,13 +2,14 @@ package pt.iade.mypastry.repositories;
 
 import java.util.ArrayList;
 
+import pt.iade.mypastry.models.Cart;
 import pt.iade.mypastry.models.User;
 
 public class UserRepository {
     private static ArrayList<User> users = new ArrayList<User>();
 
     public static void populate() {
-        users.add(new User("Jane Doe", "janedoe@gmail.com", 1));
+        users.add(new User("Jane Doe", "janedoe@gmail.com", new Cart(1)));
     }
 
     public static ArrayList<User> getUsers(){

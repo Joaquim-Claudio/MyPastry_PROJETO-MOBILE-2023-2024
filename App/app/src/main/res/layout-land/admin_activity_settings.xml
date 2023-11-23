@@ -277,7 +277,7 @@
                     android:id="@+id/textView50"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/admin_settings_activity_log_out_button"
+                    android:text="@string/log_out_button"
                     android:textAlignment="center"
                     android:textColor="@color/textView_color_red"
                     android:textSize="24sp"

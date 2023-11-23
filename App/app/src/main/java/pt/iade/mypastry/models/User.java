@@ -6,19 +6,19 @@ public class User implements java.io.Serializable {
     private String name;
     private String email;
     private int points;
-    private int cartId;
+    private Cart cart;
 
 
-    public User(String name, String email, int cartId){
-        this(next_id, name, email, cartId);
+    public User(String name, String email, Cart cart){
+        this(next_id, name, email, cart);
     }
-    public User(int id, String name, String email, int cartId) {
+    public User(int id, String name, String email, Cart cart) {
         this.id = id;
         next_id++;
         this.name = name;
         this.email = email;
         this.points = 0;
-        this.cartId = cartId;
+        this.cart = cart;
     }
 
 
@@ -42,10 +42,6 @@ public class User implements java.io.Serializable {
         this.email = email;
     }
 
-    public int getCartId() {
-        return cartId;
-    }
-
     public int getPoints() {
         return points;
     }
@@ -53,4 +49,9 @@ public class User implements java.io.Serializable {
     public void addPoints(int points) {
         this.points += points;
     }
+
+    public Cart getCart() {
+        return cart;
+    }
+
 }

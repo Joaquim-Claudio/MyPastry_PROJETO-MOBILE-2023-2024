@@ -16,10 +16,14 @@ import pt.iade.mypastry.repositories.ProductRepository;
 
 public class BeverageListActivity extends AppCompatActivity {
 
+    int userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beverages_list);
+
+        Intent intent = getIntent();
+        userId = intent.getIntExtra("user_id", 0);
 
         for (Product p : ProductRepository.getProducts()) {
             if (p.getType() == ProductType.DRINK){
@@ -40,6 +44,7 @@ public class BeverageListActivity extends AppCompatActivity {
         ConstraintLayout menuProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId + product.getId(), "id", getPackageName()));
         menuProduct.setOnClickListener(v -> {
             Intent intent = new Intent(BeverageListActivity.this, ProductDetailsActivity.class);
+            intent.putExtra("user_id", userId);
             intent.putExtra("product_id", product.getId());
             startActivity(intent);
         });

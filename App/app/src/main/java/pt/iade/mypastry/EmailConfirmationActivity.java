@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import pt.iade.mypastry.models.Cart;
 import pt.iade.mypastry.models.User;
-import pt.iade.mypastry.repositories.CartRepository;
 import pt.iade.mypastry.repositories.UserRepository;
 
 public class EmailConfirmationActivity extends AppCompatActivity {
@@ -41,8 +40,7 @@ public class EmailConfirmationActivity extends AppCompatActivity {
         if (pin.equals(confirmKey)){
             //  Register new user
             Cart cart = new Cart();
-            CartRepository.addCart(cart);
-            User user = new User(userName, userEmail, cart.getId());
+            User user = new User(userName, userEmail, cart);
             UserRepository.addUser(user);
 
             Intent intent = new Intent(this, WelcomeActivity.class);

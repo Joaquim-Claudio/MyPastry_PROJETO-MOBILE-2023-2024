@@ -62,7 +62,9 @@
     <string name="admin_settings_activity_company_info_button">Informação da Empresa</string>
     <string name="admin_settings_activity_order_reciepts_button">Impressão do recibo</string>
     <string name="admin_settings_activity_software_license_button">Licensas de software</string>
-    <string name="admin_settings_activity_log_out_button">Terminar sessão</string>
+
+
+    <string name="log_out_button">Terminar sessão</string>
 
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
 </resources>
