@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +40,21 @@ public class CartActivity extends AppCompatActivity {
 
         TextView total = (TextView) findViewById(R.id.cart_total_textView);
         total.setText(String.format("%.2f", cart.getTotal()) + " €");
+
+
+        Button checkOutButton = (Button) findViewById(R.id.cart_check_out_button);
+        checkOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cart.getCartProducts().size() == 0){
+
+                }else{
+                    Intent intent = new Intent(CartActivity.this, CheckOutActivity.class);
+                    intent.putExtra("user_id", userId);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     public void callHomeActivity(View view){
