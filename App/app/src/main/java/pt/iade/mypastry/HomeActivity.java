@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void callCartActivity(View view){
-        Intent intent = new Intent(this, CartActivity.class);
+        Intent intent = new Intent(this, OrderActivity.class);
         intent.putExtra("user_id", userId);
         startActivity(intent);
     }

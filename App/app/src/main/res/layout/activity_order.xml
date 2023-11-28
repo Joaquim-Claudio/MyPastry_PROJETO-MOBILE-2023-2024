@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    tools:context=".OrderActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -21,7 +21,7 @@
         android:id="@+id/textView95"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Carrinho"
+        android:text="Pedido"
         android:textColor="@color/white"
         android:textSize="27sp"
         android:textStyle="bold"
@@ -101,7 +101,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/cart_product_name_textView_1"
+                        android:id="@+id/order_product_name_textView_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_title_hint"
@@ -111,23 +111,23 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/cart_product_description_textView_1"
+                        android:id="@+id/order_product_description_textView_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_description_hint"
                         android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_name_textView_1"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_name_textView_1" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_name_textView_1"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_name_textView_1" />
 
                     <ImageView
-                        android:id="@+id/cart_product_imageView_1"
+                        android:id="@+id/order_product_imageView_1"
                         android:layout_width="115dp"
                         android:layout_height="81dp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_description_textView_1"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_description_textView_1" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_description_textView_1"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_description_textView_1" />
 
                     <TextView
-                        android:id="@+id/cart_product_sub_total_textView_1"
+                        android:id="@+id/order_product_sub_total_textView_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_price_hint"
@@ -144,10 +144,10 @@
                         android:layout_marginTop="15dp"
                         android:background="@drawable/costum_button"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_sub_total_textView_1">
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_sub_total_textView_1">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_decrease_quant_1"
+                            android:id="@+id/order_product_decrease_quant_1"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -169,12 +169,12 @@
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/cart_product_increase_quant_1"
-                            app:layout_constraintStart_toEndOf="@+id/cart_product_decrease_quant_1"
+                            app:layout_constraintEnd_toStartOf="@+id/order_product_increase_quant_1"
+                            app:layout_constraintStart_toEndOf="@+id/order_product_decrease_quant_1"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
-                                android:id="@+id/cart_product_quant_1"
+                                android:id="@+id/order_product_quant_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1"
@@ -187,7 +187,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_increase_quant_1"
+                            android:id="@+id/order_product_increase_quant_1"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -238,7 +238,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/cart_product_name_textView_2"
+                        android:id="@+id/order_product_name_textView_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_title_hint"
@@ -248,23 +248,23 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/cart_product_description_textView_2"
+                        android:id="@+id/order_product_description_textView_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_description_hint"
                         android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_name_textView_2"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_name_textView_2" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_name_textView_2"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_name_textView_2" />
 
                     <ImageView
-                        android:id="@+id/cart_product_imageView_2"
+                        android:id="@+id/order_product_imageView_2"
                         android:layout_width="115dp"
                         android:layout_height="81dp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_description_textView_2"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_description_textView_2" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_description_textView_2"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_description_textView_2" />
 
                     <TextView
-                        android:id="@+id/cart_product_sub_total_textView_2"
+                        android:id="@+id/order_product_sub_total_textView_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="45dp"
@@ -281,10 +281,10 @@
                         android:layout_marginTop="15dp"
                         android:background="@drawable/costum_button"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_sub_total_textView_2">
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_sub_total_textView_2">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_decrease_quant_2"
+                            android:id="@+id/order_product_decrease_quant_2"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -306,12 +306,12 @@
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/cart_product_increase_quant_2"
-                            app:layout_constraintStart_toEndOf="@+id/cart_product_decrease_quant_2"
+                            app:layout_constraintEnd_toStartOf="@+id/order_product_increase_quant_2"
+                            app:layout_constraintStart_toEndOf="@+id/order_product_decrease_quant_2"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
-                                android:id="@+id/cart_product_quant_2"
+                                android:id="@+id/order_product_quant_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1"
@@ -324,7 +324,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_increase_quant_2"
+                            android:id="@+id/order_product_increase_quant_2"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -375,7 +375,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/cart_product_name_textView_3"
+                        android:id="@+id/order_product_name_textView_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_title_hint"
@@ -385,23 +385,23 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/cart_product_description_textView_3"
+                        android:id="@+id/order_product_description_textView_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_description_hint"
                         android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_name_textView_3"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_name_textView_3" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_name_textView_3"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_name_textView_3" />
 
                     <ImageView
-                        android:id="@+id/cart_product_imageView_3"
+                        android:id="@+id/order_product_imageView_3"
                         android:layout_width="115dp"
                         android:layout_height="81dp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_description_textView_3"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_description_textView_3" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_description_textView_3"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_description_textView_3" />
 
                     <TextView
-                        android:id="@+id/cart_product_sub_total_textView_3"
+                        android:id="@+id/order_product_sub_total_textView_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_price_hint"
@@ -418,10 +418,10 @@
                         android:layout_marginTop="15dp"
                         android:background="@drawable/costum_button"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_sub_total_textView_3">
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_sub_total_textView_3">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_decrease_quant_3"
+                            android:id="@+id/order_product_decrease_quant_3"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -443,12 +443,12 @@
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/cart_product_increase_quant_3"
-                            app:layout_constraintStart_toEndOf="@+id/cart_product_decrease_quant_3"
+                            app:layout_constraintEnd_toStartOf="@+id/order_product_increase_quant_3"
+                            app:layout_constraintStart_toEndOf="@+id/order_product_decrease_quant_3"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
-                                android:id="@+id/cart_product_quant_3"
+                                android:id="@+id/order_product_quant_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1"
@@ -461,7 +461,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_increase_quant_3"
+                            android:id="@+id/order_product_increase_quant_3"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -512,7 +512,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/cart_product_name_textView_4"
+                        android:id="@+id/order_product_name_textView_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_title_hint"
@@ -522,23 +522,23 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/cart_product_description_textView_4"
+                        android:id="@+id/order_product_description_textView_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_description_hint"
                         android:textSize="15sp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_name_textView_4"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_name_textView_4" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_name_textView_4"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_name_textView_4" />
 
                     <ImageView
-                        android:id="@+id/cart_product_imageView_4"
+                        android:id="@+id/order_product_imageView_4"
                         android:layout_width="115dp"
                         android:layout_height="81dp"
-                        app:layout_constraintStart_toStartOf="@+id/cart_product_description_textView_4"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_description_textView_4" />
+                        app:layout_constraintStart_toStartOf="@+id/order_product_description_textView_4"
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_description_textView_4" />
 
                     <TextView
-                        android:id="@+id/cart_product_sub_total_textView_4"
+                        android:id="@+id/order_product_sub_total_textView_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="@string/product_price_hint"
@@ -555,10 +555,10 @@
                         android:layout_marginTop="15dp"
                         android:background="@drawable/costum_button"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cart_product_sub_total_textView_4">
+                        app:layout_constraintTop_toBottomOf="@+id/order_product_sub_total_textView_4">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_decrease_quant_4"
+                            android:id="@+id/order_product_decrease_quant_4"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -580,12 +580,12 @@
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/cart_product_increase_quant_4"
-                            app:layout_constraintStart_toEndOf="@+id/cart_product_decrease_quant_4"
+                            app:layout_constraintEnd_toStartOf="@+id/order_product_increase_quant_4"
+                            app:layout_constraintStart_toEndOf="@+id/order_product_decrease_quant_4"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
-                                android:id="@+id/cart_product_quant_4"
+                                android:id="@+id/order_product_quant_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="1"
@@ -598,7 +598,7 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cart_product_increase_quant_4"
+                            android:id="@+id/order_product_increase_quant_4"
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -660,7 +660,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/cart_total_textView"
+            android:id="@+id/order_total_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -673,7 +673,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/cart_check_out_button"
+        android:id="@+id/order_check_out_button"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginHorizontal="10dp"
@@ -698,6 +698,6 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cart_check_out_button" />
+        app:layout_constraintTop_toBottomOf="@+id/order_check_out_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

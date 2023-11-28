@@ -12,10 +12,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import pt.iade.mypastry.models.Cart;
-import pt.iade.mypastry.models.CartProduct;
+import pt.iade.mypastry.models.Order;
+import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
+import pt.iade.mypastry.repositories.OrderRepository;
 import pt.iade.mypastry.repositories.ProductRepository;
 import pt.iade.mypastry.repositories.UserRepository;
 
@@ -90,15 +91,21 @@ public class ProductDetailsActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int quantity = parseInt(quantityTextView.getText().toString());
-                CartProduct cartProduct = new CartProduct(product.getId(), quantity);
-
-                Cart cart = user.getCart();
-                if (cart.getCartProducts().size() < 4){
-                    cart.addCartProduct(cartProduct);
+                Order order = OrderRepository.getUserPendingOrder(user.getId());
+                if (order == null){
+                    order = new Order(user.getId());
+                    OrderRepository.addOrder(order);
                 }
 
-                Intent intent = new Intent(ProductDetailsActivity.this, CartActivity.class);
+
+                int quantity = parseInt(quantityTextView.getText().toString());
+                OrderProduct orderProduct = new OrderProduct(order.getId(), product.getId(), quantity);
+
+                if (order.getOrderProducts().size() < 4){
+                    order.addOrderProduct(orderProduct);
+                }
+
+                Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
                 intent.putExtra("user_id", user.getId());
                 startActivity(intent);
             }

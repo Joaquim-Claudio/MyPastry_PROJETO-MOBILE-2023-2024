@@ -27,13 +27,22 @@ public class RegisterActivity extends AppCompatActivity {
         EditText passInputText = (EditText) findViewById(R.id.register_textInput_password);
         String password = passInputText.getText().toString();
 
+        //TODO: EditText birthDateInputText = (EditText) findViewById(R.id.register_textInput_birthDate);
+        String birthDate = "";
+
+        //TODO: EditText genderInputText = (EditText) findViewById(R.id.register_textInput_gender);
+        String gender = "";
+
+        //TODO: EditText addressInputText = (EditText) findViewById(R.id.register_textInput_address);
+        String address = "";
+
 
         if (!name.equals("") && !email.equals("")&& !password.equals("")){
             Intent intent = new Intent(this, EmailConfirmationActivity.class);
-            String key = "000000";
-            intent.putExtra("user_name", name);
-            intent.putExtra("user_email", email);
-            intent.putExtra("confirm_key", key);
+            String confirm_key = "000000";
+            User newUser = new User(name, email, password, birthDate,gender, address);
+            intent.putExtra("new_user", newUser);
+            intent.putExtra("confirm_key", confirm_key);
             startActivity(intent);
         }
     }

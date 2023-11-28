@@ -1,9 +1,5 @@
 package pt.iade.mypastry.models;
 
-import android.graphics.drawable.Drawable;
-
-import java.util.List;
-
 import pt.iade.mypastry.enums.ProductType;
 
 public class Product implements java.io.Serializable {
@@ -14,6 +10,7 @@ public class Product implements java.io.Serializable {
     private String description;
     private Float price;
     private int srcImage;
+    private boolean available;
 
     /** No-arg constructor (takes no arguments). */
     public Product() {
@@ -27,6 +24,7 @@ public class Product implements java.io.Serializable {
         this.description = description;
         this.price = price;
         this.srcImage = srcImage;
+        this.available = true;
     }
 
     public int getId() {
@@ -66,5 +64,9 @@ public class Product implements java.io.Serializable {
     }
     public void setType(ProductType type) {
         this.type = type;
+    }
+
+    public boolean isAvailable() {
+        return available;
     }
 }

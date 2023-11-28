@@ -8,14 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import pt.iade.mypastry.models.Cart;
+import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.User;
 import pt.iade.mypastry.repositories.UserRepository;
 
 public class EmailConfirmationActivity extends AppCompatActivity {
 
-    String userName;
-    String userEmail;
+    User newUser;
     String confirmKey;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +22,11 @@ public class EmailConfirmationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_email_confirmation);
 
         Intent intent = getIntent();
-        userName = intent.getStringExtra("user_name");
-        userEmail = intent.getStringExtra("user_email");
+        newUser = (User) intent.getSerializableExtra("new_user");
         confirmKey = intent.getStringExtra("confirm_key");
 
         TextView emailTextView = (TextView) findViewById(R.id.email_confirm_textView_email);
-        emailTextView.setText(userEmail);
+        emailTextView.setText(newUser.getEmail());
 
     }
 
@@ -39,12 +37,10 @@ public class EmailConfirmationActivity extends AppCompatActivity {
 
         if (pin.equals(confirmKey)){
             //  Register new user
-            Cart cart = new Cart();
-            User user = new User(userName, userEmail, cart);
-            UserRepository.addUser(user);
+            UserRepository.addUser(newUser);
 
             Intent intent = new Intent(this, WelcomeActivity.class);
-            intent.putExtra("user_id", user.getId());
+            intent.putExtra("user_id", newUser.getId());
             startActivity(intent);
         }
     }

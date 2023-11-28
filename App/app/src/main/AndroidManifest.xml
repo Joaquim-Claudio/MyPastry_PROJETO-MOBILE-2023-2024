@@ -22,7 +22,7 @@
             android:name=".CheckOutActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
+            android:name=".OrderActivity"
             android:exported="false" />
         <activity
             android:name=".SelectMenuDrinkActivity"
