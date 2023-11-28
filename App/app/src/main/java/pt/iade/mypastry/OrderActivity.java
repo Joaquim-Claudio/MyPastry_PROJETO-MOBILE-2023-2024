@@ -54,7 +54,7 @@ public class OrderActivity extends AppCompatActivity {
 
                         }else{
                             Intent intent = new Intent(OrderActivity.this, CheckOutActivity.class);
-                            intent.putExtra("user_id", userId);
+                            intent.putExtra("order", order);
                             startActivity(intent);
                         }
                     }

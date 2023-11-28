@@ -3,11 +3,13 @@ package pt.iade.mypastry.models;
 import java.util.ArrayList;
 
 import pt.iade.mypastry.enums.OrderStatus;
+import pt.iade.mypastry.enums.OrderType;
 
 public class Order implements java.io.Serializable {
     private static int next_id = 1;
     private int id;
     private int user_id;
+    private OrderType type;
     private OrderStatus status;
     private ArrayList<OrderProduct> orderProducts;
     private Float total;
@@ -33,6 +35,13 @@ public class Order implements java.io.Serializable {
 
     public int getUserId() {
         return user_id;
+    }
+
+    public OrderType getType() {
+        return type;
+    }
+    public void setType(OrderType type) {
+        this.type = type;
     }
 
     public OrderStatus getStatus() {

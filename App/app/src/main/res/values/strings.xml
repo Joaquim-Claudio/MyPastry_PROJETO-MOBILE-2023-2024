@@ -27,13 +27,13 @@
     <string name="home_activity_delicacies_button">Iguarias</string>
     <string name="home_activity_drinks_button">Bebidas</string>
     <string name="home_activity_dessert_button">Sobremesas</string>
-    <string name="home_activity_conviniences_button">Conveniências</string>
+    <string name="home_activity_conviniences_button">Convniência</string>
     <string name="home_activity_see_all_button">Ver tudo</string>
     <string name="home_activity_product_promo_1">Pastel de Calabresa</string>
     <string name="home_activity_product_promo_2">Menu Cachorro Quente</string>
     <string name="home_activity_home_button">Página inicial</string>
-    <string name="home_activity_order_list_button">Pedidos</string>
-    <string name="home_activity_cart_button">Carrinho</string>
+    <string name="home_activity_order_history_button">Histórico</string>
+    <string name="home_activity_order_button">Pedido</string>
     <string name="home_activity_account_button">Conta</string>
 
     <string name="menu_activity_title">Menu</string>
@@ -42,9 +42,26 @@
     <string name="product_description_hint">Descrição do produto</string>
     <string name="product_price_hint">0.00 €</string>
 
-    <string name="product_details_activity_quantity_textView">Selecione a quantidade</string>
+    <string name="product_details_activity_select_textView">Selecione a quantidade:</string>
     <string name="product_details_activity_required_textView">Obrigatório</string>
-    <string name="product_details_activity_add_product_button">Adicionar ao carrinho - </string>
+    <string name="product_details_activity_add_product_button">Adicionar ao pedido - </string>
+
+    <string name="order_activity_title">Pedido</string>
+    <string name="order_activity_total_textView">Total</string>
+    <string name="order_activity_check_out_button">Finalizar</string>
+    <string name="order_activity_add_products_button">Adicionar artigos</string>
+
+    <string name="checkout_activity_title">CheckOut</string>
+    <string name="checkout_activity_select_textView">Selecione uma opção:</string>
+    <string name="checkout_activity_required_textView">Obrigatório</string>
+    <string name="checkout_activity_delivery_title">Pedido Delivery</string>
+    <string name="checkout_activity_delivery_description">Selecione o local de entrega.</string>
+    <string name="checkout_activity_mobile_title">Pedido Mobile</string>
+    <string name="checkout_activity_mobile_description">Levante no balcão.</string>
+    <string name="checkout_activity_subtotal_textView">Subtotal</string>
+    <string name="checkout_activity_service_textView">Serviço</string>
+    <string name="checkout_activity_delivery_textView">Entrega</string>
+    <string name="checkout_activity_total_textView">Total</string>
 
 
     <string name="admin_portrait_activities_instruction">Por favor, incline o seu dispositivo.</string>
@@ -67,4 +84,6 @@
     <string name="log_out_button">Terminar sessão</string>
 
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

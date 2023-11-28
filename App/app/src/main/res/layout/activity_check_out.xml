@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Checkout"
+        android:text="@string/checkout_activity_title"
         android:textColor="@color/white"
         android:textSize="27sp"
         android:textStyle="bold"
@@ -41,179 +41,232 @@
 
         <ImageView
             android:id="@+id/imageView43"
-            android:layout_width="20dp"
-            android:layout_height="28dp"
-            android:src="@drawable/delete_icon"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:src="@drawable/back_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:id="@+id/divider32"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginVertical="30dp"
-        android:layout_marginTop="20dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView95" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/mobile"
+        android:id="@+id/constraintLayout9"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider32">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
 
-        <ImageView
-            android:id="@+id/imageView45"
-            android:layout_width="70dp"
-            android:layout_height="40dp"
-            android:src="@drawable/localpoint_image"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/textView99"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkout_activity_select_textView"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView101"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Pedido Delivery"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView45"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView102"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selecione local de entrega"
-            app:layout_constraintStart_toStartOf="@+id/textView101"
-            app:layout_constraintTop_toBottomOf="@+id/textView101" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/constraint_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="@string/checkout_activity_required_textView"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:id="@+id/divider33"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginVertical="10dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobile" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/delivery"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:id="@+id/constraintLayout20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider33">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
 
-        <ImageView
-            android:id="@+id/imageView46"
-            android:layout_width="70dp"
-            android:layout_height="40dp"
-            android:src="@drawable/clock_image"
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/divider33"
+            app:layout_constraintTop_toBottomOf="@+id/divider32">
+
+            <RadioButton
+                android:id="@+id/checkout_delivery_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+
+            <RadioButton
+                android:id="@+id/checkout_mobile_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider32"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginVertical="30dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView98"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Pedido Mobile"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView46"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider32">
 
-        <TextView
-            android:id="@+id/textView106"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Levante no balcão"
-            app:layout_constraintStart_toStartOf="@+id/textView98"
-            app:layout_constraintTop_toBottomOf="@+id/textView98" />
+            <ImageView
+                android:id="@+id/imageView45"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/location_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioButton
-            android:id="@+id/radioButton9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/checkout_activity_delivery_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView45"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView102"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout_activity_delivery_description"
+                app:layout_constraintStart_toStartOf="@+id/textView101"
+                app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider33"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginVertical="10dp"
+            android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mobile" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/delivery"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider33">
+
+            <ImageView
+                android:id="@+id/imageView46"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fast_delivery_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView98"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/checkout_activity_mobile_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView46"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView106"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout_activity_mobile_description"
+                app:layout_constraintStart_toStartOf="@+id/textView98"
+                app:layout_constraintTop_toBottomOf="@+id/textView98" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider35"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginVertical="10dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@+id/delivery" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:id="@+id/divider35"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginVertical="10dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/delivery" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout10"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider35">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout20">
 
         <TextView
             android:id="@+id/textView103"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Subtotal"
-            android:textSize="17sp"
+            android:layout_marginTop="30dp"
+            android:text="@string/checkout_activity_subtotal_textView"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView104"
+            android:id="@+id/checkout_subtotal_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="5,00 €"
-            android:textSize="17sp"
+            android:hint="5.00 €"
+            android:textSize="18sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textView103" />
 
         <TextView
             android:id="@+id/textView107"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Serviço"
+            android:text="@string/checkout_activity_service_textView"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView103"
             app:layout_constraintTop_toBottomOf="@+id/textView103" />
 
@@ -221,15 +274,17 @@
             android:id="@+id/textView108"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0,00 €"
-            app:layout_constraintEnd_toEndOf="@+id/textView104"
-            app:layout_constraintTop_toBottomOf="@+id/textView104" />
+            android:hint="0.00 €"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/checkout_subtotal_textView"
+            app:layout_constraintTop_toBottomOf="@+id/checkout_subtotal_textView" />
 
         <TextView
             android:id="@+id/textView109"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entrega"
+            android:text="@string/checkout_activity_delivery_textView"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/textView107"
             app:layout_constraintTop_toBottomOf="@+id/textView107" />
 
@@ -237,7 +292,8 @@
             android:id="@+id/textView110"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0,00 €"
+            android:hint="0.00 €"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/textView108"
             app:layout_constraintTop_toBottomOf="@+id/textView108" />
 
@@ -245,35 +301,34 @@
             android:id="@+id/textView111"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Total"
-            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:text="@string/checkout_activity_total_textView"
+            android:textSize="26sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView109" />
 
         <TextView
-            android:id="@+id/textView112"
+            android:id="@+id/checkout_total_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="5,00 €"
-            android:textSize="20sp"
+            android:hint="5.00 €"
+            android:textSize="26sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/textView111"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView111" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/checkout_pay_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
-        android:backgroundTint="@color/button_color_red"
-        android:text="Finalizar Pedido"
+        android:backgroundTint="@color/button_color_black"
+        android:text="Pagamento"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
