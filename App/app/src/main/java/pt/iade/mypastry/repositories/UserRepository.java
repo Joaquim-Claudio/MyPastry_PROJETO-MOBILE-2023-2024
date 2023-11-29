@@ -9,7 +9,7 @@ public class UserRepository {
     private static ArrayList<User> users = new ArrayList<User>();
 
     public static void populate() {
-        users.add(new User("Jane Doe", "janedoe@gmail.com", "", "","F", ""));
+        users.add(new User("Jane Doe", "janedoe@gmail.com", "", "08-08-2008","Feminino", "Rua António Miguel"));
     }
 
     public static ArrayList<User> getUsers(){

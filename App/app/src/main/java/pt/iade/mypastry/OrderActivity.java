@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
@@ -54,7 +56,8 @@ public class OrderActivity extends AppCompatActivity {
 
                         }else{
                             Intent intent = new Intent(OrderActivity.this, CheckOutActivity.class);
-                            intent.putExtra("order", order);
+                            intent.putExtra("user_id", userId);
+                            intent.putExtra("order_id", order.getId());
                             startActivity(intent);
                         }
                     }
@@ -127,6 +130,25 @@ public class OrderActivity extends AppCompatActivity {
                     TextView total = (TextView) findViewById(R.id.order_total_textView);
                     total.setText(String.format("%.2f", order.getTotal()) + " €");
                 }
+            }
+        });
+
+        ConstraintLayout deleteProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId+"delete_button_"+ orderProduct.getId(), "id", getPackageName()));
+        deleteProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               boolean isRemoved = order.removeOrderProduct(orderProduct.getId());
+
+
+               if (isRemoved){
+                   ConstraintLayout coordinatorLayout = (ConstraintLayout) findViewById(R.id.order_layout);
+                   Snackbar snackbar =  Snackbar.make(coordinatorLayout, "Produto removido com sucesso!", Snackbar.LENGTH_LONG);
+                   snackbar.show();
+               } else{
+                   ConstraintLayout coordinatorLayout = (ConstraintLayout) findViewById(R.id.order_layout);
+                   Snackbar snackbar =  Snackbar.make(coordinatorLayout, "Impossível remover o produto!", Snackbar.LENGTH_LONG);
+                   snackbar.show();
+               }
             }
         });
     }

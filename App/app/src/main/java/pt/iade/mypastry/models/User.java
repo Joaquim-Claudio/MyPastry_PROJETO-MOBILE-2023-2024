@@ -58,6 +58,13 @@ public class User implements java.io.Serializable {
         this.password = password;
     }
 
+    public String getBirthDate() {
+        return birthDate;
+    }
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
     public String getGender() {
         return gender;
     }

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/checkout_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CheckOutActivity">
@@ -34,10 +35,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="60dp"
         android:layout_height="50dp"
+        android:onClick="returnToCallingActivity"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="returnToCallingActivity">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView43"
@@ -83,8 +84,8 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
                 android:text="@string/checkout_activity_required_textView"
-                android:textStyle="bold"
                 android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

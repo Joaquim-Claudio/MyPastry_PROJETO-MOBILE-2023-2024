@@ -56,9 +56,9 @@ public class Order implements java.io.Serializable {
         return orderProducts;
     }
 
-    public OrderProduct getOrderProduct(int productId){
+    public OrderProduct getOrderProduct(int id){
         for (OrderProduct p : orderProducts){
-            if (p.getProductId() == productId){
+            if (p.getId() == id){
                 return p;
             }
         }
@@ -66,14 +66,13 @@ public class Order implements java.io.Serializable {
     }
     public void addOrderProduct(OrderProduct orderProduct){
             orderProducts.add(orderProduct);
-            total += orderProduct.getSubTotal();
     }
     public boolean removeOrderProduct(int id){
-        total -= getOrderProduct(id).getSubTotal();
-        return orderProducts.removeIf(p -> p.getProductId() == id);
+        boolean isRemoved =  orderProducts.removeIf(p -> p.getId() == id);
+        return isRemoved;
     }
 
-    public Float getTotal() {
+    public float getTotal() {
         total = 0f;
         for (OrderProduct p : orderProducts){
             total += p.getSubTotal();
