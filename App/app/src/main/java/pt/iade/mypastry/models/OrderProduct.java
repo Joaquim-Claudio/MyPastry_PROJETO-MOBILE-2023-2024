@@ -3,7 +3,7 @@ package pt.iade.mypastry.models;
 import pt.iade.mypastry.repositories.ProductRepository;
 
 public class OrderProduct implements java.io.Serializable {
-    private static int next_id = 1;
+    public static int next_id = 1;
     private final int id;
     private final int orderId;
     private final int productId;

@@ -21,6 +21,7 @@ import org.w3c.dom.Text;
 import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.enums.OrderType;
 import pt.iade.mypastry.models.Order;
+import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.User;
 import pt.iade.mypastry.repositories.OrderRepository;
 import pt.iade.mypastry.repositories.UserRepository;
@@ -105,10 +106,13 @@ public class CheckOutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 UserRepository.getUser(userId).addPoints((int) Math.floor(order.getTotal()));
                 order.setStatus(OrderStatus.PREPARING);
+                OrderProduct.next_id = 1;
                 Intent intent = new Intent(CheckOutActivity.this, MobileOrderActivity.class);
                 intent.putExtra("user_id", userId);
                 intent.putExtra("order", order);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                CheckOutActivity.this.finish();
             }
         });
 

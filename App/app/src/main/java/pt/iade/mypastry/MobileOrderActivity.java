@@ -39,7 +39,9 @@ public class MobileOrderActivity extends AppCompatActivity {
                 if (order.getStatus() == OrderStatus.COMPLETED){
                     Intent intent = new Intent(MobileOrderActivity.this, HomeActivity.class);
                     intent.putExtra("user_id", userId);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    MobileOrderActivity.this.finish();
                 }
 
                 updateView();

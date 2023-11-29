@@ -269,6 +269,7 @@
                 android:background="?android:attr/listDivider" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/admin_settings_log_out_button"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:paddingHorizontal="50dp">
