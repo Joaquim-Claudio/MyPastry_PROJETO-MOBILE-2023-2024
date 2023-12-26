@@ -11,9 +11,9 @@
 > **20220481** – Laís da Silva Ferreira
 
 
-- [x] **Volume 1 - PROPOSTA**
-- [ ] Volume 2 - PROTÓTIPO
-- [ ] Volume 3 - PRODUTO
+- [x] Volume 1 - PROPOSTA
+- [x] Volume 2 - PROTÓTIPO
+- [ ] **Volume 3 - PRODUTO**
 ___
 
 ## SUMÁRIO
