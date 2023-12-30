@@ -16,9 +16,6 @@ import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
-import pt.iade.mypastry.repositories.OrderRepository;
-import pt.iade.mypastry.repositories.ProductRepository;
-import pt.iade.mypastry.repositories.UserRepository;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
@@ -26,6 +23,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
+        /*
 
         //  Taking the main objects
         Intent intent = getIntent();
@@ -112,6 +110,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         });
 
 
+
+         */
 
     }
 

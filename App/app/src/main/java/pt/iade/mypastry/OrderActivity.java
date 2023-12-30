@@ -19,9 +19,6 @@ import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
-import pt.iade.mypastry.repositories.OrderRepository;
-import pt.iade.mypastry.repositories.ProductRepository;
-import pt.iade.mypastry.repositories.UserRepository;
 
 public class OrderActivity extends AppCompatActivity {
     int userId;
@@ -32,6 +29,7 @@ public class OrderActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         userId = intent.getIntExtra("user_id", 0);
+        /*
         User user = UserRepository.getUser(userId);
 
         Order order = OrderRepository.getUserPendingOrder(user.getId());
@@ -65,6 +63,8 @@ public class OrderActivity extends AppCompatActivity {
 
             }
 
+         */
+
     }
 
     public void callHomeActivity(View view){
@@ -78,6 +78,7 @@ public class OrderActivity extends AppCompatActivity {
 
     private void setCartProduct(Order order, OrderProduct orderProduct){
         String defaultId = "order_product_";
+        /*
         Product product = ProductRepository.getProduct(orderProduct.getProductId());
 
         TextView orderProductName = (TextView) findViewById(getResources().getIdentifier(defaultId+"name_textView_"+ orderProduct.getId(), "id", getPackageName()));
@@ -151,5 +152,8 @@ public class OrderActivity extends AppCompatActivity {
                }
             }
         });
+        */
     }
+
+
 }

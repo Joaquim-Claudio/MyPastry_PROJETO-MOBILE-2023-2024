@@ -185,10 +185,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout24"
-        android:layout_width="match_parent"
+        android:layout_width="425dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
-        android:paddingHorizontal="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2">
@@ -197,6 +196,7 @@
             android:id="@+id/register_button_previous"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginStart="50dp"
             android:src="@drawable/left_arrow"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
@@ -209,7 +209,6 @@
             android:text="1/2"
             android:textSize="22sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -218,49 +217,53 @@
             android:id="@+id/register_button_next"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="50dp"
             android:src="@drawable/right_arrow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/register_privacy_policy"
+            android:layout_width="351dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/privacyPolicyTextView"
+            android:textAlignment="center"
+            android:textColor="#b6b6b8"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_page_number_textView" />
+
+        <Button
+            android:id="@+id/register_button_register"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/costum_button"
+            android:onClick="register"
+            android:text="@string/register_activity_registerButton"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="@color/button_color_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_privacy_policy" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="351dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/privacyPolicyTextView"
-        android:textAlignment="center"
-        android:textColor="#b6b6b8"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout24" />
-
-    <Button
-        android:id="@+id/register_button_register"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/costum_button"
-        android:onClick="register"
-        android:text="@string/register_activity_registerButton"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/button_color_green"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/register_activity_RegisteredTextView"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/register_button_register"
-        app:layout_constraintTop_toBottomOf="@+id/register_button_register" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout24" />
 
     <Button
         android:id="@+id/register_button_login"

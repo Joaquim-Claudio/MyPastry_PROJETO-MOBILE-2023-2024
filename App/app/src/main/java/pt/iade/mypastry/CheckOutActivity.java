@@ -23,8 +23,6 @@ import pt.iade.mypastry.enums.OrderType;
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.User;
-import pt.iade.mypastry.repositories.OrderRepository;
-import pt.iade.mypastry.repositories.UserRepository;
 
 public class CheckOutActivity extends AppCompatActivity {
 
@@ -41,7 +39,8 @@ public class CheckOutActivity extends AppCompatActivity {
         Intent intent = getIntent();
         userId = intent.getIntExtra("user_id", 0);
         int orderId = intent.getIntExtra("order_id", 0);
-        order = OrderRepository.getOrder(orderId);
+
+        //  order = OrderRepository.getOrder(orderId);
 
 
 
@@ -104,7 +103,7 @@ public class CheckOutActivity extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserRepository.getUser(userId).addPoints((int) Math.floor(order.getTotal()));
+                // UserRepository.getUser(userId).addPoints((int) Math.floor(order.getTotal()));
                 order.setStatus(OrderStatus.PREPARING);
                 OrderProduct.next_id = 1;
                 Intent intent = new Intent(CheckOutActivity.this, MobileOrderActivity.class);

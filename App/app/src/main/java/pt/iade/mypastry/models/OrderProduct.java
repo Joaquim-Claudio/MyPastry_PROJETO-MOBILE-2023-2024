@@ -1,7 +1,5 @@
 package pt.iade.mypastry.models;
 
-import pt.iade.mypastry.repositories.ProductRepository;
-
 public class OrderProduct implements java.io.Serializable {
     public static int next_id = 1;
     private final int id;
@@ -18,7 +16,7 @@ public class OrderProduct implements java.io.Serializable {
         this.orderId = orderId;
         this.productId = productId;
         this.quantity = quantity;
-        subTotal = ProductRepository.getProduct(productId).getPrice() * quantity;
+        // subTotal = ProductRepository.getProduct(productId).getPrice() * quantity;
         next_id++;
     }
 
@@ -40,7 +38,7 @@ public class OrderProduct implements java.io.Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-        subTotal = ProductRepository.getProduct(productId).getPrice() * quantity;
+        // subTotal = ProductRepository.getProduct(productId).getPrice() * quantity;
     }
 
     public Float getSubTotal() {

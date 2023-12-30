@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import pt.iade.mypastry.repositories.ProductRepository;
-import pt.iade.mypastry.repositories.UserRepository;
-
 public class HomeActivity extends AppCompatActivity {
 
     int userId;
@@ -21,11 +18,14 @@ public class HomeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         userId = intent.getIntExtra("user_id", 0);
+        /*
 
         TextView home_textView_points = (TextView) findViewById(R.id.home_textView_points);
         home_textView_points.setText(UserRepository.getUser(userId).getPoints() + " pontos");
 
         ProductRepository.populate();
+
+         */
     }
 
     public void callMenuActiviy(View view){

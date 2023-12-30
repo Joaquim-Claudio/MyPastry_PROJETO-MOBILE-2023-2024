@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import pt.iade.mypastry.enums.ProductType;
 import pt.iade.mypastry.models.Product;
-import pt.iade.mypastry.repositories.ProductRepository;
 
 public class BeverageListActivity extends AppCompatActivity {
 
@@ -24,12 +23,14 @@ public class BeverageListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         userId = intent.getIntExtra("user_id", 0);
-
+    /*
         for (Product p : ProductRepository.getProducts()) {
             if (p.getType() == ProductType.DRINK){
                 setListElement(p);
             }
         }
+
+     */
     }
 
     public void returnToHomeActivity(View view){

@@ -7,28 +7,58 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.time.LocalDate;
+
 import pt.iade.mypastry.models.User;
 
 public class RegisterActivity extends AppCompatActivity {
+    EditText nameInputText, emailInputText, passInputText,
+            birthDateInputText, genderInputText, addressInputText;
+    TextView priPolicyTextView;
+    ImageView nextButton, previousButton;
+    ConstraintLayout firstPage, secondPage;
+    Button registerButton;
+
+    User newUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        ConstraintLayout firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
-        firstPage.setVisibility(View.VISIBLE);
-        ConstraintLayout secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
-        secondPage.setVisibility(View.GONE);
+        setupComponents();
+    }
 
-        ImageView nextButton = (ImageView) findViewById(R.id.register_button_next);
-        ImageView previousButton = (ImageView) findViewById(R.id.register_button_previous);
+    public void callSignInActivity(View view) {
+        Intent intent = new Intent(this, SignInActivity.class);
+        startActivity(intent);
+    }
+
+    private void setupComponents(){
+        nameInputText = (EditText) findViewById(R.id.register_textInput_name);
+        emailInputText = (EditText) findViewById(R.id.register_textInput_email);
+        passInputText = (EditText) findViewById(R.id.register_textInput_password);
+        birthDateInputText = (EditText) findViewById(R.id.register_textInput_birth_date);
+        genderInputText = (EditText) findViewById(R.id.register_textInput_gender);
+        addressInputText = (EditText) findViewById(R.id.register_textInput_address);
+        priPolicyTextView = (TextView) findViewById(R.id.register_privacy_policy);
+        nextButton = (ImageView) findViewById(R.id.register_button_next);
+        previousButton = (ImageView) findViewById(R.id.register_button_previous);
+        firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
+        secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
+        registerButton = (Button) findViewById(R.id.register_button_register);
+
+        firstPage.setVisibility(View.VISIBLE);
+        secondPage.setVisibility(View.GONE);
+        priPolicyTextView.setVisibility(View.GONE);
+        registerButton.setVisibility(View.GONE);
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +66,8 @@ public class RegisterActivity extends AppCompatActivity {
                 ConstraintLayout firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
                 firstPage.setVisibility(View.GONE);
                 ConstraintLayout secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
+                priPolicyTextView.setVisibility(View.VISIBLE);
+                registerButton.setVisibility(View.VISIBLE);
                 secondPage.setVisibility(View.VISIBLE);
                 previousButton.setVisibility(View.VISIBLE);
                 TextView pageNumber = (TextView) findViewById(R.id.register_page_number_textView);
@@ -50,6 +82,8 @@ public class RegisterActivity extends AppCompatActivity {
                 ConstraintLayout secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
                 secondPage.setVisibility(View.GONE);
                 ConstraintLayout firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
+                priPolicyTextView.setVisibility(View.GONE);
+                registerButton.setVisibility(View.GONE);
                 firstPage.setVisibility(View.VISIBLE);
                 nextButton.setVisibility(View.VISIBLE);
                 TextView pageNumber = (TextView) findViewById(R.id.register_page_number_textView);
@@ -57,53 +91,42 @@ public class RegisterActivity extends AppCompatActivity {
                 previousButton.setVisibility(View.GONE);
             }
         });
-    }
 
+        registerButton.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
 
-    public void register(View view){
-        EditText nameInputText = (EditText) findViewById(R.id.register_textInput_name);
-        String name = nameInputText.getText().toString();
+                String name = nameInputText.getText().toString();
+                String email = emailInputText.getText().toString();
+                String password = passInputText.getText().toString();
+                String birthDate = birthDateInputText.getText().toString();
+                String gender = genderInputText.getText().toString();
+                String address = addressInputText.getText().toString();
 
-        EditText emailInputText = (EditText) findViewById(R.id.register_textInput_email);
-        String email = emailInputText.getText().toString();
+                if (!name.equals("") && !email.equals("") && !password.equals("")) {
+                    if (!birthDate.equals("") && !gender.equals("") && !address.equals("")) {
 
-        EditText passInputText = (EditText) findViewById(R.id.register_textInput_password);
-        String password = passInputText.getText().toString();
+                        newUser = new User();
+                        commitViews();
 
-        EditText birthDateInputText = (EditText) findViewById(R.id.register_textInput_birth_date);
-        String birthDate = birthDateInputText.getText().toString();
+                        Intent intent = new Intent(RegisterActivity.this, EmailConfirmationActivity.class);
 
-        EditText genderInputText = (EditText) findViewById(R.id.register_textInput_gender);
-        String gender = genderInputText.getText().toString();
+                        intent.putExtra("new_user", newUser);
 
-        EditText addressInputText = (EditText) findViewById(R.id.register_textInput_address);
-        String address = addressInputText.getText().toString();
-
-
-        if (!name.equals("") && !email.equals("")&& !password.equals("")){
-            if(!birthDate.equals("") && !gender.equals("")&& !address.equals("")){
-                Intent intent = new Intent(this, EmailConfirmationActivity.class);
-                String confirm_key = "000000";
-                User newUser = new User(name, email, password, birthDate,gender, address);
-                intent.putExtra("new_user", newUser);
-                intent.putExtra("confirm_key", confirm_key);
-                startActivity(intent);
-            }else{
-                ConstraintLayout coordinatorLayout = (ConstraintLayout) findViewById(R.id.register_layout);
-                Snackbar snackbar =  Snackbar.make(coordinatorLayout, "Existem campos não preenchidos na 2ª etapa!", Snackbar.LENGTH_LONG);
-                snackbar.show();
+                        startActivity(intent);
+                    }
+                }
             }
+        });
 
-        }else{
-            ConstraintLayout coordinatorLayout = (ConstraintLayout) findViewById(R.id.register_layout);
-            Snackbar snackbar =  Snackbar.make(coordinatorLayout, "Existem campos não preenchidos na 1ª etapa!", Snackbar.LENGTH_LONG);
-            snackbar.show();
-        }
     }
 
-    public void callSignInActivity(View view) {
-        Intent intent = new Intent(this, SignInActivity.class);
-        startActivity(intent);
+    private void commitViews(){
+        newUser.setName(nameInputText.getText().toString());
+        newUser.setEmail(emailInputText.getText().toString());
+        newUser.setPassword(passInputText.getText().toString());
+        newUser.setBirthDate(LocalDate.now());
+        newUser.setGender(genderInputText.getText().toString());
     }
 }
