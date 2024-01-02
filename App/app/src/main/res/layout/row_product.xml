@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="8dp"
-    android:paddingHorizontal="8dp">
+    android:layout_marginBottom="8dp">
 
     <ImageView
         android:id="@+id/product_imageView"
         android:layout_width="74dp"
         android:layout_height="74dp"
-        android:src="@tools:sample/avatars"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,8 +19,8 @@
         android:id="@+id/product_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/product_imageView"
         app:layout_constraintTop_toTopOf="@+id/product_imageView"
@@ -31,9 +30,8 @@
         android:id="@+id/product_description_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
         android:textColor="@color/light_text"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/product_name_textView"
         app:layout_constraintTop_toBottomOf="@+id/product_name_textView"
         tools:text="Descrição do produto" />
@@ -42,9 +40,8 @@
         android:id="@+id/product_time_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:textColor="@color/light_text"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/product_description_textView"
         app:layout_constraintTop_toBottomOf="@+id/product_description_textView"
         tools:text="10 min - Estimado" />
@@ -54,9 +51,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/product_name_textView"
-        tools:text="0.00 €"
-        android:textSize="16sp"/>
+        tools:text="0.00 €" />
+
+    <View
+        android:id="@+id/list_divider"
+        android:layout_width="315dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_time_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

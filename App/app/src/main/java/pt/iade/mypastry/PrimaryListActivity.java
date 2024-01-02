@@ -18,37 +18,37 @@ import pt.iade.mypastry.enums.ProductType;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
 
-public class DessertsListActivity extends AppCompatActivity {
+public class PrimaryListActivity extends AppCompatActivity {
     ArrayList<Product> productsList;
     RecyclerView listView;
     ProductRowAdapter productRowAdapter;
     User user;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_desserts_list);
+        setContentView(R.layout.activity_primary_list);
 
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
 
         setupComponents();
     }
+
     public void returnToHomeActivity(View view){
         finish();
     }
 
-    private void setupComponents() {
-        Product.GetAllByType(ProductType.DESSERT, new Product.GetByTypeResult() {
+    public void setupComponents() {
+        Product.GetAllByType(ProductType.PRIMARY, new Product.GetByTypeResult() {
             @Override
             public void result(ArrayList<Product> products) {
                 productsList = products;
 
-                productRowAdapter = new ProductRowAdapter(DessertsListActivity.this, productsList);
+                productRowAdapter = new ProductRowAdapter(PrimaryListActivity.this, productsList);
                 productRowAdapter.setOnClickListener(new ProductRowAdapter.ItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(DessertsListActivity.this, ProductDetailsActivity.class);
+                        Intent intent = new Intent(PrimaryListActivity.this, ProductDetailsActivity.class);
                         intent.putExtra("user", user);
                         intent.putExtra("product", productsList.get(position));
 
@@ -56,8 +56,8 @@ public class DessertsListActivity extends AppCompatActivity {
                     }
                 });
 
-                listView = (RecyclerView) findViewById(R.id.dessert_product_list);
-                listView.setLayoutManager(new LinearLayoutManager(DessertsListActivity.this));
+                listView = (RecyclerView) findViewById(R.id.primary_product_list);
+                listView.setLayoutManager(new LinearLayoutManager(PrimaryListActivity.this));
                 listView.setAdapter(productRowAdapter);
             }
         });

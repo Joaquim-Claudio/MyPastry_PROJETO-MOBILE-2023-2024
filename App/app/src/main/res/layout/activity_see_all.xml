@@ -8,10 +8,10 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context=".ConveniencesListActivity">
+    tools:context=".SeeAllActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/convenience_toolbar"
+        android:id="@+id/see_all_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
@@ -26,7 +26,7 @@
         android:layout_height="40dp"
         android:onClick="returnToHomeActivity"
         android:scrollbarSize="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/convenience_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/see_all_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -46,13 +46,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/convenience_activity_title"
+        android:text="@string/see_all_activity_title"
         android:textAlignment="center"
         android:textColor="@color/button_color_black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/convenience_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/see_all_toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/convenience_product_list"
+                android:id="@+id/see_all_product_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/list_background"

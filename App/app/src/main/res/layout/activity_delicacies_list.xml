@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#FFFFFF"
+    android:background="@color/background_light_pink"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".DelicaciesListActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/bever_toolbar"
+        android:id="@+id/delicacy_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/button_color_red"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,17 +24,17 @@
         android:id="@+id/constraintLayout4"
         android:layout_width="54dp"
         android:layout_height="40dp"
+        android:onClick="returnToHomeActivity"
         android:scrollbarSize="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/delicacy_toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="returnToHomeActivity">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView30"
             android:layout_width="29dp"
             android:layout_height="21dp"
-            android:src="@drawable/back_icon"
+            android:src="@drawable/ic_arrow_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,532 +45,39 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iguarias"
+        android:layout_marginStart="8dp"
+        android:text="@string/delicacy_activity_title"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/button_color_black"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/bever_toolbar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delicacy_toolbar" />
 
     <ScrollView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bever_toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/textView25">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/delicacy_product_list"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_background"
+                android:paddingVertical="8dp" />
 
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="Iguarias Brasileiras"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider2"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_29"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_29"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_29"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_29"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_29"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_29"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_29" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_29"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider17"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_30"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_30"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_30"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_30"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_30" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider18"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_31"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_31"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_31"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_31"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_31"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_31"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_31" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_31"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider19"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_32"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_32"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_32"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_32"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_32"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_32"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_32" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_32"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider20"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_33"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_33"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_33"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_33"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_33"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_33"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_33" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_33"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider21"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_34"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_34"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_34"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_34"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_34" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider22"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_35"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_35"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_35"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_35"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_35"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_35"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_35" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_35"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider23"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_36"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_36"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_36"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_36"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_36" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/divider24"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:layout_marginVertical="10dp"
-                android:background="?android:attr/listDivider" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/delicacy_product_37"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/delicacy_product_imageView_37"
-                    android:layout_width="86dp"
-                    android:layout_height="63dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_name_textView_37"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:hint="@string/product_title_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_37"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_description_textView_37"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:hint="@string/product_description_hint"
-                    app:layout_constraintStart_toEndOf="@+id/delicacy_product_imageView_37"
-                    app:layout_constraintTop_toBottomOf="@+id/delicacy_product_name_textView_37" />
-
-                <TextView
-                    android:id="@+id/delicacy_product_price_textView_37"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:hint="@string/product_price_hint"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
+                android:layout_height="150dp" />
+        </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hom"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:isScrollContainer="true"
@@ -84,10 +85,10 @@
                             <TableRow android:layout_height="wrap_content">
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/home_primary_button"
                                     android:layout_width="176dp"
                                     android:layout_height="match_parent"
-                                    android:background="@drawable/constraint_button"
-                                    android:onClick="callMenuActiviy">
+                                    android:background="@drawable/constraint_button">
 
                                     <ImageView
                                         android:id="@+id/imageView18"
@@ -112,11 +113,11 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/home_delicacy_button"
                                     android:layout_width="176dp"
                                     android:layout_height="100dp"
                                     android:layout_marginStart="18dp"
-                                    android:background="@drawable/constraint_button"
-                                    android:onClick="callDelicaciesListActivity">
+                                    android:background="@drawable/constraint_button">
 
                                     <TextView
                                         android:id="@+id/textView6"
@@ -166,10 +167,10 @@
                                 android:layout_height="wrap_content">
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/home_bever_button"
                                     android:layout_width="80dp"
                                     android:layout_height="70dp"
-                                    android:background="@drawable/constraint_button"
-                                    android:onClick="callBeveragesListActivity">
+                                    android:background="@drawable/constraint_button">
 
                                     <ImageView
                                         android:id="@+id/imageView21"
@@ -183,11 +184,11 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/home_dessert_button"
                                     android:layout_width="80dp"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="16dp"
-                                    android:background="@drawable/constraint_button"
-                                    android:onClick="callDessertsListActivity">
+                                    android:background="@drawable/constraint_button">
 
                                     <ImageView
                                         android:id="@+id/imageView22"
@@ -201,11 +202,11 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/home_convinience_button"
                                     android:layout_width="80dp"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="18dp"
-                                    android:background="@drawable/constraint_button"
-                                    android:onClick="callConveniencesListActivity">
+                                    android:background="@drawable/constraint_button">
 
                                     <ImageView
                                         android:id="@+id/imageView24"
@@ -219,6 +220,7 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/home_see_all_button"
                                     android:layout_width="80dp"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="16dp"
@@ -560,7 +562,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </TableRow>
 

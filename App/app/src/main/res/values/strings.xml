@@ -36,9 +36,18 @@
     <string name="home_activity_order_button">Pedido</string>
     <string name="home_activity_account_button">Conta</string>
 
+    <string name="primary_activity_title">Principal</string>
+
+    <string name="delicacy_activity_title">Iguarias</string>
+
     <string name="bever_activity_title">Bebidas</string>
 
-    <string name="menu_activity_title">Menu</string>
+    <string name="dessert_activity_title">Sobremesas</string>
+
+    <string name="convenience_activity_title">Conveniências</string>
+
+    <string name="see_all_activity_title">Todos</string>
+
 
     <string name="product_title_hint">Nome do produto</string>
     <string name="product_description_hint">Descrição do produto</string>
@@ -86,6 +95,6 @@
     <string name="log_out_button">Terminar sessão</string>
 
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

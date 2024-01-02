@@ -2,6 +2,8 @@ package pt.iade.mypastry;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,54 +11,71 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import pt.iade.mypastry.adapters.ProductRowAdapter;
 import pt.iade.mypastry.enums.ProductType;
 import pt.iade.mypastry.models.Product;
+import pt.iade.mypastry.models.User;
 
 public class ConveniencesListActivity extends AppCompatActivity {
+    ArrayList<Product> productsList;
+    RecyclerView listView;
+    ProductRowAdapter productRowAdapter;
+    User user;
 
-    int userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conveniences_list);
 
         Intent intent = getIntent();
-        userId = intent.getIntExtra("user_id", 0);
-    /*
-        for (Product p : ProductRepository.getProducts()) {
-            if (p.getType() == ProductType.CONVINIENCE){
-                setListElement(p);
-            }
-        }
+        user = (User) intent.getSerializableExtra("user");
 
-     */
+        setupComponents();
     }
 
     public void returnToHomeActivity(View view){
         finish();
     }
 
+    private void setupComponents() {
+        Product.GetAllByType(ProductType.CONVENIENCE, new Product.GetByTypeResult() {
+            @Override
+            public void result(ArrayList<Product> products) {
+                productsList = products;
 
-    private void setListElement(Product product){
-        String defaultId = "conven_product_";
+                productRowAdapter = new ProductRowAdapter(ConveniencesListActivity.this, productsList);
+                productRowAdapter.setOnClickListener(new ProductRowAdapter.ItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(ConveniencesListActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("user", user);
+                        intent.putExtra("product", productsList.get(position));
 
-        ConstraintLayout menuProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId + product.getId(), "id", getPackageName()));
-        menuProduct.setOnClickListener(v -> {
-            Intent intent = new Intent(ConveniencesListActivity.this, ProductDetailsActivity.class);
-            intent.putExtra("user_id", userId);
-            intent.putExtra("product_id", product.getId());
-            startActivity(intent);
+                        startActivity(intent);
+                    }
+                });
+
+                listView = (RecyclerView) findViewById(R.id.convenience_product_list);
+                listView.setLayoutManager(new LinearLayoutManager(ConveniencesListActivity.this));
+                listView.setAdapter(productRowAdapter);
+            }
         });
-
-
-        TextView productName = (TextView) findViewById(getResources().getIdentifier(defaultId+"name_textView_"+product.getId(), "id", getPackageName()));
-        TextView productDescription = (TextView) findViewById(getResources().getIdentifier(defaultId+"description_textView_"+product.getId(), "id", getPackageName()));
-        TextView productPrice = (TextView) findViewById(getResources().getIdentifier(defaultId+"price_textView_"+product.getId(), "id", getPackageName()));
-        ImageView productImage = (ImageView) findViewById(getResources().getIdentifier(defaultId+"imageView_"+product.getId(), "id", getPackageName()));
-
-        productName.setText(product.getName());
-        productDescription.setText(product.getDescription());
-        productPrice.setText(String.format("%.2f", product.getPrice()) + " €");
-        productImage.setImageResource(product.getSrcImage());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

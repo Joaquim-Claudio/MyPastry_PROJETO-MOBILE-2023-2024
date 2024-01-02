@@ -8,7 +8,8 @@
     <color name="button_color_blue">#3948bd</color>
     <color name="button_color_grey">#585859</color>
     <color name="textView_color_red">#B5001C</color>
-    <color name="background_light_pink">#FFF2EBE9</color>
+    <color name="background_light_pink">#F0FFFCDA</color>
+    <color name="stroke_light_pink">#FFC7C5AA</color>
     <color name="title_color">#F0222336</color>
     <color name="light_text">#FFADADAD</color>
 

@@ -2,6 +2,8 @@ package pt.iade.mypastry;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,27 +11,27 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import pt.iade.mypastry.adapters.ProductRowAdapter;
 import pt.iade.mypastry.enums.ProductType;
 import pt.iade.mypastry.models.Product;
+import pt.iade.mypastry.models.User;
 
 public class DelicaciesListActivity extends AppCompatActivity {
-
-    int userId;
+    ArrayList<Product> productsList;
+    RecyclerView listView;
+    ProductRowAdapter productRowAdapter;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delicacies_list);
 
         Intent intent = getIntent();
-        userId = intent.getIntExtra("user_id", 0);
-    /*
-        for (Product p : ProductRepository.getProducts()) {
-            if (p.getType() == ProductType.DELICACY){
-                setListElement(p);
-            }
-        }
+        user = (User) intent.getSerializableExtra("user");
 
-     */
+        setupComponents();
     }
 
     public void returnToHomeActivity(View view){
@@ -38,26 +40,28 @@ public class DelicaciesListActivity extends AppCompatActivity {
 
 
 
-    private void setListElement(Product product){
-        String defaultId = "delicacy_product_";
+    private void setupComponents() {
+        Product.GetDelicacies(new Product.GetDelicaciesResult() {
+            @Override
+            public void result(ArrayList<Product> products) {
+                productsList = products;
 
-        ConstraintLayout menuProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId + product.getId(), "id", getPackageName()));
-        menuProduct.setOnClickListener(v -> {
-            Intent intent = new Intent(DelicaciesListActivity.this, ProductDetailsActivity.class);
-            intent.putExtra("user_id", userId);
-            intent.putExtra("product_id", product.getId());
-            startActivity(intent);
+                productRowAdapter = new ProductRowAdapter(DelicaciesListActivity.this, productsList);
+                productRowAdapter.setOnClickListener(new ProductRowAdapter.ItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(DelicaciesListActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("user", user);
+                        intent.putExtra("product", productsList.get(position));
+
+                        startActivity(intent);
+                    }
+                });
+
+                listView = (RecyclerView) findViewById(R.id.delicacy_product_list);
+                listView.setLayoutManager(new LinearLayoutManager(DelicaciesListActivity.this));
+                listView.setAdapter(productRowAdapter);
+            }
         });
-
-
-        TextView productName = (TextView) findViewById(getResources().getIdentifier(defaultId+"name_textView_"+product.getId(), "id", getPackageName()));
-        TextView productDescription = (TextView) findViewById(getResources().getIdentifier(defaultId+"description_textView_"+product.getId(), "id", getPackageName()));
-        TextView productPrice = (TextView) findViewById(getResources().getIdentifier(defaultId+"price_textView_"+product.getId(), "id", getPackageName()));
-        ImageView productImage = (ImageView) findViewById(getResources().getIdentifier(defaultId+"imageView_"+product.getId(), "id", getPackageName()));
-
-        productName.setText(product.getName());
-        productDescription.setText(product.getDescription());
-        productPrice.setText(String.format("%.2f", product.getPrice()) + " €");
-        productImage.setImageResource(product.getSrcImage());
     }
 }

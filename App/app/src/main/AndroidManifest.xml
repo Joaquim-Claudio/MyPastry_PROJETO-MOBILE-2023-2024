@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MyPastry"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".SeeAllActivity"
+            android:exported="false" />
         <activity
             android:name=".MobileOrderActivity"
             android:exported="false" />
@@ -55,7 +58,7 @@
             android:name=".BeverageListActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".PrimaryListActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
