@@ -24,9 +24,9 @@ public class UserController {
     private AddressRepository addressRepository;
 
     /*
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<User> getUsers() {
-        logger.info("Sending all the users.");
+        logger.info("User-> Sending all the users.");
         return userRepository.findAll();
     }
 
@@ -36,10 +36,10 @@ public class UserController {
         User user = userRepository.findByEmailAndPassword(email, password);
         if(user == null) {
             //  TODO: implement NotFoundException
-            logger.info("User email="+email+ " was not found.");
+            logger.info("User-> User email="+email+ " was not found.");
             return null;
         } else {
-            logger.info("Sending the user with id="+user.getId()+".");
+            logger.info("User-> Sending the user with id="+user.getId()+".");
             return user;
         }
     }
@@ -47,14 +47,14 @@ public class UserController {
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public User addUser(@RequestBody User user) {
-        logger.info("Adding a new user.");
+        logger.info("User-> Adding a new user.");
         addressRepository.save(user.getAddress());
         return userRepository.save(user);
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response removeUser(@PathVariable(name = "id") int id){
-        logger.info("Removing the user with id="+id+".");
+        logger.info("User-> Removing the user with id="+id+".");
         userRepository.deleteById(id);
         return new Response("User with id="+id+" was successfully removed!", null);
     }

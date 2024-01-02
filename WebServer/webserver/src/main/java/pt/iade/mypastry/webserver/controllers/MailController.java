@@ -24,7 +24,7 @@ public class MailController {
 
         MailDetail mailDetail = new MailDetail();
         mailDetail.setTo(email);
-        logger.info("Sending email to "+mailDetail.getTo());
+        logger.info("Mail-> Sending email to "+mailDetail.getTo());
         return mailService.sendMail(mailDetail);
     }
 

@@ -11,7 +11,7 @@
     tools:context=".ConveniencesListActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/bever_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/button_color_red"
@@ -26,7 +26,7 @@
         android:layout_width="54dp"
         android:layout_height="40dp"
         android:scrollbarSize="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="returnToHomeActivity">
@@ -52,9 +52,9 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/bever_toolbar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+        app:layout_constraintTop_toBottomOf="@+id/bever_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -7,7 +7,7 @@
     tools:context=".AdminHomeActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/bever_toolbar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/button_color_red"
@@ -27,9 +27,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/bever_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/bever_toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:onClick="returnToAdminSettingsActivity"
         android:paddingHorizontal="10dp"
         android:paddingVertical="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -62,7 +62,7 @@
         android:src="@drawable/turn_device_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toBottomOf="@+id/bever_toolbar" />
 
     <TextView
         android:id="@+id/textView56"

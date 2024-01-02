@@ -36,6 +36,8 @@
     <string name="home_activity_order_button">Pedido</string>
     <string name="home_activity_account_button">Conta</string>
 
+    <string name="bever_activity_title">Bebidas</string>
+
     <string name="menu_activity_title">Menu</string>
 
     <string name="product_title_hint">Nome do produto</string>

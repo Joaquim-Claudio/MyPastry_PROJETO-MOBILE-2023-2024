@@ -1,6 +1,6 @@
-insert into tb_address (add_postalcode, add_street, add_building, add_city) values('1500-234', 'Rua Brasil', 87, 'Lisboa');
-insert into tb_address (add_postalcode, add_street, add_building, add_door, add_city) values('2910-222', 'Av. da Liberdade', 913, 'R/C esquerdo', 'Lisboa');
-insert into tb_address (add_postalcode, add_street, add_building, add_door, add_city) values('1500-549', 'Praceta Vasco da Gama', 2, '4º frente', 'Amadora');
+insert into tb_address (add_postalcode, add_street, add_building, add_city) values('1500-234', 'Rua Brasil', '87', 'Lisboa');
+insert into tb_address (add_postalcode, add_street, add_building, add_door, add_city) values('2910-222', 'Av. da Liberdade', '913', 'R/C esquerdo', 'Lisboa');
+insert into tb_address (add_postalcode, add_street, add_building, add_door, add_city) values('1500-549', 'Praceta Vasco da Gama', '2', '4º frente', 'Amadora');
 
 
 insert into tb_user (use_name, use_email, use_password, use_admin) values('Admin', 'adminLogin', 'adminPassword', 1);
@@ -8,55 +8,29 @@ insert into tb_user (use_name, use_email, use_password, use_gender, use_bdate, u
 insert into tb_user (use_name, use_email, use_password, use_gender, use_bdate, use_add_id, use_pts, use_admin) values('Joaquim Claudio', 'eusoujoaquim@sapo.pt', 'javascript', 'M', str_to_date('1948.12.29','%Y.%m.%d'), 2, 13, 0);
 insert into tb_user (use_name, use_email, use_password, use_gender, use_bdate, use_add_id, use_pts, use_admin) values('Edja Silva', 'edja@gmail.com', 'estudar', 'F', str_to_date('1998.04.01','%Y.%m.%d'), 3, 10, 0);	
 																																				
-
-insert into tb_status (sta_name) values('Pendente');		
-insert into tb_status (sta_name) values('Pago');			
-insert into tb_status (sta_name) values('Pronto');				
-insert into tb_status (sta_name) values('Concluido');		
-
-insert into tb_ordertype (oty_name) values('Mobile');   
-insert into tb_ordertype (oty_name) values('Delivery');
-
-insert into tb_order (ord_use_id, ord_oty_id, ord_total) values(2, 2, 8.5); 
-insert into tb_order (ord_use_id, ord_oty_id, ord_total) values(3, 1, 13.0); 
-insert into tb_order (ord_use_id, ord_oty_id, ord_total) values(4, 1, 10.0);
+                                                                                                                                                
+insert into tb_order (ord_use_id, ord_type, ord_status, ord_total) values(2, 'Mobile', 'Pendente', 8.5); 
+insert into tb_order (ord_use_id, ord_type, ord_status, ord_total) values(3, 'Mobile', 'Pronto', 13.0); 
+insert into tb_order (ord_use_id, ord_type, ord_status, ord_total) values(4, 'Delivery', 'Concluido', 10.0);
 
 
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(1,1,'2023-11-14 14:30'); 
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(1,2,'2023-11-14 14:31');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(1,3, '2023-11-14 14:43');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(2,1,'2023-11-17 11:15'); 
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(2,2,'2023-11-17 11:16');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(2,3,'2023-11-17 11:20');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(2,4,'2023-11-17 11:23');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(3,1,'2023-11-17 13:48'); 
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(3,2,'2023-11-17 13:49');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(3,3,'2023-11-17 13:57');
-insert into tb_ordst (ost_ord_id, ost_sta_id, ost_date_time) values(3,4, '2023-11-17 14:06');
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary' ,'Pastél de Queijo', '1 unidade', 3.0, 1, 0);	
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary' ,'Pastel de Carne', '1 unidade', 4.0, 1, 0);  	
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Pastel de Camarão', '1 unidade', 4.0, 1, 0); 	
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Dessert', 'Açaí', '100g', 4.5, 1, 1);				
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Dessert', 'Mousse de Lima', '100g', 3.0, 1, 0);		
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Drink', 'Coca-cola', '33cl', 1.8, 1, 0);			
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Drink', 'Sumo de Laranja', '33cl', 2.0, 1, 0);	
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Drink', 'Super Bock', '33cl', 2.0, 1, 0);			
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Convinience', 'Tapioca', '70g', 5.0, 1, 1);			
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Convinience', 'Paçoca', '75g', 1.0, 1, 1);				
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Convinience', 'Flocão', '200g', 1.3, 1, 0);				
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Dessert', 'Pão de Queijo', '6 unidades', 2.5, 1, 1);		
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Coxinha', '1 unidade', 3.0, 1, 1);			
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Esfiha', '1 unidade', 3.0, 1, 0);				
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Hambúrguer', '1 unidade', 4.5, 1, 0);			
+insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Cachorro', '1 unidade', 4.5, 1, 0);			
 
-
-insert into tb_producttype (pty_name) values('Primary');
-insert into tb_producttype (pty_name) values('Drink');   
-insert into tb_producttype (pty_name) values('Dessert');
-insert into tb_producttype (pty_name) values('Convinience');
-
-
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Pastél de Queijo', 1, 3.0, 1, 0);	
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Pastel de Carne', 1, 4.0, 1, 0);  	
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Pastel de Camarão', 1, 4.0, 1, 0); 	
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Açaí', 3, 4.5, 1, 1);				
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Mousse de Lima', 3, 3.0, 1, 0);		
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Coca-cola', 2, 1.8, 1, 0);			
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Sumo de Laranja', 2, 2.0, 1, 0);	
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Super Bock', 2.0, 2, 1, 0);			
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Tapioca', 4, 5.0, 1, 1);			
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Paçoca', 4, 1.0, 1, 1);				
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Flocão', 4, 1.3, 1, 0);				
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Pão de Queijo', 3, 2.5, 1, 1);		
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Coxinha', 1, 3.0, 1, 1);			
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Esfiha', 1, 3.0, 1, 0);				
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Hambúrguer', 1, 4.5, 1, 0);			
-insert into tb_product (pro_name, pro_pty_id, pro_price, pro_status, pro_delicacy) values('Cachorro', 1, 4.5, 1, 0);			
 
 insert into tb_ordprod (orp_pro_id, orp_ord_id, orp_quantity, orp_subtotal) values(1, 1, 1, 4.0);
 insert into tb_ordprod (orp_pro_id, orp_ord_id, orp_quantity, orp_subtotal) values(6, 1, 1, 0);
