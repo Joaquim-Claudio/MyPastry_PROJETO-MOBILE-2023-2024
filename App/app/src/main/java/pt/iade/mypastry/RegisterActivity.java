@@ -14,19 +14,26 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import org.w3c.dom.Text;
+
 import java.time.LocalDate;
 
+import pt.iade.mypastry.models.Address;
 import pt.iade.mypastry.models.User;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText nameInputText, emailInputText, passInputText,
-            birthDateInputText, genderInputText, addressInputText;
-    TextView priPolicyTextView;
+    EditText nameInputText, emailInputText, genderInputText,
+            addressStreetInputText, addressPostCodeInputText,
+            addressBuildInputText, addressDoorInputText, addressCityInputText,
+            birthDateInputText, passInputText, rePassInputText;
+    TextView priPolicyTextView, pageNumberTextView;
     ImageView nextButton, previousButton;
-    ConstraintLayout firstPage, secondPage;
+    ConstraintLayout firstPage, secondPage, thirdPage;
     Button registerButton;
 
     User newUser;
+
+    int pageNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,51 +51,124 @@ public class RegisterActivity extends AppCompatActivity {
     private void setupComponents(){
         nameInputText = (EditText) findViewById(R.id.register_textInput_name);
         emailInputText = (EditText) findViewById(R.id.register_textInput_email);
-        passInputText = (EditText) findViewById(R.id.register_textInput_password);
-        birthDateInputText = (EditText) findViewById(R.id.register_textInput_birth_date);
         genderInputText = (EditText) findViewById(R.id.register_textInput_gender);
-        addressInputText = (EditText) findViewById(R.id.register_textInput_address);
+
+        addressStreetInputText = (EditText) findViewById(R.id.register_textInput_address_street);
+        addressPostCodeInputText = (EditText) findViewById(R.id.register_textInput_address_postalcode);
+        addressBuildInputText = (EditText) findViewById(R.id.register_textInput_address_building);
+        addressDoorInputText = (EditText) findViewById(R.id.register_textInput_address_door);
+        addressCityInputText = (EditText) findViewById(R.id.register_textInput_address_city);
+
+
+        birthDateInputText = (EditText) findViewById(R.id.register_textInput_birth_date);
+        passInputText = (EditText) findViewById(R.id.register_textInput_password);
+        rePassInputText = (EditText) findViewById(R.id.register_textInput_repassword);
+
         priPolicyTextView = (TextView) findViewById(R.id.register_privacy_policy);
+
         nextButton = (ImageView) findViewById(R.id.register_button_next);
         previousButton = (ImageView) findViewById(R.id.register_button_previous);
+        pageNumberTextView = (TextView) findViewById(R.id.register_page_number_textView);
+
         firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
         secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
+        thirdPage = (ConstraintLayout) findViewById(R.id.register_third_page_constraint);
+
         registerButton = (Button) findViewById(R.id.register_button_register);
+
+        pageNumber=1;
 
         firstPage.setVisibility(View.VISIBLE);
         secondPage.setVisibility(View.GONE);
+        thirdPage.setVisibility(View.GONE);
         priPolicyTextView.setVisibility(View.GONE);
         registerButton.setVisibility(View.GONE);
+
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConstraintLayout firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
-                firstPage.setVisibility(View.GONE);
-                ConstraintLayout secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
-                priPolicyTextView.setVisibility(View.VISIBLE);
-                registerButton.setVisibility(View.VISIBLE);
-                secondPage.setVisibility(View.VISIBLE);
-                previousButton.setVisibility(View.VISIBLE);
-                TextView pageNumber = (TextView) findViewById(R.id.register_page_number_textView);
-                pageNumber.setText("2/2");
-                nextButton.setVisibility(View.GONE);
+                switch (pageNumber){
+                    case 1:
+                        firstPage.setVisibility(View.GONE);
+
+                        secondPage.setVisibility(View.VISIBLE);
+
+                        thirdPage.setVisibility(View.GONE);
+
+                        priPolicyTextView.setVisibility(View.GONE);
+
+                        registerButton.setVisibility(View.GONE);
+
+                        previousButton.setVisibility(View.VISIBLE);
+                        nextButton.setVisibility(View.VISIBLE);
+
+                        pageNumber++;
+                        pageNumberTextView.setText(pageNumber+"/3");
+                        break;
+
+                    case 2:
+                        firstPage.setVisibility(View.GONE);
+
+                        secondPage.setVisibility(View.GONE);
+
+                        thirdPage.setVisibility(View.VISIBLE);
+
+                        priPolicyTextView.setVisibility(View.VISIBLE);
+
+                        registerButton.setVisibility(View.VISIBLE);
+
+                        previousButton.setVisibility(View.VISIBLE);
+                        nextButton.setVisibility(View.GONE);
+
+                        pageNumber++;
+                        pageNumberTextView.setText(pageNumber+"/3");
+                        break;
+                }
+
             }
         });
 
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConstraintLayout secondPage = (ConstraintLayout) findViewById(R.id.register_second_page_constraint);
-                secondPage.setVisibility(View.GONE);
-                ConstraintLayout firstPage = (ConstraintLayout) findViewById(R.id.register_first_page_constraint);
-                priPolicyTextView.setVisibility(View.GONE);
-                registerButton.setVisibility(View.GONE);
-                firstPage.setVisibility(View.VISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
-                TextView pageNumber = (TextView) findViewById(R.id.register_page_number_textView);
-                pageNumber.setText("1/2");
-                previousButton.setVisibility(View.GONE);
+                switch (pageNumber){
+                    case 2:
+                        firstPage.setVisibility(View.VISIBLE);
+
+                        secondPage.setVisibility(View.GONE);
+
+                        thirdPage.setVisibility(View.GONE);
+
+                        priPolicyTextView.setVisibility(View.GONE);
+
+                        registerButton.setVisibility(View.GONE);
+
+                        previousButton.setVisibility(View.GONE);
+                        nextButton.setVisibility(View.VISIBLE);
+
+                        pageNumber--;
+                        pageNumberTextView.setText(pageNumber+"/3");
+                        break;
+
+                    case 3:
+                        firstPage.setVisibility(View.GONE);
+
+                        secondPage.setVisibility(View.VISIBLE);
+
+                        thirdPage.setVisibility(View.GONE);
+
+                        priPolicyTextView.setVisibility(View.GONE);
+
+                        registerButton.setVisibility(View.GONE);
+
+                        previousButton.setVisibility(View.VISIBLE);
+                        nextButton.setVisibility(View.VISIBLE);
+
+                        pageNumber--;
+                        pageNumberTextView.setText(pageNumber+"/3");
+                        break;
+                }
             }
         });
 
@@ -102,10 +182,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = passInputText.getText().toString();
                 String birthDate = birthDateInputText.getText().toString();
                 String gender = genderInputText.getText().toString();
-                String address = addressInputText.getText().toString();
+
+
+
 
                 if (!name.equals("") && !email.equals("") && !password.equals("")) {
-                    if (!birthDate.equals("") && !gender.equals("") && !address.equals("")) {
+                    if (!birthDate.equals("") && !gender.equals("")) {
 
                         newUser = new User();
                         commitViews();
@@ -128,5 +210,14 @@ public class RegisterActivity extends AppCompatActivity {
         newUser.setPassword(passInputText.getText().toString());
         newUser.setBirthDate(LocalDate.now());
         newUser.setGender(genderInputText.getText().toString());
+
+        Address address = new Address();
+        address.setStreet(addressStreetInputText.getText().toString());
+        address.setPostalCode(addressPostCodeInputText.getText().toString());
+        address.setBuilding(addressBuildInputText.getText().toString());
+        address.setDoor(addressDoorInputText.getText().toString());
+        address.setCity(addressCityInputText.getText().toString());
+
+        newUser.setAddress(address);
     }
 }

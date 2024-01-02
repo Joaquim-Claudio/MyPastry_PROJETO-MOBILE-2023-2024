@@ -14,11 +14,20 @@ public class User {
     @Column(name = "use_email") private String email;
     @Column(name = "use_password") private String password;
     @Column(name = "use_gender") private char gender;
-    @Column(name = "use_bday") private LocalDate birthDate;
+    @Column(name = "use_bdate") private LocalDate birthDate;
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "use_add_id")
+    private Address address;
+    @Column(name = "use_pts") private int points;
     @Column(name = "use_admin") private boolean admin;
 
     public User() {
     }
+
+    public int getId() {
+        return id;
+    }
+
 
     public String getName() {
         return name;
@@ -60,11 +69,27 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public int getId() {
-        return id;
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 
     public boolean isAdmin() {
         return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }

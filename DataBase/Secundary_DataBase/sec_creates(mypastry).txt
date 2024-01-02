@@ -1,0 +1,75 @@
+
+create table tb_address (
+								add_id int not null auto_increment,
+								add_postalcode VARCHAR (15) not null,
+								add_street VARCHAR (100) not null,
+								add_building int not null,
+								add_door VARCHAR (20),
+								add_city VARCHAR(40) not null,
+								primary key (add_id)
+);
+create table tb_user (
+								use_id int not null auto_increment,
+								use_name VARCHAR(60) not null, 			
+								use_email VARCHAR(30)not null, 				
+								use_password VARCHAR(30) not null,								
+								use_gender CHAR (1),
+								use_bdate date,
+                                				use_add_id int,
+								use_admin bit not null,
+                                				use_pts int,	
+								primary key (use_id),
+                                				FOREIGN KEY(use_add_id) REFERENCES tb_address(add_id)
+
+);
+create table tb_status ( 
+								sta_id int not null auto_increment,
+								sta_name VARCHAR (20) not null,
+								primary key (sta_id)
+);
+create table tb_ordertype(
+								oty_id int not null auto_increment,
+								oty_name VARCHAR (15) not null,
+								primary key (oty_id)
+);
+create table tb_order (
+								ord_id int not null auto_increment,
+								ord_use_id int not null,	
+								ord_oty_id int not null,
+								ord_total decimal (4,2),
+								primary key (ord_id),
+								FOREIGN KEY (ord_use_id) REFERENCES tb_user(use_id),
+                                FOREIGN KEY (ord_oty_id) REFERENCES tb_ordertype(oty_id)
+);
+create table tb_ordst (
+								ost_sta_id int not null,
+								ost_ord_id int not null,
+								ost_date_time datetime not null,
+								primary key (ost_sta_id, ost_ord_id),
+								FOREIGN KEY (ost_sta_id) REFERENCES tb_status (sta_id),
+								FOREIGN KEY (ost_ord_id) REFERENCES tb_order(ord_id)
+);
+create table tb_producttype (
+								pty_id int not null auto_increment,
+                                pty_name VARCHAR (20) not null,
+                                primary key(pty_id)
+);
+create table tb_product (
+								pro_id int not null auto_increment,
+                                pro_pty_id int not null,
+								pro_name VARCHAR (40) not null,
+								pro_price decimal (4,2) not null,			
+								pro_status bit,
+                                pro_delicacy bit,
+								primary key (pro_id),
+                                FOREIGN KEY(pro_pty_id) REFERENCES tb_producttype(pty_id)
+);
+create table tb_ordprod (
+								orp_pro_id int not null,			
+								orp_ord_id int not null,				
+								orp_quantity int,
+								orp_subtotal decimal (4,2) not null,
+								primary key (orp_ord_id, orp_pro_id),
+								FOREIGN KEY (orp_pro_id) REFERENCES tb_product(pro_id),
+								FOREIGN KEY (orp_ord_id) REFERENCES tb_order(ord_id)
+);

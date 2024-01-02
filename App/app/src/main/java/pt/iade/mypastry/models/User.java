@@ -7,7 +7,6 @@ import com.google.gson.annotations.JsonAdapter;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.HashMap;
 
 import pt.iade.mypastry.utilities.LocalDateJsonAdapter;
@@ -21,21 +20,29 @@ public class User implements java.io.Serializable {
     private String gender;
     @JsonAdapter(LocalDateJsonAdapter.class)
     private LocalDate birthDate;
+    private Address address;
+    private int points;
     private boolean admin;
 
 
     public User(){
-        this(0, "", "", "", "N", LocalDate.now(), false);
+        this(0, "", "", "", "N", LocalDate.now(),
+                new Address(), 0, false);
     }
-    public User(int id, String name, String email, String password, String gender, LocalDate birthDate, boolean admin) {
+
+    public User(int id, String name, String email, String password, String gender,
+                LocalDate birthDate, Address address, int points, boolean admin) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.birthDate = birthDate;
         this.gender = gender;
+        this.birthDate = birthDate;
+        this.address = address;
+        this.points = points;
         this.admin = admin;
     }
+
 
     public static void Athenticate(String email, String password, AuthenticateResult result){
         Thread thread = new Thread(new Runnable() {
@@ -129,11 +136,32 @@ public class User implements java.io.Serializable {
         this.birthDate = birthDate;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
     public boolean isAdmin() {
         return admin;
     }
 
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
 
+
+    //  Interfaces to control the return parameters
     public interface AuthenticateResult{
         public void result(User user);
     }
