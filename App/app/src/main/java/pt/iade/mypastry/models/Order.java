@@ -1,45 +1,115 @@
 package pt.iade.mypastry.models;
 
-import java.util.ArrayList;
+import android.util.Log;
+
+import com.google.gson.Gson;
+
+import java.net.URL;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
 import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.enums.OrderType;
+import pt.iade.mypastry.utilities.WebRequest;
 
 public class Order implements java.io.Serializable {
-    private static int next_id = 1;
     private int id;
-    private int user_id;
+    private int userId;
     private OrderType type;
     private OrderStatus status;
-    private ArrayList<OrderProduct> orderProducts;
-    private Float total;
-    private int points;
+    private float total;
 
     public Order() {
-        this(0);
+        this(0, 0, OrderType.MOBILE, OrderStatus.PENDING, 0f);
     }
 
-    public Order(int user_id){
-        this.id = next_id;
-        this.user_id = user_id;
-        status = OrderStatus.PENDING;
-        orderProducts = new ArrayList<OrderProduct>();
-        total = 0f;
-        points = 0;
-        next_id++;
+
+    public Order(int id, int userId, OrderType type, OrderStatus status, float total) {
+        this.id = id;
+        this.userId = userId;
+        this.type = type;
+        this.status = status;
+        this.total = total;
     }
+
+    public static void GetPending(int userId, GetPendingResult result){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/user/pending"));
+
+                    HashMap<String, String> param = new HashMap<String, String>();
+                    param.put("userId", String.valueOf(userId));
+
+                    String response = request.performGetRequest(param);
+
+                    Order order = new Gson().fromJson(response, Order.class);
+
+                    result.result(order);
+
+                } catch (Exception e) {
+                    Log.e("Order.GetPending", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public void save(SaveResult result) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (id == 0){
+                    try{
+                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders"));
+                        String response = request.performPostRequest(Order.this);
+
+                        Order order = new Gson().fromJson(response, Order.class);
+                        id = order.getId();
+
+                        Log.i("Order.save", "Order was successfully added!");
+                        result.result();
+                    } catch (Exception e) {
+                        Log.e("Order.save", e.toString());
+                    }
+
+                } else {
+                    try{
+                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+id));
+                        String response = request.performPostRequest(Order.this);
+
+                        Log.i("Order.save", "Order was successfully updated!");
+                        result.result();
+                    } catch (Exception e) {
+                        Log.e("Order.save", e.toString());
+                    }
+                }
+            }
+        });
+        thread.start();
+    }
+
+
+
 
     public int getId() {
         return id;
     }
 
+
     public int getUserId() {
-        return user_id;
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public OrderType getType() {
         return type;
     }
+
     public void setType(OrderType type) {
         this.type = type;
     }
@@ -47,37 +117,27 @@ public class Order implements java.io.Serializable {
     public OrderStatus getStatus() {
         return status;
     }
+
     public void setStatus(OrderStatus status) {
         this.status = status;
     }
 
-
-    public ArrayList<OrderProduct> getOrderProducts() {
-        return orderProducts;
-    }
-
-    public OrderProduct getOrderProduct(int id){
-        for (OrderProduct p : orderProducts){
-            if (p.getId() == id){
-                return p;
-            }
-        }
-        return null;
-    }
-    public void addOrderProduct(OrderProduct orderProduct){
-            orderProducts.add(orderProduct);
-    }
-    public boolean removeOrderProduct(int id){
-        boolean isRemoved =  orderProducts.removeIf(p -> p.getId() == id);
-        return isRemoved;
-    }
-
     public float getTotal() {
-        total = 0f;
-        for (OrderProduct p : orderProducts){
-            total += p.getSubTotal();
-        }
         return total;
     }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
+
+    public interface GetPendingResult{
+        public void result(Order pendingOrder);
+    }
+
+    public interface SaveResult{
+        public void result();
+    }
+
 
 }

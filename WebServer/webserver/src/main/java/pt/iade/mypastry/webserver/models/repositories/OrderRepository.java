@@ -1,0 +1,14 @@
+package pt.iade.mypastry.webserver.models.repositories;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import pt.iade.mypastry.webserver.enums.OrderStatus;
+import pt.iade.mypastry.webserver.models.Order;
+import pt.iade.mypastry.webserver.models.OrderProduct;
+import pt.iade.mypastry.webserver.models.User;
+
+public interface OrderRepository extends CrudRepository<Order, Integer> {
+    public Iterable<Order> findAllByUserId(int userId);
+    public Order findByUserIdAndStatus(int userId, OrderStatus status);
+}

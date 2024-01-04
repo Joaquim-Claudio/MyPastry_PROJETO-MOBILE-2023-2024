@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
+
+import pt.iade.mypastry.enums.OrderStatus;
+import pt.iade.mypastry.enums.OrderType;
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
@@ -19,53 +23,53 @@ import pt.iade.mypastry.models.User;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
+    ImageView productImage;
+    TextView productName, productDescription, productPrice,
+            quantityTextView, subTotalTextView;
+    ConstraintLayout decreaseQuant, increaseQuant, addButton;
+
+
+    User user;
+    Product product;
+    OrderProduct ordProd;
+    Order order;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
-        /*
 
-        //  Taking the main objects
         Intent intent = getIntent();
-        User user = UserRepository.getUser(intent.getIntExtra("user_id", 0));
-        Product product = ProductRepository.getProduct(intent.getIntExtra("product_id", 0));
+        user = (User) intent.getSerializableExtra("user");
+        product = (Product) intent.getSerializableExtra("product");
+
+        setupComponents();
+    }
 
 
-        //  Taking all the View elements
-        TextView productName = (TextView) findViewById(R.id.product_name_textView);
-        TextView productDescription = (TextView) findViewById(R.id.product_description_textView);
-        TextView productPrice = (TextView) findViewById(R.id.product_price_textView);
-        ImageView productImage = (ImageView) findViewById(R.id.product_image);
+    public void returnToCallingActivity(View view){
+        finish();
+    }
 
-
-        //  Setting the value of the the Views
-        productName.setText(product.getName());
-        productDescription.setText(product.getDescription());
-        productPrice.setText(String.format("%.2f", product.getPrice()) + " €");
-        productImage.setImageResource(product.getSrcImage());
-
-
-        //  Taking the quantity button Views
-        TextView quantityTextView = (TextView) findViewById(R.id.product_details_quant);
-        ConstraintLayout decreaseQuant = (ConstraintLayout) findViewById(R.id.product_details_decrease_quant);
-        ConstraintLayout increaseQuant = (ConstraintLayout) findViewById(R.id.product_details_increase_quant);
-
-
-        TextView subTotalTextView = (TextView) findViewById(R.id.product_details_sub_total_textView);
-        Float subTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
-        subTotalTextView.setText(String.format("%.2f", subTotal) + " €");
-
-
+    private void setupComponents() {
+        productName = (TextView) findViewById(R.id.product_details_name_textView);
+        productDescription = (TextView) findViewById(R.id.product_details_description_textView);
+        productPrice = (TextView) findViewById(R.id.product_details_price_textView);
+        productImage = (ImageView) findViewById(R.id.product_details_image);
+        quantityTextView = (TextView) findViewById(R.id.product_details_quant);
+        decreaseQuant = (ConstraintLayout) findViewById(R.id.product_details_decrease_quant);
+        increaseQuant = (ConstraintLayout) findViewById(R.id.product_details_increase_quant);
+        subTotalTextView = (TextView) findViewById(R.id.product_details_sub_total_textView);
+        addButton = (ConstraintLayout) findViewById(R.id.product_details_add_button);
 
         //  Setting onClick Listener to increase the product quantity
         increaseQuant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer quantity = parseInt(quantityTextView.getText().toString()) + 1;
-                quantityTextView.setText(quantity.toString());
+                int quantity = parseInt(quantityTextView.getText().toString()) + 1;
+                quantityTextView.setText(String.format(Locale.FRANCE,"%d", quantity));
 
-                Float newSubTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
-                subTotalTextView.setText(String.format("%.2f", newSubTotal) + " €");
+                float newSubTotal = product.getPrice() * quantity;
+                subTotalTextView.setText(String.format(Locale.ENGLISH, "%.2f", newSubTotal));
             }
         });
 
@@ -73,50 +77,87 @@ public class ProductDetailsActivity extends AppCompatActivity {
         decreaseQuant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer quantity = valueOf(quantityTextView.getText().toString());
-                if(quantity > 1){
+                int quantity = parseInt(quantityTextView.getText().toString());
+                if (quantity > 1){
                     quantity--;
-                    quantityTextView.setText(quantity.toString());
+                    quantityTextView.setText(String.format(Locale.FRANCE,"%d", quantity));
 
-                    Float newSubTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
-                    subTotalTextView.setText(String.format("%.2f", newSubTotal) + " €");
+                    Float newSubTotal = product.getPrice() * quantity;
+                    subTotalTextView.setText(String.format(Locale.ENGLISH, "%.2f", newSubTotal));
                 }
             }
         });
 
-        //  Taking the Add Product button and Setting onClick Listener
-        ConstraintLayout addButton = (ConstraintLayout) findViewById(R.id.product_details_add_button);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Order order = OrderRepository.getUserPendingOrder(user.getId());
-                if (order == null){
-                    order = new Order(user.getId());
-                    OrderRepository.addOrder(order);
-                }
+                ordProd = new OrderProduct();
+                Order.GetPending(user.getId(), new Order.GetPendingResult() {
+                    @Override
+                    //  Firstly checking if there is an existing Pending Order
+                    public void result(Order pendingOrder) {
+                        if (pendingOrder != null){
+                            order=pendingOrder;
 
+                            //  Adding a new OrderProduct to an existing order
+                            performAddOrderProduct();
+                        }
+                        else {
+                            //  Creating a new Order
+                            order = new Order();
+                            initializeNewOrder();
+                            order.save(new Order.SaveResult() {
+                                @Override
+                                public void result() {
+                                    //  Adding a new OrderProduct to an existing order
+                                    performAddOrderProduct();
+                                }
+                            });
+                        }
+                    }
+                });
 
-                int quantity = parseInt(quantityTextView.getText().toString());
-                OrderProduct orderProduct = new OrderProduct(order.getId(), product.getId(), quantity);
-
-                if (order.getOrderProducts().size() < 4){
-                    order.addOrderProduct(orderProduct);
-                }
-
-                Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
-                intent.putExtra("user_id", user.getId());
-                startActivity(intent);
             }
         });
 
-
-
-         */
-
+        populateViews();
     }
 
+    private void populateViews() {
+        productName.setText(product.getName());
+        productDescription.setText(product.getDescription());
+        productPrice.setText(String.format(Locale.FRANCE, "%.2f €", product.getPrice()));
+        //  TODO: update Product model to have an image rsc
+        productImage.setImageResource(R.drawable.settings_icon);
 
-    public void returnToCallingActivity(View view){
-        finish();
+        quantityTextView.setText("1");
+
+        Float subTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
+        subTotalTextView.setText(String.format(Locale.ENGLISH, "%.2f", subTotal));
+    }
+
+    private void commitViews() {
+        ordProd.setProductId(product.getId());
+        ordProd.setOrderId(order.getId());
+        ordProd.setQuantity(parseInt(quantityTextView.getText().toString()));
+        ordProd.setSubTotal(Float.parseFloat(subTotalTextView.getText().toString()));
+    }
+
+    private void initializeNewOrder() {
+        order.setUserId(user.getId());
+    }
+
+    private void performAddOrderProduct() {
+        commitViews();
+        ordProd.saveProdToOrder(order, new OrderProduct.AddProductResult() {
+            @Override
+            public void result() {
+                Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
+                intent.putExtra("user", user);
+                intent.putExtra("order", order);
+
+                startActivity(intent);
+            }
+        });
     }
 }

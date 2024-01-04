@@ -15,7 +15,9 @@
     <string name="email_confirmation_activity_resendTextView">Não recebeu nenhum código?</string>
     <string name="email_confirmation_activity_resendButton">Reenviar</string>
 
-    <string name="welcome_activity_welcomeTextView">Bem vindo ao "\n"MyPastry</string>
+    <string name="welcome_activity_welcomeTextView">Bem-Vindo!</string>
+    <string name="welcome_activity_description">MyPastry App for mobile devices</string>
+    <string name="welcome_activity_copyright">\u00a9 MyPastry</string>
 
     <string name="sign_in_activity_mainTextView">Bem vindo ao MyPastry</string>
     <string name="sign_in_activity_loginButton">Entrar</string>
@@ -93,6 +95,8 @@
 
 
     <string name="log_out_button">Terminar sessão</string>
+
+    <string name="eur_symbol">€</string>
 
     <string name="privacyPolicyTextView">Ao clicar no botão, você concorda com os nossos Termos de Serviço e Política de Privacidade</string>
     <!-- TODO: Remove or change this placeholder text -->

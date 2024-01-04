@@ -50,6 +50,7 @@ public class UserController {
         logger.info("User-> Adding a new user.");
         addressRepository.save(user.getAddress());
         return userRepository.save(user);
+
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)

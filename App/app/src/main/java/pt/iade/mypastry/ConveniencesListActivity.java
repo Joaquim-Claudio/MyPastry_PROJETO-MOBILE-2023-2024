@@ -40,6 +40,9 @@ public class ConveniencesListActivity extends AppCompatActivity {
     }
 
     private void setupComponents() {
+        listView = (RecyclerView) findViewById(R.id.convenience_product_list);
+        listView.setLayoutManager(new LinearLayoutManager(ConveniencesListActivity.this));
+
         Product.GetAllByType(ProductType.CONVENIENCE, new Product.GetByTypeResult() {
             @Override
             public void result(ArrayList<Product> products) {
@@ -57,9 +60,12 @@ public class ConveniencesListActivity extends AppCompatActivity {
                     }
                 });
 
-                listView = (RecyclerView) findViewById(R.id.convenience_product_list);
-                listView.setLayoutManager(new LinearLayoutManager(ConveniencesListActivity.this));
-                listView.setAdapter(productRowAdapter);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listView.setAdapter(productRowAdapter);
+                    }
+                });
             }
         });
     }

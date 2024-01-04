@@ -16,22 +16,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_constraint_button"
+        android:background="@drawable/button_radius_small"
+        android:onClick="returnToCallingActivity"
         android:paddingHorizontal="6dp"
         android:paddingVertical="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/product_details_image"
-        android:onClick="returnToCallingActivity">
+        app:layout_constraintTop_toTopOf="@+id/product_details_image">
 
         <ImageView
             android:id="@+id/imageView43"
-            android:layout_width="29dp"
-            android:layout_height="24dp"
-            android:src="@drawable/black_close_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/ic_close"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:hint="@string/product_title_hint"
+            tools:text="@string/product_title_hint"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
             android:id="@+id/product_details_description_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/product_description_hint"
+            tools:text="@string/product_description_hint"
             android:textSize="17sp"
             app:layout_constraintStart_toStartOf="@+id/product_details_name_textView"
             app:layout_constraintTop_toBottomOf="@+id/product_details_name_textView" />
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
-            android:hint="@string/product_price_hint"
+            tools:text="@string/product_price_hint"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -173,7 +173,7 @@
                 android:id="@+id/product_details_quant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
+                tools:text="1"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -245,13 +245,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="0 €"
+            android:text="0"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView20"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/eur_symbol"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/product_details_sub_total_textView"
+            app:layout_constraintStart_toEndOf="@+id/product_details_sub_total_textView"
+            app:layout_constraintTop_toTopOf="@+id/product_details_sub_total_textView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView4"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -350,131 +350,14 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <LinearLayout
-                    android:id="@+id/linearLayout"
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/random_product_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
-
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:layout_editor_absoluteX="-5dp"
-                            tools:layout_editor_absoluteY="471dp">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="370dp"
-                                android:layout_height="200dp"
-                                android:background="@drawable/constraint_button"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/divider3">
-
-                                <ImageView
-                                    android:id="@+id/imageView7"
-                                    android:layout_width="0dp"
-                                    android:layout_height="0dp"
-                                    android:src="@drawable/hot_dog_promo"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp">
-
-                                <TextView
-                                    android:id="@+id/textView15"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="3dp"
-                                    android:text="@string/home_activity_product_promo_2"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </TableRow>
-                    </TableLayout>
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp" />
-
-                    <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:layout_editor_absoluteX="-5dp"
-                            tools:layout_editor_absoluteY="471dp">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="370dp"
-                                android:layout_height="200dp"
-                                android:background="@drawable/constraint_button"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/divider3">
-
-                                <ImageView
-                                    android:id="@+id/imageView6"
-                                    android:layout_width="0dp"
-                                    android:layout_height="0dp"
-                                    android:src="@drawable/pastel_atum_promo"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp">
-
-                                <TextView
-                                    android:id="@+id/textView14"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="3dp"
-                                    android:text="@string/home_activity_product_promo_1"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </TableRow>
-                    </TableLayout>
-
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="110dp" />
-                </LinearLayout>
+                    android:paddingVertical="8dp" />
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

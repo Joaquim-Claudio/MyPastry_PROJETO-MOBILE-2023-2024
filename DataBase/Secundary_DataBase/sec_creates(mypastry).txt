@@ -39,11 +39,12 @@ create table tb_product (
 								primary key (pro_id)
 );
 create table tb_ordprod (
+								orp_id int not null auto_increment,
 								orp_pro_id int not null,			
 								orp_ord_id int not null,				
 								orp_quantity int not null,
 								orp_subtotal decimal (4,2) not null,
-								primary key (orp_ord_id, orp_pro_id),
+								primary key (orp_id),
                                 FOREIGN KEY (orp_pro_id) REFERENCES tb_product(pro_id),
                                 FOREIGN KEY (orp_ord_id) REFERENCES tb_order(ord_id)
 );

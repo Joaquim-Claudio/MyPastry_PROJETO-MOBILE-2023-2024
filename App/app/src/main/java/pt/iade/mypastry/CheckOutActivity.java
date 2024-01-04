@@ -72,6 +72,7 @@ public class CheckOutActivity extends AppCompatActivity {
     }
 
     public void createPopUpWindow(){
+        /*
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View popUpView = inflater.inflate(R.layout.popup_payment, null);
 
@@ -120,6 +121,8 @@ public class CheckOutActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+         */
     }
 
     public void returnToCallingActivity(View view){

@@ -39,6 +39,9 @@ public class PrimaryListActivity extends AppCompatActivity {
     }
 
     public void setupComponents() {
+        listView = (RecyclerView) findViewById(R.id.primary_product_list);
+        listView.setLayoutManager(new LinearLayoutManager(PrimaryListActivity.this));
+
         Product.GetAllByType(ProductType.PRIMARY, new Product.GetByTypeResult() {
             @Override
             public void result(ArrayList<Product> products) {
@@ -56,9 +59,12 @@ public class PrimaryListActivity extends AppCompatActivity {
                     }
                 });
 
-                listView = (RecyclerView) findViewById(R.id.primary_product_list);
-                listView.setLayoutManager(new LinearLayoutManager(PrimaryListActivity.this));
-                listView.setAdapter(productRowAdapter);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listView.setAdapter(productRowAdapter);
+                    }
+                });
             }
         });
     }

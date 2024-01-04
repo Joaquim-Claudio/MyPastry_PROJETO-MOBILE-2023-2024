@@ -41,6 +41,9 @@ public class DelicaciesListActivity extends AppCompatActivity {
 
 
     private void setupComponents() {
+        listView = (RecyclerView) findViewById(R.id.delicacy_product_list);
+        listView.setLayoutManager(new LinearLayoutManager(DelicaciesListActivity.this));
+
         Product.GetDelicacies(new Product.GetDelicaciesResult() {
             @Override
             public void result(ArrayList<Product> products) {
@@ -58,9 +61,12 @@ public class DelicaciesListActivity extends AppCompatActivity {
                     }
                 });
 
-                listView = (RecyclerView) findViewById(R.id.delicacy_product_list);
-                listView.setLayoutManager(new LinearLayoutManager(DelicaciesListActivity.this));
-                listView.setAdapter(productRowAdapter);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listView.setAdapter(productRowAdapter);
+                    }
+                });
             }
         });
     }
