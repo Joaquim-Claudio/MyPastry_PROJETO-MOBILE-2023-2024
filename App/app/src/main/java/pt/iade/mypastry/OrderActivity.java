@@ -5,6 +5,8 @@ import static java.lang.Integer.valueOf;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,20 +17,38 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+
+import pt.iade.mypastry.adapters.OrdProdRowAdapter;
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
 
 public class OrderActivity extends AppCompatActivity {
-    int userId;
+    TextView emptyTextView;
+    ArrayList<OrderProduct> ordProdsList;
+    ArrayList<Product> productsList;
+    RecyclerView listView;
+    OrdProdRowAdapter ordProdRowAdapter;
+
+    Order order;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
         Intent intent = getIntent();
-        userId = intent.getIntExtra("user_id", 0);
+        user = (User) intent.getSerializableExtra("user");
+
+        setupComponents();
+    }
+
+
+
         /*
         User user = UserRepository.getUser(userId);
 
@@ -65,95 +85,105 @@ public class OrderActivity extends AppCompatActivity {
 
          */
 
-    }
+
 
     public void callHomeActivity(View view){
         Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra("user_id", userId);
+        intent.putExtra("user", user);
         startActivity(intent);
     }
 
 
+    private void setupComponents() {
+        emptyTextView = (TextView) findViewById(R.id.order_empty_textView);
 
+        listView = (RecyclerView) findViewById(R.id.order_listView);
+        listView.setLayoutManager(new LinearLayoutManager(OrderActivity.this));
 
-    private void setCartProduct(Order order, OrderProduct orderProduct){
-        String defaultId = "order_product_";
-        /*
-        Product product = ProductRepository.getProduct(orderProduct.getProductId());
-
-        TextView orderProductName = (TextView) findViewById(getResources().getIdentifier(defaultId+"name_textView_"+ orderProduct.getId(), "id", getPackageName()));
-        TextView orderProductDescription = (TextView) findViewById(getResources().getIdentifier(defaultId+"description_textView_"+ orderProduct.getId(), "id", getPackageName()));
-        TextView orderProductSubTotal = (TextView) findViewById(getResources().getIdentifier(defaultId+"sub_total_textView_"+ orderProduct.getId(), "id", getPackageName()));
-        TextView orderProductQuantity = (TextView) findViewById(getResources().getIdentifier(defaultId+"quant_"+ orderProduct.getId(), "id", getPackageName()));
-        ImageView orderProductImage = (ImageView) findViewById(getResources().getIdentifier(defaultId+"imageView_"+ orderProduct.getId(), "id", getPackageName()));
-
-        orderProductName.setText(product.getName());
-        orderProductDescription.setText(product.getDescription());
-        orderProductSubTotal.setText(String.format("%.2f", orderProduct.getSubTotal()) + " €");
-        orderProductQuantity.setText(orderProduct.getQuantity().toString());
-        orderProductImage.setImageResource(product.getSrcImage());
-
-        TextView quantityTextView = (TextView) findViewById(getResources().getIdentifier(defaultId+"quant_"+ orderProduct.getId(), "id", getPackageName()));
-        ConstraintLayout decreaseQuant = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId+"decrease_quant_"+ orderProduct.getId(), "id", getPackageName()));
-        ConstraintLayout increaseQuant = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId+"increase_quant_"+ orderProduct.getId(), "id", getPackageName()));
-
-
-
-        //  Setting onClick Listener to increase the product quantity
-        increaseQuant.setOnClickListener(new View.OnClickListener() {
+        //  Firstly checking for an existing Pending Order
+        Order.GetPending(user.getId(), new Order.GetPendingResult() {
             @Override
-            public void onClick(View v) {
-                Integer quantity = parseInt(quantityTextView.getText().toString()) + 1;
-                quantityTextView.setText(quantity.toString());
-                orderProduct.setQuantity(quantity);
+            public void result(Order pendingOrder) {
+                //  If a Pending Order is found
+                if (pendingOrder != null){
 
-                Float newSubTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
-                orderProductSubTotal.setText(String.format("%.2f", newSubTotal) + " €");
+                    setFullyListView();
 
-                TextView total = (TextView) findViewById(R.id.order_total_textView);
-                total.setText(String.format("%.2f", order.getTotal()) + " €");
-            }
-        });
+                    order=pendingOrder;
 
-        // Setting onClick Listener to decrease the product quantity
-        decreaseQuant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Integer quantity = valueOf(quantityTextView.getText().toString());
-                if(quantity > 1){
-                    quantity--;
-                    quantityTextView.setText(quantity.toString());
-                    orderProduct.setQuantity(quantity);
+                    //  Takes all the OrdProds that belong to this Order
+                    order.getOrdProducts(new Order.GetOrdProdResult() {
+                        @Override
+                        public void result(ArrayList<OrderProduct> ordProds) {
+                            if (ordProds.size() > 0){
+                                ordProdsList = ordProds;
 
-                    Float newSubTotal = product.getPrice() * parseInt(quantityTextView.getText().toString());
-                    orderProductSubTotal.setText(String.format("%.2f", newSubTotal) + " €");
+                                ArrayList<Integer> proIdList = getProductIds();
 
-                    TextView total = (TextView) findViewById(R.id.order_total_textView);
-                    total.setText(String.format("%.2f", order.getTotal()) + " €");
+                                //  Takes all the products associated to the OrdProds previously taken
+                                Product.GetAllById(proIdList, new Product.GetAllByIdResult() {
+                                    @Override
+                                    public void result(ArrayList<Product> products) {
+                                        productsList= products;
+
+                                        //  Creates the list view adapter
+                                        ordProdRowAdapter = new OrdProdRowAdapter(OrderActivity.this, ordProdsList, productsList);
+
+                                        //  Set the list view adapter after running all previous code
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                listView.setAdapter(ordProdRowAdapter);
+                                            }
+                                        });
+
+                                    }
+                                });
+                            } else {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        setEmptyListView();
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+                else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            setEmptyListView();
+                        }
+                    });
                 }
             }
         });
 
-        ConstraintLayout deleteProduct = (ConstraintLayout) findViewById(getResources().getIdentifier(defaultId+"delete_button_"+ orderProduct.getId(), "id", getPackageName()));
-        deleteProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               boolean isRemoved = order.removeOrderProduct(orderProduct.getId());
-
-
-               if (isRemoved){
-                   ConstraintLayout coordinatorLayout = (ConstraintLayout) findViewById(R.id.order_layout);
-                   Snackbar snackbar =  Snackbar.make(coordinatorLayout, "Produto removido com sucesso!", Snackbar.LENGTH_LONG);
-                   snackbar.show();
-               } else{
-                   ConstraintLayout coordinatorLayout = (ConstraintLayout) findViewById(R.id.order_layout);
-                   Snackbar snackbar =  Snackbar.make(coordinatorLayout, "Impossível remover o produto!", Snackbar.LENGTH_LONG);
-                   snackbar.show();
-               }
-            }
-        });
-        */
     }
 
+    private void initializeNewOrder() {
+        order.setUserId(user.getId());
+    }
+
+    private void setFullyListView() {
+        emptyTextView.setVisibility(View.GONE);
+        listView.setVisibility(View.VISIBLE);
+    }
+    private void setEmptyListView() {
+        listView.setVisibility(View.GONE);
+        emptyTextView.setVisibility(View.VISIBLE);
+    }
+
+    private ArrayList<Integer> getProductIds() {
+        ArrayList<Integer> productIds = new ArrayList<Integer>();
+
+        for (OrderProduct p : ordProdsList){
+            productIds.add(p.getProductId());
+        }
+
+        return productIds;
+    }
 
 }

@@ -1,10 +1,14 @@
 package pt.iade.mypastry.models;
 
+import android.gesture.Gesture;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.WeakHashMap;
 
@@ -90,7 +94,30 @@ public class Order implements java.io.Serializable {
         thread.start();
     }
 
+    public void getOrdProducts(GetOrdProdResult result) {
+        ArrayList<OrderProduct> ordProds = new ArrayList<OrderProduct>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+id+"/products"));
+                    String response = request.performGetRequest();
 
+                    JsonArray array = new Gson().fromJson(response, JsonArray.class);
+                    for (JsonElement element : array){
+                        ordProds.add(new Gson().fromJson(element, OrderProduct.class));
+                    }
+
+                    Log.i("Order.getOrdProducts", "OrderProducts list of order with id="+id+" successfully received!");
+                    result.result(ordProds);
+
+                } catch (Exception e) {
+                    Log.e("Order.getOrdProducts", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
 
 
     public int getId() {
@@ -139,5 +166,8 @@ public class Order implements java.io.Serializable {
         public void result();
     }
 
+    public interface GetOrdProdResult{
+        public void result(ArrayList<OrderProduct> ordProds);
+    }
 
 }

@@ -27,10 +27,6 @@ public class ProductRowAdapter extends RecyclerView.Adapter<ProductRowAdapter.Vi
         clickListener = null;
     }
 
-    public void setItems(ArrayList<Product> items) {
-        this.items = items;
-    }
-
 
     @NonNull
     @Override

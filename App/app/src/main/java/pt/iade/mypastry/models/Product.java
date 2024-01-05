@@ -122,6 +122,33 @@ public class Product implements java.io.Serializable {
         thread.start();
     }
 
+    public static void GetAllById(ArrayList<Integer> idList, GetAllByIdResult result) {
+        ArrayList<Product> products = new ArrayList<Product>();
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/products/allById"));
+                    String response = request.performPostRequest(idList);
+
+                    JsonArray array = new Gson().fromJson(response, JsonArray.class);
+
+                    for (JsonElement element : array){
+                        products.add(new Gson().fromJson(element, Product.class));
+                    }
+
+                    Log.i("Product.GetAllById", "All products received successfully!");
+                    result.result(products);
+
+                } catch (Exception e){
+                    Log.e("Product.GetAllById", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
+
     public int getId() {
         return id;
     }
@@ -186,6 +213,10 @@ public class Product implements java.io.Serializable {
     }
 
     public interface GetDelicaciesResult{
+        public  void result(ArrayList<Product> products);
+    }
+
+    public interface GetAllByIdResult{
         public  void result(ArrayList<Product> products);
     }
 }

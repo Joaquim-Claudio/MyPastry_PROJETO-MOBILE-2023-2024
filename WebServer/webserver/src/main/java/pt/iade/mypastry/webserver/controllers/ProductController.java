@@ -10,6 +10,7 @@ import pt.iade.mypastry.webserver.models.Product;
 import pt.iade.mypastry.webserver.models.repositories.ProductRepository;
 import pt.iade.mypastry.webserver.results.Response;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
@@ -38,6 +39,21 @@ public class ProductController {
             logger.info("Product-> Sending product with id="+id);
             return product.get();
         }
+    }
+
+    @PostMapping(path = "/allById", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<Product> getProductById(@RequestBody ArrayList<Integer> idList){
+        logger.info("Product-> Sending a list of requested products");
+
+        ArrayList<Product> products = new ArrayList<Product>();
+
+        for (Integer id : idList){
+            Optional<Product> product = productRepository.findById(id);
+            assert product.isPresent();
+            products.add(product.get());
+        }
+
+        return products;
     }
 
     @GetMapping(path = "/delicacies", produces = MediaType.APPLICATION_JSON_VALUE)

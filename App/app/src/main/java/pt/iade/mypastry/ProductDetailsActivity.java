@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import pt.iade.mypastry.enums.OrderStatus;
-import pt.iade.mypastry.enums.OrderType;
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
@@ -92,9 +90,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ordProd = new OrderProduct();
+
+                //  Firstly checking for existing Pending Order
                 Order.GetPending(user.getId(), new Order.GetPendingResult() {
                     @Override
-                    //  Firstly checking if there is an existing Pending Order
                     public void result(Order pendingOrder) {
                         if (pendingOrder != null){
                             order=pendingOrder;
@@ -149,12 +148,14 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     private void performAddOrderProduct() {
         commitViews();
-        ordProd.saveProdToOrder(order, new OrderProduct.AddProductResult() {
+        ordProd.saveProdToOrder(order.getId(), new OrderProduct.SaveProdResult() {
             @Override
             public void result() {
                 Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
                 intent.putExtra("user", user);
                 intent.putExtra("order", order);
+                intent.putExtra("ordprod", ordProd);
+                intent.putExtra("product", product);
 
                 startActivity(intent);
             }

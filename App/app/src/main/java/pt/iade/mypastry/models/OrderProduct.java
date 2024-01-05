@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 
 import java.net.URL;
 
+import pt.iade.mypastry.models.results.Response;
 import pt.iade.mypastry.utilities.WebRequest;
 
 public class OrderProduct implements java.io.Serializable {
@@ -27,31 +28,52 @@ public class OrderProduct implements java.io.Serializable {
         subTotal = 0;
     }
 
-    public void saveProdToOrder(Order order, AddProductResult result){
+    public void saveProdToOrder(int orderId, SaveProdResult result){
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try{
                     if (id == 0){
-                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+order.getId()+"/products"));
+                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+orderId+"/products"));
                         String response = request.performPostRequest(OrderProduct.this);
 
                         OrderProduct orderProduct = new Gson().fromJson(response, OrderProduct.class);
 
                         id = orderProduct.getId();
 
-                        Log.i("OrderProduct.saveProdToOrder", "OrderProduct was successfuly added to order with id="+ order.getId());
+                        Log.i("OrderProduct.saveProdToOrder", "OrderProduct was successfuly added to order with id="+ orderId);
                         result.result();
                     } else {
-                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+order.getId()+"/products/"+id));
+                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+orderId+"/products/"+id));
                         String response = request.performPostRequest(OrderProduct.this);
 
-                        Log.i("OrderProduct.saveProdToOrder", "OrderProduct was successfuly updated to order with id="+ order.getId());
+                        Log.i("OrderProduct.saveProdToOrder", "OrderProduct was successfuly updated to order with id="+orderId);
                         result.result();
                     }
 
                 } catch (Exception e) {
                     Log.e("OrderProduct.saveProdToOrder", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public static void DeleteProdFromOrder(int ordProdId, int orderId, DeleteProdResult result){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+orderId+"/products/"+ordProdId));
+                    String resp = request.performDeleteRequest();
+
+                    Response response = new Gson().fromJson(resp, Response.class);
+
+                    Log.i("OrderProduct.DeleteProdFromOrder", response.getMsg());
+                    result.result();
+
+                } catch (Exception e) {
+                    Log.e("OrderProduct.DeleteProdFromOrder", e.toString());
                 }
             }
         });
@@ -99,7 +121,11 @@ public class OrderProduct implements java.io.Serializable {
         public void result();
     }
 
-    public interface AddProductResult{
+    public interface SaveProdResult {
+        public void result();
+    }
+
+    public interface DeleteProdResult{
         public void result();
     }
 }

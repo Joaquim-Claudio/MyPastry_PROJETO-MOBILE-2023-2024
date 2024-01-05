@@ -53,7 +53,7 @@
 
     <string name="product_title_hint">Nome do produto</string>
     <string name="product_description_hint">Descrição do produto</string>
-    <string name="product_price_hint">0.00 €</string>
+    <string name="product_price_hint">0.00</string>
 
     <string name="product_details_activity_select_textView">Selecione a quantidade:</string>
     <string name="product_details_activity_required_textView">Obrigatório</string>
@@ -63,6 +63,7 @@
     <string name="order_activity_total_textView">Total</string>
     <string name="order_activity_check_out_button">Finalizar</string>
     <string name="order_activity_add_products_button">Adicionar artigos</string>
+    <string name="order_activity_empty_view">Adicione produtos ao seu pedido.</string>
 
     <string name="checkout_activity_title">CheckOut</string>
     <string name="checkout_activity_select_textView">Selecione uma opção:</string>
