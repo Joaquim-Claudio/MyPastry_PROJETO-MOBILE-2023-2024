@@ -48,7 +48,7 @@ public class SignInActivity extends AppCompatActivity {
 
                 } else if (!email.equals("") && !password.equals("")) {
 
-                    User.Athenticate(email, password, new User.AuthenticateResult() {
+                    User.Authenticate(email, password, new User.AuthenticateResult() {
                         @Override
                         public void result(User authenticatedUser) {
                             if(authenticatedUser == null){

@@ -11,7 +11,7 @@
     tools:context=".BeverageListActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/bever_toolbar"
+        android:id="@+id/admin_home_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
@@ -26,7 +26,7 @@
         android:layout_height="40dp"
         android:onClick="returnToHomeActivity"
         android:scrollbarSize="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bever_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_home_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -52,7 +52,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bever_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"

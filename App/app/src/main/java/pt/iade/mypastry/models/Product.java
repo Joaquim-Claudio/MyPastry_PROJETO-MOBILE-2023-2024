@@ -17,6 +17,7 @@ import pt.iade.mypastry.utilities.WebRequest;
 public class Product implements java.io.Serializable {
 
     private int id;
+    private int image;
     private ProductType type;
     private String name;
     private String description;
@@ -26,12 +27,13 @@ public class Product implements java.io.Serializable {
 
     /** No-arg constructor (takes no arguments). */
     public Product() {
-        this(0, ProductType.PRIMARY,"", "", 0f, false, false);
+        this(0, 0, ProductType.PRIMARY,"", "", 0f, false, false);
     }
 
 
-    public Product(int id, ProductType type, String name, String description, Float price, boolean available, boolean delicacy) {
+    public Product(int id, int image, ProductType type, String name, String description, Float price, boolean available, boolean delicacy) {
         this.id = id;
+        this.image = image;
         this.type = type;
         this.name = name;
         this.description = description;
@@ -153,6 +155,14 @@ public class Product implements java.io.Serializable {
         return id;
     }
 
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
     public ProductType getType() {
         return type;
     }
@@ -177,11 +187,11 @@ public class Product implements java.io.Serializable {
         this.description = description;
     }
 
-    public Float getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -200,7 +210,6 @@ public class Product implements java.io.Serializable {
     public void setDelicacy(boolean delicacy) {
         this.delicacy = delicacy;
     }
-
 
 
     //  Local interfaces to return values from Threads

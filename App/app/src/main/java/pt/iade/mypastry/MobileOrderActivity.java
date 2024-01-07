@@ -13,10 +13,11 @@ import java.util.Random;
 
 import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.models.Order;
+import pt.iade.mypastry.models.User;
 
 public class MobileOrderActivity extends AppCompatActivity {
 
-    int userId;
+    User user;
     Order order;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +25,11 @@ public class MobileOrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mobile_order);
 
         Intent intent = getIntent();
-        userId = intent.getIntExtra("user_id", 0);
+        user = (User) intent.getSerializableExtra("user");
         order = (Order) intent.getSerializableExtra("order");
 
         int orderNumber = new Random().ints(0, 100).findFirst().getAsInt();
-        TextView orderNumberTextView = (TextView) findViewById(R.id.mobile_order_number);
+        TextView orderNumberTextView = (TextView) findViewById(R.id.admin_order_id_textView);
         orderNumberTextView.setText("#"+String.format("%03d", orderNumber));
 
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.mobile_layout);
@@ -38,7 +39,7 @@ public class MobileOrderActivity extends AppCompatActivity {
 
                 if (order.getStatus() == OrderStatus.COMPLETED){
                     Intent intent = new Intent(MobileOrderActivity.this, HomeActivity.class);
-                    intent.putExtra("user_id", userId);
+                    intent.putExtra("user", user);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     MobileOrderActivity.this.finish();

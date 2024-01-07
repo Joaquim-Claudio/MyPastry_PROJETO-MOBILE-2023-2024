@@ -127,7 +127,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productDescription.setText(product.getDescription());
         productPrice.setText(String.format(Locale.FRANCE, "%.2f €", product.getPrice()));
         //  TODO: update Product model to have an image rsc
-        productImage.setImageResource(R.drawable.settings_icon);
+        productImage.setImageResource(product.getImage());
 
         quantityTextView.setText("1");
 

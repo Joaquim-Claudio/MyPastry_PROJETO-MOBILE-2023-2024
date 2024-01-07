@@ -5,11 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import pt.iade.mypastry.webserver.models.Order;
 import pt.iade.mypastry.webserver.models.User;
 import pt.iade.mypastry.webserver.models.repositories.AddressRepository;
 import pt.iade.mypastry.webserver.models.repositories.UserRepository;
 import pt.iade.mypastry.webserver.results.Response;
 
+import java.nio.file.Path;
 import java.util.Optional;
 import java.util.Random;
 
@@ -52,6 +54,25 @@ public class UserController {
         return userRepository.save(user);
 
     }
+
+    @PostMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response updateUser(@PathVariable int id, @RequestBody User updatedUser) {
+        logger.info("User-> Updating user with id="+id);
+
+        Optional<User> user_ = userRepository.findById(id);
+        if (user_.isPresent()){
+            user_.get().setEmail(updatedUser.getEmail());
+            user_.get().setPassword(updatedUser.getPassword());
+            user_.get().setPoints(updatedUser.getPoints());
+            user_.get().setAddress(updatedUser.getAddress());
+
+            userRepository.save(user_.get());
+        }
+
+        return new Response("User with id="+id+
+                " was successfully updated.", null);
+    }
+
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response removeUser(@PathVariable(name = "id") int id){

@@ -9,6 +9,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pro_id") private int id;
+    @Column(name = "pro_image") private int image;
     @Enumerated(EnumType.STRING)
     @Column(name = "pro_type") private ProductType type;
     @Column(name = "pro_name") private String name;
@@ -22,6 +23,14 @@ public class Product {
 
     public int getId() {
         return id;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public ProductType getType() {

@@ -4,7 +4,6 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Integer.valueOf;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,27 +11,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
+import java.util.Locale;
 
 import pt.iade.mypastry.adapters.OrdProdRowAdapter;
+import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
 
 public class OrderActivity extends AppCompatActivity {
-    TextView emptyTextView;
+    TextView emptyTextView, totalTextView;
+    Button checkOutButton, keepButton;
     ArrayList<OrderProduct> ordProdsList;
     ArrayList<Product> productsList;
     RecyclerView listView;
     OrdProdRowAdapter ordProdRowAdapter;
+
+    float total = 0f;
 
     Order order;
     User user;
@@ -48,45 +47,6 @@ public class OrderActivity extends AppCompatActivity {
     }
 
 
-
-        /*
-        User user = UserRepository.getUser(userId);
-
-        Order order = OrderRepository.getUserPendingOrder(user.getId());
-
-        if(order == null){
-
-        }   else{
-                for (OrderProduct p : order.getOrderProducts()){
-                    setCartProduct(order, p);
-                }
-
-
-                TextView total = (TextView) findViewById(R.id.order_total_textView);
-                total.setText(String.format("%.2f", order.getTotal()) + " €");
-
-
-                Button checkOutButton = (Button) findViewById(R.id.order_check_out_button);
-                checkOutButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (order.getOrderProducts().size() == 0){
-
-                        }else{
-                            Intent intent = new Intent(OrderActivity.this, CheckOutActivity.class);
-                            intent.putExtra("user_id", userId);
-                            intent.putExtra("order_id", order.getId());
-                            startActivity(intent);
-                        }
-                    }
-                });
-
-            }
-
-         */
-
-
-
     public void callHomeActivity(View view){
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra("user", user);
@@ -96,9 +56,37 @@ public class OrderActivity extends AppCompatActivity {
 
     private void setupComponents() {
         emptyTextView = (TextView) findViewById(R.id.order_empty_textView);
+        totalTextView = (TextView) findViewById(R.id.order_total_textView);
+        checkOutButton = (Button) findViewById(R.id.order_check_out_button);
+        keepButton = (Button) findViewById(R.id.order_keep_button);
 
         listView = (RecyclerView) findViewById(R.id.order_listView);
         listView.setLayoutManager(new LinearLayoutManager(OrderActivity.this));
+
+        populateView();
+
+        keepButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderActivity.this, HomeActivity.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
+            }
+        });
+
+        checkOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ordProdsList != null){
+                    commitViews();
+
+                    Intent intent = new Intent(OrderActivity.this, CheckOutActivity.class);
+                    intent.putExtra("user", user);
+                    intent.putExtra("order", order);
+                    startActivity(intent);
+                }
+            }
+        });
 
         //  Firstly checking for an existing Pending Order
         Order.GetPending(user.getId(), new Order.GetPendingResult() {
@@ -115,6 +103,7 @@ public class OrderActivity extends AppCompatActivity {
                     order.getOrdProducts(new Order.GetOrdProdResult() {
                         @Override
                         public void result(ArrayList<OrderProduct> ordProds) {
+
                             if (ordProds.size() > 0){
                                 ordProdsList = ordProds;
 
@@ -134,6 +123,8 @@ public class OrderActivity extends AppCompatActivity {
                                             @Override
                                             public void run() {
                                                 listView.setAdapter(ordProdRowAdapter);
+                                                calculateTotal();
+                                                totalTextView.setText(String.format(Locale.ENGLISH, "%.02f", total));
                                             }
                                         });
 
@@ -163,6 +154,11 @@ public class OrderActivity extends AppCompatActivity {
 
     }
 
+    private void populateView() {
+        totalTextView.setText(String.format(Locale.ENGLISH, "%.02f", total));
+    }
+
+
     private void initializeNewOrder() {
         order.setUserId(user.getId());
     }
@@ -184,6 +180,19 @@ public class OrderActivity extends AppCompatActivity {
         }
 
         return productIds;
+    }
+
+    private void commitViews() {
+        calculateTotal();
+        order.setTotal(total);
+    }
+
+    private void calculateTotal() {
+        total = 0;
+        for (OrderProduct p : ordProdsList){
+            total += p.getSubTotal();
+        }
+        order.setTotal(total);
     }
 
 }

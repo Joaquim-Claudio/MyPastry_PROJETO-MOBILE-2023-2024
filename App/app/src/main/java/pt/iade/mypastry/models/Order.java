@@ -6,14 +6,17 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.annotations.JsonAdapter;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.WeakHashMap;
 
 import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.enums.OrderType;
+import pt.iade.mypastry.utilities.LocalDateJsonAdapter;
 import pt.iade.mypastry.utilities.WebRequest;
 
 public class Order implements java.io.Serializable {
@@ -21,20 +24,51 @@ public class Order implements java.io.Serializable {
     private int userId;
     private OrderType type;
     private OrderStatus status;
-    private float total;
+    @JsonAdapter(LocalDateJsonAdapter.class)
+    private LocalDate date;
+    private double total;
 
     public Order() {
-        this(0, 0, OrderType.MOBILE, OrderStatus.PENDING, 0f);
+        this(0, 0, OrderType.MOBILE, OrderStatus.PENDING, LocalDate.now(), 0f);
     }
 
-
-    public Order(int id, int userId, OrderType type, OrderStatus status, float total) {
+    public Order(int id, int userId, OrderType type, OrderStatus status, LocalDate date, double total) {
         this.id = id;
         this.userId = userId;
         this.type = type;
         this.status = status;
+        this.date = date;
         this.total = total;
     }
+
+    public static void GetByUserId(int userId, GetByUserIdResult result){
+        ArrayList<Order> orders = new ArrayList<Order>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/user"));
+
+                    HashMap<String, String> param = new HashMap<String, String>();
+                    param.put("userId", String.valueOf(userId));
+
+                    String response = request.performGetRequest(param);
+
+                    JsonArray array = new Gson().fromJson(response, JsonArray.class);
+                    for (JsonElement element : array) {
+                        orders.add(new Gson().fromJson(element, Order.class));
+                    }
+
+                    result.result(orders);
+
+                } catch (Exception e) {
+                    Log.e("Order.GetByUserId", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
+
 
     public static void GetPending(int userId, GetPendingResult result){
         Thread thread = new Thread(new Runnable() {
@@ -119,7 +153,6 @@ public class Order implements java.io.Serializable {
         thread.start();
     }
 
-
     public int getId() {
         return id;
     }
@@ -149,14 +182,27 @@ public class Order implements java.io.Serializable {
         this.status = status;
     }
 
-    public float getTotal() {
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(float total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 
+
+
+    public interface GetByUserIdResult{
+        public void result(ArrayList<Order> orders);
+    }
 
     public interface GetPendingResult{
         public void result(Order pendingOrder);

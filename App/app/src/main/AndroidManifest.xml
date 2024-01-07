@@ -31,7 +31,7 @@
             android:name=".OrderActivity"
             android:exported="false" />
         <activity
-            android:name=".SelectMenuDrinkActivity"
+            android:name=".HistoricActivity"
             android:exported="false" />
         <activity
             android:name=".ProductDetailsActivity"

@@ -21,7 +21,6 @@
         android:id="@+id/constraintLayout13"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="4dp"
         android:onClick="returnToHomeActivity"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Minha Conta"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,11 +51,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/account_save_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:onClick="returnToHomeActivity"
+        android:padding="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView49"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_check"
+            app:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:paddingStart="10dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4">
@@ -65,6 +85,7 @@
             android:id="@+id/textView115"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Dados Pessoais"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -73,225 +94,211 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:id="@+id/divider37"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginTop="8dp"
-        android:background="?android:attr/listDivider"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout15"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+            <TextView
+                android:id="@+id/textView116"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome:"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/account_user_name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/light_text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textView116"
+                app:layout_constraintTop_toBottomOf="@+id/textView116"
+                tools:text="Jane Doe" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/account_user_email_editView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edit_text_simple_background"
+                android:ems="10"
+                android:inputType="text|textEmailAddress"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="12dp"
+                android:textColor="@color/light_text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
+                tools:text="janedoe@gmail.com" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider37">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <TextView
-            android:id="@+id/textView116"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:text="Nome:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/account_user_name_textView"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView120"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gênero:"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/account_user_gender_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/light_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView120"
+                app:layout_constraintStart_toStartOf="@+id/textView120"
+                app:layout_constraintTop_toBottomOf="@+id/textView120"
+                tools:text="Feminino" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout1"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="Jane Doe"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/textView116"
-            app:layout_constraintTop_toBottomOf="@+id/textView116" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_weight="1">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout16"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout15">
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data de Nascimento:"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:text="Email:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/account_user_bdate_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/light_text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textView1"
+                app:layout_constraintTop_toBottomOf="@+id/textView1"
+                tools:text="08-08-1998" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/account_user_email_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="janedoe@gmail.com"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout16">
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:text="Data de Nascimento:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/account_user_bdate_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="08-08-1998"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/textView1"
-            app:layout_constraintTop_toBottomOf="@+id/textView1" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
-
-        <TextView
-            android:id="@+id/textView120"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:text="Gênero:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/account_user_gender_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="Feminino"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/textView120"
-            app:layout_constraintTop_toBottomOf="@+id/textView120" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
             android:text="Endereço:"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/account_user_address_textView"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/account_user_address_editView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="None"
-            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text_simple_background"
+            android:ems="10"
+            android:inputType="text|textCapWords"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="12dp"
+            android:textColor="@color/light_text"
+
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:text="Rua João Ortigão 13 3 dir, Lisboa" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:paddingStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Definições"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:id="@+id/divider31"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_marginTop="20dp"
-        android:background="#828282"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout11" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/account_update_password_button"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rectangle_button_grey"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/account_log_out_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider31">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="5dp"
             android:text="Alterar palavra passe"
-            android:textSize="17sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -300,31 +307,27 @@
         <ImageView
             android:id="@+id/imageView17"
             android:layout_width="29dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="15dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="12dp"
             android:src="@drawable/settings_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:id="@+id/divider30"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#828282"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_update_password_button" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/account_log_out_button"
-        android:layout_width="410dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/rectangle_button_red"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider30">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView26"
@@ -332,8 +335,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="@string/log_out_button"
-            android:textColor="@color/textView_color_red"
-            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -342,21 +345,12 @@
         <ImageView
             android:id="@+id/imageView16"
             android:layout_width="36dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="11dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
             android:src="@drawable/log_out_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:id="@+id/divider36"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#828282"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_log_out_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

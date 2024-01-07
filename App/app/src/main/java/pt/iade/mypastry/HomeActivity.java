@@ -2,19 +2,34 @@ package pt.iade.mypastry;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Random;
+
+import pt.iade.mypastry.adapters.RandRowAdapter;
+import pt.iade.mypastry.enums.ProductType;
+import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
 
 public class HomeActivity extends AppCompatActivity {
 
     TextView home_textView_points;
     ConstraintLayout primaryButton, delicacyButton, beverageButton,
-            dessertButton, convivienceButton, seeAllButton;
+            dessertButton, convenienceButton, seeAllButton;
+    ConstraintLayout homeButton;
+    ArrayList<Product> randProdList;
+    RecyclerView randListView;
+    RandRowAdapter randRowAdapter;
+
     User user;
 
     @Override
@@ -28,6 +43,12 @@ public class HomeActivity extends AppCompatActivity {
         setupComponents();
     }
 
+
+    public void callHistoricActivity(View view) {
+        Intent intent = new Intent(this, HistoricActivity.class);
+        intent.putExtra("user", user);
+        startActivity(intent);
+    }
 
     public void callOrderActivity(View view){
         Intent intent = new Intent(this, OrderActivity.class);
@@ -47,8 +68,47 @@ public class HomeActivity extends AppCompatActivity {
         delicacyButton = (ConstraintLayout) findViewById(R.id.home_delicacy_button);
         beverageButton = (ConstraintLayout) findViewById(R.id.home_bever_button);
         dessertButton = (ConstraintLayout) findViewById(R.id.home_dessert_button);
-        convivienceButton = (ConstraintLayout) findViewById(R.id.home_convinience_button);
+        convenienceButton = (ConstraintLayout) findViewById(R.id.home_convinience_button);
         seeAllButton = (ConstraintLayout) findViewById(R.id.home_see_all_button);
+
+        homeButton = (ConstraintLayout) findViewById(R.id.home_button);
+
+        randListView = (RecyclerView) findViewById(R.id.random_product_list);
+        randListView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
+
+        randProdList = new ArrayList<Product>();
+
+        Product.GetAllByType(ProductType.PRIMARY, new Product.GetByTypeResult() {
+            @Override
+            public void result(ArrayList<Product> products) {
+                int startIndex = new Random().nextInt(products.size());
+                if (startIndex == products.size()) startIndex-=2;
+
+                randProdList.add(products.get(startIndex-1));
+                randProdList.add(products.get(startIndex));
+                randProdList.add(products.get(startIndex+1));
+
+                randRowAdapter = new RandRowAdapter(HomeActivity.this, randProdList);
+                randRowAdapter.setOnClickListener(new RandRowAdapter.ItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(HomeActivity.this, ProductDetailsActivity.class);
+                        intent.putExtra("user", user);
+                        intent.putExtra("product", randProdList.get(position));
+
+                        startActivity(intent);
+                    }
+                });
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        randListView.setAdapter(randRowAdapter);
+                    }
+                });
+
+            }
+        });
 
         primaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +142,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        convivienceButton.setOnClickListener(new View.OnClickListener() {
+        convenienceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ConveniencesListActivity.class);
@@ -99,10 +159,25 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         populateViews();
     }
 
     public void populateViews() {
-        home_textView_points.setText("89 pontos");
+        home_textView_points.setText(String.format(Locale.FRANCE, "%d pontos", user.getPoints()));
     }
 }
+
+
+
+
+
+
+
+

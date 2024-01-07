@@ -9,6 +9,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashMap;
 
+import pt.iade.mypastry.models.results.Response;
 import pt.iade.mypastry.utilities.LocalDateJsonAdapter;
 import pt.iade.mypastry.utilities.WebRequest;
 
@@ -44,7 +45,7 @@ public class User implements java.io.Serializable {
     }
 
 
-    public static void Athenticate(String email, String password, AuthenticateResult result){
+    public static void Authenticate(String email, String password, AuthenticateResult result){
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -68,10 +69,6 @@ public class User implements java.io.Serializable {
         thread.start();
     }
 
-    public void save() {
-        //  TODO: implement the UPDATE method
-    }
-
     public void register(RegisterResult result) {
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -91,6 +88,28 @@ public class User implements java.io.Serializable {
         });
         thread.start();
     }
+
+
+    public void save() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/users/"+id));
+                    String resp = request.performPostRequest(User.this);
+
+                    Response response = new Gson().fromJson(resp, Response.class);
+
+                    Log.i("User.save", response.getMsg());
+
+                } catch (Exception e) {
+                    Log.e("User.save", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
+
 
     public int getId() {
         return id;
@@ -148,8 +167,8 @@ public class User implements java.io.Serializable {
         return points;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
+    public void addPoints(int points) {
+        this.points += points;
     }
 
     public boolean isAdmin() {
@@ -167,6 +186,10 @@ public class User implements java.io.Serializable {
     }
 
     public interface RegisterResult{
+        public void result();
+    }
+
+    public interface SaveResult{
         public void result();
     }
 }

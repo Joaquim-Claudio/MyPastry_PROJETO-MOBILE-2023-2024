@@ -3,9 +3,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/hom"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:isScrollContainer="true"
     android:nestedScrollingEnabled="true"
     android:overScrollMode="always"
@@ -13,7 +12,8 @@
     app:layout_scrollFlags="scroll"
     tools:context=".HomeActivity">
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout100"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,10 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView4"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -350,186 +353,170 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/random_product_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingVertical="8dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
+
+
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/nav_bar_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintCircleRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_button"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="call">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/top_radius_background">
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/home_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/home_icon"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="17dp"
-                    android:background="@drawable/top_radius_background"
-                    android:onClick="callOrderActivity">
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/shopping_list_icon"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="17dp"
-                    android:background="@drawable/top_radius_background">
-
-                    <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/loop_icon"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/top_radius_background"
-                    android:onClick="callAccountActivity">
-
-                    <ImageView
-                        android:id="@+id/imageView13"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/user_icon"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/textView16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_activity_home_button"
-                        android:textAlignment="center"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <TextView
+                    android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="17dp">
+                    android:layout_marginTop="3dp"
+                    android:text="@string/home_activity_home_button"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView10"
+                    app:layout_constraintStart_toStartOf="@+id/imageView10"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_activity_order_button"
-                        android:textAlignment="center"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout26"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:onClick="callOrderActivity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/home_button"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/shopping_list_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="17dp">
+                    android:layout_marginTop="3dp"
+                    android:text="@string/home_activity_order_button"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView11"
+                    app:layout_constraintStart_toStartOf="@+id/imageView11"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/textView18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_activity_order_history_button"
-                        android:textAlignment="center"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout27"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="17dp"
+                android:onClick="callHistoricActivity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout23"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.503">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/loop_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp">
+                    android:layout_marginTop="3dp"
+                    android:text="@string/home_activity_order_history_button"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                    app:layout_constraintStart_toStartOf="@+id/imageView12"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_activity_account_button"
-                        android:textAlignment="center"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </TableRow>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout23"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:onClick="callAccountActivity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </TableLayout>
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/user_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/home_activity_account_button"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                    app:layout_constraintStart_toStartOf="@+id/imageView13"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

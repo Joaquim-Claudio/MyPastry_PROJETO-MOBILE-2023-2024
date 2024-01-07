@@ -47,6 +47,7 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
 
         holder.nameTextView.setText(product.getName());
         holder.descriptionTextView.setText(product.getDescription());
+        holder.imageView.setImageResource(product.getImage());
         holder.subTotalTextView.setText(String.format(Locale.ENGLISH, "%.02f", ordProd.getSubTotal()));
         holder.quantityTextView.setText(String.format(Locale.FRANCE, "%d", ordProd.getQuantity()));
 
@@ -73,6 +74,8 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
                         notifyItemRemoved(position);
                     }
                 });
+
+                orderProducts.remove(position);
             }
         });
 

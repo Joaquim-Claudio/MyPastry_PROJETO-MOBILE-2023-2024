@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import pt.iade.mypastry.webserver.enums.OrderStatus;
 import pt.iade.mypastry.webserver.enums.OrderType;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -18,6 +19,7 @@ public class Order {
     @Column(name = "ord_type") private OrderType type;
     @Enumerated(EnumType.STRING)
     @Column(name = "ord_status") private OrderStatus status;
+    @Column(name = "ord_date") private LocalDate date;
     @Column(name = "ord_total") private float total;
 
     public Order() {
@@ -26,6 +28,7 @@ public class Order {
     public int getId() {
         return id;
     }
+
 
     public int getUserId() {
         return userId;
@@ -51,6 +54,14 @@ public class Order {
         this.status = status;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     public float getTotal() {
         return total;
     }
@@ -58,14 +69,4 @@ public class Order {
     public void setTotal(float total) {
         this.total = total;
     }
-/*
-    public Set<OrderProduct> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<OrderProduct> products){
-        this.products = products;
-    }
-
- */
 }

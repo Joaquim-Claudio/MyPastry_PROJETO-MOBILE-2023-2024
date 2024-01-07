@@ -46,7 +46,7 @@ public class ProductRowAdapter extends RecyclerView.Adapter<ProductRowAdapter.Vi
     public void onBindViewHolder(@NonNull ProductRowAdapter.ViewHolder holder, int position) {
         Product item = items.get(position);
 
-        holder.imageView.setImageResource(R.drawable.settings_icon);
+        holder.imageView.setImageResource(item.getImage());
         holder.nameTextView.setText(item.getName());
         holder.descriptionTextView.setText(item.getDescription());
         holder.timeTextView.setText("10 min - Estimado");
