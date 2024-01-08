@@ -8,7 +8,10 @@ import pt.iade.mypastry.webserver.models.Order;
 import pt.iade.mypastry.webserver.models.OrderProduct;
 import pt.iade.mypastry.webserver.models.User;
 
+import java.util.ArrayList;
+
 public interface OrderRepository extends CrudRepository<Order, Integer> {
     public Iterable<Order> findAllByUserId(int userId);
+    public ArrayList<Order> findAllByStatus(OrderStatus status);
     public Order findByUserIdAndStatus(int userId, OrderStatus status);
 }

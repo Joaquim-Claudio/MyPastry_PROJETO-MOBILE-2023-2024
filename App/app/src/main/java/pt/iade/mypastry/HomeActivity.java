@@ -82,11 +82,12 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void result(ArrayList<Product> products) {
                 int startIndex = new Random().nextInt(products.size());
-                if (startIndex == products.size()) startIndex-=2;
+                int nextIndex = new Random().nextInt(products.size());
+                int lastIndex =new Random().nextInt(products.size());
 
-                randProdList.add(products.get(startIndex-1));
                 randProdList.add(products.get(startIndex));
-                randProdList.add(products.get(startIndex+1));
+                randProdList.add(products.get(nextIndex));
+                randProdList.add(products.get(lastIndex));
 
                 randRowAdapter = new RandRowAdapter(HomeActivity.this, randProdList);
                 randRowAdapter.setOnClickListener(new RandRowAdapter.ItemClickListener() {

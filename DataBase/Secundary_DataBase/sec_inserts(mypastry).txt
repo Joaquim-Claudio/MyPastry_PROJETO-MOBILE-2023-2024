@@ -9,27 +9,28 @@ insert into tb_user (use_name, use_email, use_password, use_gender, use_bdate, u
 insert into tb_user (use_name, use_email, use_password, use_gender, use_bdate, use_add_id, use_pts, use_admin) values('Edja Silva', 'edja@gmail.com', 'estudar', 'F', str_to_date('1998.04.01','%Y.%m.%d'), 3, 10, 0);	
 																																				
                                                                                                                                                 
-insert into tb_order (ord_use_id, ord_type, ord_status, ord_total) values(2, 'Mobile', 'Pendente', 8.5); 
-insert into tb_order (ord_use_id, ord_type, ord_status, ord_total) values(3, 'Mobile', 'Pronto', 13.0); 
-insert into tb_order (ord_use_id, ord_type, ord_status, ord_total) values(4, 'Delivery', 'Concluido', 10.0);
+insert into tb_order (ord_use_id, ord_type, ord_status, ord_date, ord_total) values(2, 'MOBILE', 'PENDING', str_to_date('2023.05.01','%Y.%m.%d'), 8.5); 
+insert into tb_order (ord_use_id, ord_type, ord_status, ord_date, ord_total) values(3, 'MOBILE', 'DELIVERING', str_to_date('2024.01.02','%Y.%m.%d'), 13.0); 
+insert into tb_order (ord_use_id, ord_type, ord_status, ord_date, ord_total) values(4, 'DELIVERY', 'COMPLETED', str_to_date('2024.01.06','%Y.%m.%d'), 10.0);
 
 
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary' ,'Pastél de Queijo', '1 unidade', 3.0, 1, 0);	
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary' ,'Pastel de Carne', '1 unidade', 4.0, 1, 0);  	
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Pastel de Camarão', '1 unidade', 4.0, 1, 0); 	
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Dessert', 'Açaí', '100g', 4.5, 1, 1);				
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Dessert', 'Mousse de Lima', '100g', 3.0, 1, 0);		
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Drink', 'Coca-cola', '33cl', 1.8, 1, 0);			
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Drink', 'Sumo de Laranja', '33cl', 2.0, 1, 0);	
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Drink', 'Super Bock', '33cl', 2.0, 1, 0);			
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Convinience', 'Tapioca', '70g', 5.0, 1, 1);			
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Convinience', 'Paçoca', '75g', 1.0, 1, 1);				
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Convinience', 'Flocão', '200g', 1.3, 1, 0);				
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Dessert', 'Pão de Queijo', '6 unidades', 2.5, 1, 1);		
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Coxinha', '1 unidade', 3.0, 1, 1);			
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Esfiha', '1 unidade', 3.0, 1, 0);				
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Hambúrguer', '1 unidade', 4.5, 1, 0);			
-insert into tb_product (pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy) values('Primary', 'Cachorro', '1 unidade', 4.5, 1, 0);			
+insert into tb_product (pro_image, pro_type, pro_name, pro_description, pro_price, pro_available, pro_delicacy)
+values(2131165489 ,'PRIMARY' ,'Pastél de Queijo', '1 unidade', 3.0, 1, 0),
+(2131165424 ,'PRIMARY' ,'Pastel de Carne', '1 unidade', 4.0, 1, 0),
+(2131165490 ,'PRIMARY', 'Pastel de Atum', '1 unidade', 4.0, 1, 0),
+(2131165305 ,'DESSERT', 'Açaí', '100g', 4.5, 1, 1),
+(2131165394 ,'DESSERT', 'Mousse de Lima', '100g', 3.0, 1, 0),
+(2131165340 ,'DRINK', 'Coca-cola', '33cl', 1.8, 1, 0),
+(2131165484 ,'DRINK', 'Sumo de Laranja', '33cl', 2.0, 1, 0),
+(2131165507 ,'DRINK', 'Super Bock', '33cl', 2.0, 1, 0),
+(2131165508 ,'CONVENIENCE', 'Tapioca', '70g', 5.0, 1, 1),
+(2131165486 ,'CONVENIENCE', 'Paçoca', '75g', 1.0, 1, 1),
+(2131165361 ,'CONVENIENCE', 'Flocão', '200g', 1.3, 1, 0),
+(2131165488 ,'DESSERT', 'Mousse de Maracuja', '100g', 2.5, 1, 1),
+(2131165345 ,'PRIMARY', 'Coxinha', '1 unidade', 3.0, 1, 1),
+(2131165356 ,'PRIMARY', 'Esfiha', '1 unidade', 3.0, 1, 0),
+(2131165369 ,'PRIMARY', 'Hambúrguer', '1 unidade', 4.5, 1, 0),
+(2131165373 ,'PRIMARY', 'Cachorro', '1 unidade', 4.5, 1, 0);
 
 
 insert into tb_ordprod (orp_pro_id, orp_ord_id, orp_quantity, orp_subtotal) values(1, 1, 1, 4.0);

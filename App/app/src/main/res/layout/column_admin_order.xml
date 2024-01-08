@@ -6,13 +6,13 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="420dp"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginVertical="16dp"
         android:background="@drawable/admin_order_background"
         android:paddingTop="22dp"
-        android:paddingBottom="50dp"
+        android:paddingBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
+            android:paddingHorizontal="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -31,9 +32,9 @@
                 android:id="@+id/constraintLayout22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/order_number_background"
-                android:paddingHorizontal="30dp"
+                android:paddingHorizontal="70dp"
                 android:paddingVertical="5dp"
                 app:layout_constraintEnd_toEndOf="@+id/admin_order_type_textView"
                 app:layout_constraintStart_toStartOf="@+id/admin_order_type_imageView"
@@ -43,21 +44,21 @@
                     android:id="@+id/admin_order_id_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="#035"
                     android:textAlignment="center"
                     android:textColor="#FFFAB2"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="0035" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/admin_order_type_imageView"
-                android:layout_width="87dp"
-                android:layout_height="67dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/fast_delivery_icon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -67,18 +68,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                tools:text="Pedido Mobile"
-                android:textSize="30sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/admin_order_type_imageView"
                 app:layout_constraintStart_toEndOf="@+id/admin_order_type_imageView"
-                app:layout_constraintTop_toTopOf="@+id/admin_order_type_imageView" />
+                app:layout_constraintTop_toTopOf="@+id/admin_order_type_imageView"
+                tools:text="Pedido Mobile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
             android:id="@+id/divider4"
             android:layout_width="0dp"
-            android:layout_height="3dp"
+            android:layout_height="4dp"
             android:layout_marginTop="16dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,46 +90,64 @@
             android:id="@+id/admin_order_prod_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            tools:text="Pastel de Queijo:     x5"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+            app:layout_constraintTop_toBottomOf="@+id/divider4"
+            tools:text="Pastel de Queijo:     x5" />
 
         <TextView
             android:id="@+id/admin_order_prod_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            tools:text="Coca-Cola:     x3"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/admin_order_prod_1"
             app:layout_constraintStart_toStartOf="@+id/admin_order_prod_1"
-            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod_1" />
+            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod_1"
+            tools:text="Coca-Cola:     x3" />
 
         <TextView
-            android:id="@+id/admin_order_prod3"
+            android:id="@+id/admin_order_prod_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            tools:text="Caldo de Cana:     x2"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/admin_order_prod_2"
             app:layout_constraintStart_toStartOf="@+id/admin_order_prod_2"
-            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod_2" />
+            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod_2"
+            tools:text="Caldo de Cana:     x2" />
 
         <TextView
-            android:id="@+id/admin_order_prod4"
+            android:id="@+id/admin_order_prod_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            tools:text="Mousse de Lima:     x1"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="italic"
-            app:layout_constraintStart_toStartOf="@+id/admin_order_prod3"
-            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod3" />
+            app:layout_constraintEnd_toEndOf="@+id/admin_order_prod_3"
+            app:layout_constraintStart_toStartOf="@+id/admin_order_prod_3"
+            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod_3"
+            tools:text="Mousse de Lima:     x1" />
+
+        <Button
+            android:id="@+id/admin_order_update_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:paddingVertical="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/button_color_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/admin_order_prod_4"
+            tools:text="PRONTO" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

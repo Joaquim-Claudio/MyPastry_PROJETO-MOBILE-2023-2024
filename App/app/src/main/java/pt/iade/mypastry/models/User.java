@@ -79,6 +79,7 @@ public class User implements java.io.Serializable {
 
                     User respUser = new Gson().fromJson(response, User.class);
                     id = respUser.getId();
+                    getAddress().setId(respUser.getAddress().getId());
                     result.result();
 
                 } catch (Exception e){

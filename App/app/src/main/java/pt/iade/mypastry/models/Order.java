@@ -142,7 +142,6 @@ public class Order implements java.io.Serializable {
                         ordProds.add(new Gson().fromJson(element, OrderProduct.class));
                     }
 
-                    Log.i("Order.getOrdProducts", "OrderProducts list of order with id="+id+" successfully received!");
                     result.result(ordProds);
 
                 } catch (Exception e) {
@@ -152,6 +151,34 @@ public class Order implements java.io.Serializable {
         });
         thread.start();
     }
+
+
+    public static void GetAllKitchen(GetAllKitchenResult result){
+        ArrayList<Order> orders = new ArrayList<Order>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/kitchen"));
+
+                    String response = request.performGetRequest();
+
+                    JsonArray array = new Gson().fromJson(response, JsonArray.class);
+                    for (JsonElement element : array) {
+                        orders.add(new Gson().fromJson(element, Order.class));
+                    }
+
+                    result.result(orders);
+
+                } catch (Exception e) {
+                    Log.e("Order.GetAllKitchen", e.toString());
+                }
+            }
+        });
+        thread.start();
+    }
+
+
 
     public int getId() {
         return id;
@@ -199,6 +226,9 @@ public class Order implements java.io.Serializable {
     }
 
 
+    public interface GetAllKitchenResult{
+        public void result(ArrayList<Order> returnedOrders);
+    }
 
     public interface GetByUserIdResult{
         public void result(ArrayList<Order> orders);

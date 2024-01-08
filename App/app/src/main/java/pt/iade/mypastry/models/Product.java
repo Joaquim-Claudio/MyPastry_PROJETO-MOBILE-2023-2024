@@ -87,7 +87,6 @@ public class Product implements java.io.Serializable {
                         products.add(new Gson().fromJson(element, Product.class));
                     }
 
-                    Log.i("Product.GetAllByType", "Products list received successfully!");
                     result.result(products);
 
                 } catch (Exception e){
@@ -140,7 +139,6 @@ public class Product implements java.io.Serializable {
                         products.add(new Gson().fromJson(element, Product.class));
                     }
 
-                    Log.i("Product.GetAllById", "All products received successfully!");
                     result.result(products);
 
                 } catch (Exception e){

@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import pt.iade.mypastry.webserver.models.Address;
 import pt.iade.mypastry.webserver.models.Order;
 import pt.iade.mypastry.webserver.models.User;
 import pt.iade.mypastry.webserver.models.repositories.AddressRepository;
@@ -50,7 +51,7 @@ public class UserController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public User addUser(@RequestBody User user) {
         logger.info("User-> Adding a new user.");
-        addressRepository.save(user.getAddress());
+        user.setAddress(addressRepository.save(user.getAddress()));
         return userRepository.save(user);
 
     }
@@ -58,6 +59,17 @@ public class UserController {
     @PostMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response updateUser(@PathVariable int id, @RequestBody User updatedUser) {
         logger.info("User-> Updating user with id="+id);
+
+        Optional<Address> userAddress_ = addressRepository.findById(updatedUser.getAddress().getId());
+        if (userAddress_.isPresent()){
+            userAddress_.get().setStreet(updatedUser.getAddress().getStreet());
+            userAddress_.get().setPostalCode(updatedUser.getAddress().getPostalCode());
+            userAddress_.get().setBuilding(updatedUser.getAddress().getBuilding());
+            userAddress_.get().setDoor(updatedUser.getAddress().getDoor());
+            userAddress_.get().setCity(updatedUser.getAddress().getCity());
+
+            addressRepository.save(userAddress_.get());
+        }
 
         Optional<User> user_ = userRepository.findById(id);
         if (user_.isPresent()){

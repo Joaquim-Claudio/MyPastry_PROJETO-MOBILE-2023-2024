@@ -1,4 +1,9 @@
-create table tb_address (
+DROP SCHEMA IF EXISTS mypastry_db;
+
+CREATE SCHEMA mypastry_db;
+
+
+create table mypastry_db.tb_address (
 								add_id int not null auto_increment,
 								add_postalcode VARCHAR (15) not null,
 								add_street VARCHAR (100) not null,
@@ -7,7 +12,7 @@ create table tb_address (
 								add_city VARCHAR(40) not null,
 								primary key (add_id)
 );
-create table tb_user (
+create table mypastry_db.tb_user (
 								use_id int not null auto_increment,
 								use_name VARCHAR(60) not null, 			
 								use_email VARCHAR(30)not null, 				
@@ -19,17 +24,20 @@ create table tb_user (
                                 use_pts int,	
 								primary key (use_id),
                                 FOREIGN KEY (use_add_id) REFERENCES tb_address(add_id)
+                                ON DELETE CASCADE
 );
-create table tb_order (
+create table mypastry_db.tb_order (
 								ord_id int not null auto_increment,
 								ord_use_id int not null,	
 								ord_type VARCHAR (25) not null,
                                 ord_status VARCHAR (25) not null,
+                                ord_date DATE not null,
 								ord_total decimal (4,2) not null,
 								primary key (ord_id)
 );
-create table tb_product (
+create table mypastry_db.tb_product (
 								pro_id int not null auto_increment,
+                                pro_image int not null,
                                 pro_type VARCHAR (40) not null,
 								pro_name VARCHAR (40) not null,
                                 pro_description VARCHAR (40) not null,
@@ -38,13 +46,15 @@ create table tb_product (
                                 pro_delicacy bit not null,
 								primary key (pro_id)
 );
-create table tb_ordprod (
+create table mypastry_db.tb_ordprod (
 								orp_id int not null auto_increment,
 								orp_pro_id int not null,			
 								orp_ord_id int not null,				
 								orp_quantity int not null,
 								orp_subtotal decimal (4,2) not null,
 								primary key (orp_id),
-                                FOREIGN KEY (orp_pro_id) REFERENCES tb_product(pro_id),
+                                FOREIGN KEY (orp_pro_id) REFERENCES tb_product(pro_id)
+                                ON DELETE CASCADE,
                                 FOREIGN KEY (orp_ord_id) REFERENCES tb_order(ord_id)
+                                ON DELETE CASCADE
 );

@@ -16,6 +16,7 @@ import pt.iade.mypastry.webserver.models.repositories.UserRepository;
 import pt.iade.mypastry.webserver.results.Response;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
@@ -116,6 +117,18 @@ public class OrderController {
 
         return new Response("Product with id="+prodId+
                 " was successfully removed from order with id="+orderId+".", null);
+    }
+
+
+
+    @GetMapping(path = "/kitchen", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Order> getAllKitchen() {
+        logger.info("Sending all the orders to the kitchen.");
+        ArrayList<Order> orders = orderRepository.findAllByStatus(OrderStatus.PREPARING);
+
+        orders.addAll(orderRepository.findAllByStatus(OrderStatus.DELIVERING));
+
+        return orders;
     }
 }
 
