@@ -1,7 +1,7 @@
 package pt.iade.mypastry.webserver.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import pt.iade.mypastry.webserver.models.Product;
 
 @Entity
 @Table(name = "tb_ordprod")
@@ -9,32 +9,38 @@ public class OrderProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orp_id") private int id;
-    @Column(name = "orp_pro_id") private int productId;
-    @Column(name = "orp_ord_id") private int orderId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "orp_pro_id")
+    private Product product;
+    @ManyToOne
+    @JoinColumn(name = "orp_ord_id")
+    private Order order;
     @Column(name = "orp_quantity") private int quantity;
     @Column(name = "orp_subtotal") private float subTotal;
 
     public OrderProduct() {
+
     }
 
     public int getId() {
         return id;
     }
 
-    public int getProductId() {
-        return productId;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public int getOrderId() {
-        return orderId;
+    @JsonBackReference
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public int getQuantity() {

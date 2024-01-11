@@ -1,5 +1,6 @@
 package pt.iade.mypastry.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,15 +26,10 @@ import pt.iade.mypastry.models.Product;
 public class AdminOrderRowAdapter extends RecyclerView.Adapter<AdminOrderRowAdapter.ViewHolder> {
     Context context;
     ArrayList<Order> orderList;
-    ArrayList<OrderProduct> orderProductList;
-    ArrayList<Product> productList;
 
-    public AdminOrderRowAdapter(Context context, ArrayList<Order> orderList, ArrayList<OrderProduct> orderProductList,
-                                ArrayList<Product> productList) {
+    public AdminOrderRowAdapter(Context context, ArrayList<Order> orderList) {
         this.context = context;
         this.orderList = orderList;
-        this.orderProductList = orderProductList;
-        this.productList = productList;
     }
 
 
@@ -47,22 +43,16 @@ public class AdminOrderRowAdapter extends RecyclerView.Adapter<AdminOrderRowAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdminOrderRowAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdminOrderRowAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Order order = orderList.get(position);
-        ArrayList<OrderProduct> ordProds = new ArrayList<OrderProduct>(5);
-        ArrayList<Product> products = new ArrayList<Product>(5);
+        ArrayList<OrderProduct> ordProds = new ArrayList<OrderProduct>();
+        ArrayList<Product> products = new ArrayList<Product>();
 
-        //  Taking all the products of this order
-        for (OrderProduct o : orderProductList) {
-            if (o.getOrderId() == order.getId()) {
-                ordProds.add(o);
-                for (Product p : productList) {
-                    if (p.getId() == o.getProductId()){
-                        products.add(p);
-                    }
-                }
-            }
+        for (OrderProduct orderProduct : order.getOrdProds()){
+            ordProds.add(orderProduct);
+            products.add(orderProduct.getProduct());
         }
+
 
         if (order.getType() == OrderType.DELIVERY) {
             holder.typeImageView.setImageResource(R.drawable.location_icon);
@@ -73,6 +63,7 @@ public class AdminOrderRowAdapter extends RecyclerView.Adapter<AdminOrderRowAdap
             holder.typeTextView.setText("Pedido Mobile");
             holder.idTextView.setText(String.format(Locale.FRANCE, "PM-%04d", order.getId()));
         }
+
         holder.prodTextView1.setText(String.format(Locale.FRANCE, "%s:     x%d", products.get(0).getName(), ordProds.get(0).getQuantity()));
         holder.prodTextView2.setText(String.format(Locale.FRANCE, "%s:     x%d", products.get(1).getName(), ordProds.get(1).getQuantity()));
         holder.prodTextView3.setText(String.format(Locale.FRANCE, "%s:     x%d", products.get(2).getName(), ordProds.get(2).getQuantity()));

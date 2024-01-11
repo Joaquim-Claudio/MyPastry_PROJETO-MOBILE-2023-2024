@@ -1,8 +1,12 @@
 package pt.iade.mypastry.webserver.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import org.hibernate.engine.internal.Cascade;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_user")
@@ -21,8 +25,12 @@ public class User {
     @Column(name = "use_pts") private int points;
     @Column(name = "use_admin") private boolean admin;
 
+    @OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    private List<Order> orders;
+
     public User() {
     }
+
 
     public int getId() {
         return id;
@@ -91,5 +99,14 @@ public class User {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    @JsonManagedReference
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

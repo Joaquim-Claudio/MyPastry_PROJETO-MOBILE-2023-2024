@@ -31,8 +31,6 @@ public class OrderActivity extends AppCompatActivity {
     RecyclerView listView;
     OrdProdRowAdapter ordProdRowAdapter;
 
-    float total = 0f;
-
     Order order;
     User user;
     @Override
@@ -63,7 +61,38 @@ public class OrderActivity extends AppCompatActivity {
         listView = (RecyclerView) findViewById(R.id.order_listView);
         listView.setLayoutManager(new LinearLayoutManager(OrderActivity.this));
 
-        populateView();
+        //  Firstly checking for an existing Pending Order
+        Order.GetPending(user.getId(), new Order.GetPendingResult() {
+            @Override
+            public void result(Order pendingOrder) {
+                //  If a Pending Order is found
+                if (pendingOrder != null) {
+
+                    order = pendingOrder;
+                    setFullyListView();
+
+                    ordProdsList = order.getOrdProds();
+
+                    ordProdRowAdapter = new OrdProdRowAdapter(OrderActivity.this, ordProdsList);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            listView.setAdapter(ordProdRowAdapter);
+                        }
+                    });
+
+                    //  Takes all the OrdProds that belong to this Order
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            setEmptyListView();
+                        }
+                    });
+                }
+            }
+        });
+
 
         keepButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +107,6 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ordProdsList != null){
-                    commitViews();
 
                     Intent intent = new Intent(OrderActivity.this, CheckOutActivity.class);
                     intent.putExtra("user", user);
@@ -88,111 +116,25 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
 
-        //  Firstly checking for an existing Pending Order
-        Order.GetPending(user.getId(), new Order.GetPendingResult() {
-            @Override
-            public void result(Order pendingOrder) {
-                //  If a Pending Order is found
-                if (pendingOrder != null){
-
-                    setFullyListView();
-
-                    order=pendingOrder;
-
-                    //  Takes all the OrdProds that belong to this Order
-                    order.getOrdProducts(new Order.GetOrdProdResult() {
-                        @Override
-                        public void result(ArrayList<OrderProduct> ordProds) {
-
-                            if (ordProds.size() > 0){
-                                ordProdsList = ordProds;
-
-                                ArrayList<Integer> proIdList = getProductIds();
-
-                                //  Takes all the products associated to the OrdProds previously taken
-                                Product.GetAllById(proIdList, new Product.GetAllByIdResult() {
-                                    @Override
-                                    public void result(ArrayList<Product> products) {
-                                        productsList= products;
-
-                                        //  Creates the list view adapter
-                                        ordProdRowAdapter = new OrdProdRowAdapter(OrderActivity.this, ordProdsList, productsList);
-
-                                        //  Set the list view adapter after running all previous code
-                                        runOnUiThread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                listView.setAdapter(ordProdRowAdapter);
-                                                calculateTotal();
-                                                totalTextView.setText(String.format(Locale.ENGLISH, "%.02f", total));
-                                            }
-                                        });
-
-                                    }
-                                });
-                            } else {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        setEmptyListView();
-                                    }
-                                });
-                            }
-                        }
-                    });
-                }
-                else {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            setEmptyListView();
-                        }
-                    });
-                }
-            }
-        });
-
     }
 
-    private void populateView() {
-        totalTextView.setText(String.format(Locale.ENGLISH, "%.02f", total));
-    }
-
-
-    private void initializeNewOrder() {
-        order.setUserId(user.getId());
-    }
 
     private void setFullyListView() {
         emptyTextView.setVisibility(View.GONE);
         listView.setVisibility(View.VISIBLE);
+        totalTextView.setText(String.format(Locale.ENGLISH, "%.02f", order.getTotal()));
     }
     private void setEmptyListView() {
         listView.setVisibility(View.GONE);
         emptyTextView.setVisibility(View.VISIBLE);
+        totalTextView.setText("0.00");
     }
 
-    private ArrayList<Integer> getProductIds() {
-        ArrayList<Integer> productIds = new ArrayList<Integer>();
-
-        for (OrderProduct p : ordProdsList){
-            productIds.add(p.getProductId());
+    private float calculateTotal() {
+        float total = 0f;
+        for (OrderProduct ordProd : order.getOrdProds()){
+            total += ordProd.getSubTotal();
         }
-
-        return productIds;
+        return total;
     }
-
-    private void commitViews() {
-        calculateTotal();
-        order.setTotal(total);
-    }
-
-    private void calculateTotal() {
-        total = 0;
-        for (OrderProduct p : ordProdsList){
-            total += p.getSubTotal();
-        }
-        order.setTotal(total);
-    }
-
 }

@@ -11,69 +11,70 @@ import pt.iade.mypastry.utilities.WebRequest;
 
 public class OrderProduct implements java.io.Serializable {
     private int id;
-    private int productId;
-    private int orderId;
+    private Product product;
+    private Order order;
     private int quantity;
     private float subTotal;
 
     public OrderProduct() {
-        this(0, 0, 0, 0);
+        this(0, null, null, 0, 0);
     }
 
-    public OrderProduct(int id, int orderId, int productId, int quantity) {
+    public OrderProduct(int id, Product product, Order order, int quantity, float subTotal) {
         this.id = id;
-        this.orderId = orderId;
-        this.productId = productId;
+        this.product = product;
+        this.order = order;
         this.quantity = quantity;
-        subTotal = 0;
+        this.subTotal = subTotal;
     }
 
-    public void saveProdToOrder(int orderId, SaveProdResult result){
+
+    public void saveOrdProd(SaveProdResult result){
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try{
                     if (id == 0){
-                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+orderId+"/products"));
+                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/ordprods"));
                         String response = request.performPostRequest(OrderProduct.this);
 
                         OrderProduct orderProduct = new Gson().fromJson(response, OrderProduct.class);
 
                         id = orderProduct.getId();
 
-                        Log.i("OrderProduct.saveProdToOrder", "OrderProduct was successfuly added to order with id="+ orderId);
+                        Log.i("OrderProduct.saveOrdProd", "OrderProduct was successfuly added to order with id="+ order.getId());
                         result.result();
                     } else {
-                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+orderId+"/products/"+id));
+                        WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/ordprods/"+id));
                         String response = request.performPostRequest(OrderProduct.this);
 
-                        Log.i("OrderProduct.saveProdToOrder", "OrderProduct was successfuly updated to order with id="+orderId);
+                        Log.i("OrderProduct.saveOrdProd", "OrderProduct was successfuly updated to order with id="+order.getId());
                         result.result();
                     }
 
                 } catch (Exception e) {
-                    Log.e("OrderProduct.saveProdToOrder", e.toString());
+                    Log.e("OrderProduct.saveOrdProd", e.toString());
                 }
             }
         });
         thread.start();
     }
 
-    public static void DeleteProdFromOrder(int ordProdId, int orderId, DeleteProdResult result){
+    public void deleteProdFromOrder(DeleteProdResult result){
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+orderId+"/products/"+ordProdId));
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/ordprods/"+id));
                     String resp = request.performDeleteRequest();
 
                     Response response = new Gson().fromJson(resp, Response.class);
 
-                    Log.i("OrderProduct.DeleteProdFromOrder", response.getMsg());
+                    Log.i("OrderProduct.deleteProdFromOrder", response.getMsg());
                     result.result();
 
                 } catch (Exception e) {
-                    Log.e("OrderProduct.DeleteProdFromOrder", e.toString());
+                    Log.e("OrderProduct.deleteProdFromOrder", e.toString());
                 }
             }
         });
@@ -84,20 +85,24 @@ public class OrderProduct implements java.io.Serializable {
         return id;
     }
 
-    public int getProductId() {
-        return productId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public Product getProduct() {
+        return product;
     }
 
-    public int getOrderId() {
-        return orderId;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public int getQuantity() {
@@ -109,7 +114,7 @@ public class OrderProduct implements java.io.Serializable {
     }
 
     public float getSubTotal() {
-        return subTotal;
+        return product.getPrice() * quantity;
     }
 
     public void setSubTotal(float subTotal) {

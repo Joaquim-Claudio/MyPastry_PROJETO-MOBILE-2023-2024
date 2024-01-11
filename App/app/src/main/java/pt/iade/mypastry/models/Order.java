@@ -1,6 +1,5 @@
 package pt.iade.mypastry.models;
 
-import android.gesture.Gesture;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -12,7 +11,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.WeakHashMap;
 
 import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.enums.OrderType;
@@ -21,25 +19,33 @@ import pt.iade.mypastry.utilities.WebRequest;
 
 public class Order implements java.io.Serializable {
     private int id;
-    private int userId;
+    private User user;
     private OrderType type;
     private OrderStatus status;
     @JsonAdapter(LocalDateJsonAdapter.class)
     private LocalDate date;
     private double total;
+    private ArrayList<OrderProduct> ordProds;
+    private float deliveryCost;
+    private String deliveryAddress;
 
     public Order() {
-        this(0, 0, OrderType.MOBILE, OrderStatus.PENDING, LocalDate.now(), 0f);
+        this(0, null, OrderType.MOBILE, OrderStatus.PENDING, LocalDate.now(), 0f, new ArrayList<OrderProduct>(), 0f, "");
     }
 
-    public Order(int id, int userId, OrderType type, OrderStatus status, LocalDate date, double total) {
+    public Order(int id, User user, OrderType type, OrderStatus status,
+                 LocalDate date, double total, ArrayList<OrderProduct> ordProds, float deliveryCost, String deliveryAddress) {
         this.id = id;
-        this.userId = userId;
+        this.user = user;
         this.type = type;
         this.status = status;
         this.date = date;
         this.total = total;
+        this.ordProds = ordProds;
+        this.deliveryCost = deliveryCost;
+        this.deliveryAddress = deliveryAddress;
     }
+
 
     public static void GetByUserId(int userId, GetByUserIdResult result){
         ArrayList<Order> orders = new ArrayList<Order>();
@@ -47,12 +53,9 @@ public class Order implements java.io.Serializable {
             @Override
             public void run() {
                 try{
-                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/user"));
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/user/"+userId));
 
-                    HashMap<String, String> param = new HashMap<String, String>();
-                    param.put("userId", String.valueOf(userId));
-
-                    String response = request.performGetRequest(param);
+                    String response = request.performGetRequest();
 
                     JsonArray array = new Gson().fromJson(response, JsonArray.class);
                     for (JsonElement element : array) {
@@ -75,7 +78,7 @@ public class Order implements java.io.Serializable {
             @Override
             public void run() {
                 try{
-                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/user/pending"));
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/user/"+userId+"/pending"));
 
                     HashMap<String, String> param = new HashMap<String, String>();
                     param.put("userId", String.valueOf(userId));
@@ -117,11 +120,35 @@ public class Order implements java.io.Serializable {
                         WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders/"+id));
                         String response = request.performPostRequest(Order.this);
 
-                        Log.i("Order.save", "Order was successfully updated!");
                         result.result();
                     } catch (Exception e) {
                         Log.e("Order.save", e.toString());
                     }
+                }
+            }
+        });
+        thread.start();
+    }
+
+    public static void GetAll(GetAllResult result) {
+        ArrayList<Order> orders = new ArrayList<Order>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    WebRequest request = new WebRequest(new URL(WebRequest.LOCALHOST+"/api/orders"));
+
+                    String response = request.performGetRequest();
+
+                    JsonArray array = new Gson().fromJson(response, JsonArray.class);
+                    for (JsonElement element : array) {
+                        orders.add(new Gson().fromJson(element, Order.class));
+                    }
+
+                    result.result(orders);
+
+                } catch (Exception e) {
+                    Log.e("Order.GetAll", e.toString());
                 }
             }
         });
@@ -178,19 +205,20 @@ public class Order implements java.io.Serializable {
         thread.start();
     }
 
-
-
     public int getId() {
         return id;
     }
 
-
-    public int getUserId() {
-        return userId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public OrderType getType() {
@@ -218,11 +246,39 @@ public class Order implements java.io.Serializable {
     }
 
     public double getTotal() {
+        total=0;
+        for (OrderProduct ordProd : ordProds){
+            total += ordProd.getSubTotal();
+        }
         return total;
     }
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public ArrayList<OrderProduct> getOrdProds() {
+        return ordProds;
+    }
+
+    public void setOrdProds(ArrayList<OrderProduct> ordProds) {
+        this.ordProds = ordProds;
+    }
+
+    public float getDeliveryCost() {
+        return deliveryCost;
+    }
+
+    public void setDeliveryCost(float deliveryCost) {
+        this.deliveryCost = deliveryCost;
+    }
+
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
     }
 
 
@@ -244,6 +300,10 @@ public class Order implements java.io.Serializable {
 
     public interface GetOrdProdResult{
         public void result(ArrayList<OrderProduct> ordProds);
+    }
+
+    public interface GetAllResult {
+        public void result(ArrayList<Order> returnedOrders);
     }
 
 }

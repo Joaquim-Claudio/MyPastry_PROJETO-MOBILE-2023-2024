@@ -42,21 +42,16 @@ public class HistoricActivity extends AppCompatActivity {
         listView = (RecyclerView) findViewById(R.id.historic_order_list);
         listView.setLayoutManager(new LinearLayoutManager(HistoricActivity.this));
 
-        Order.GetByUserId(user.getId(), new Order.GetByUserIdResult() {
+        orderList = user.getOrders();
+
+        histRowAdapter = new HistRowAdapter(HistoricActivity.this, orderList);
+        runOnUiThread(new Runnable() {
             @Override
-            public void result(ArrayList<Order> orders) {
-                orderList = orders;
-
-                histRowAdapter = new HistRowAdapter(HistoricActivity.this, orderList);
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        listView.setAdapter(histRowAdapter);
-                    }
-                });
+            public void run() {
+                listView.setAdapter(histRowAdapter);
             }
         });
+
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

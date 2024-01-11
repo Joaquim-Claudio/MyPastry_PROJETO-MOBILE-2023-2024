@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.time.LocalDate;
 import java.util.Locale;
 
+import pt.iade.mypastry.adapters.OrdProdRowAdapter;
+import pt.iade.mypastry.enums.OrderStatus;
 import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.OrderProduct;
 import pt.iade.mypastry.models.Product;
@@ -91,30 +94,54 @@ public class ProductDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ordProd = new OrderProduct();
 
-                //  Firstly checking for existing Pending Order
-                Order.GetPending(user.getId(), new Order.GetPendingResult() {
-                    @Override
-                    public void result(Order pendingOrder) {
-                        if (pendingOrder != null){
-                            order=pendingOrder;
+                for (Order o : user.getOrders()){
+                    if(o.getStatus() == OrderStatus.PENDING){
+                        order = o;
+                    }
+                }
 
-                            //  Adding a new OrderProduct to an existing order
-                            performAddOrderProduct();
-                        }
-                        else {
-                            //  Creating a new Order
-                            order = new Order();
-                            initializeNewOrder();
-                            order.save(new Order.SaveResult() {
+                if (order != null) {
+
+                    //  Adding a new OrderProduct to an existing order
+                    commitViews();
+                    order.save(new Order.SaveResult() {
+                        @Override
+                        public void result() {
+                            ordProd.saveOrdProd(new OrderProduct.SaveProdResult() {
                                 @Override
                                 public void result() {
-                                    //  Adding a new OrderProduct to an existing order
-                                    performAddOrderProduct();
+
+                                    Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
+                                    intent.putExtra("user", user);
+
+                                    startActivity(intent);
                                 }
                             });
                         }
-                    }
-                });
+                    });
+
+                } else {
+                    order = new Order();
+                    initializeNewOrder();
+                    order.save(new Order.SaveResult() {
+                        @Override
+                        public void result() {
+                            //  Adding a new OrderProduct to an existing order
+                            commitViews();
+
+                            ordProd.saveOrdProd(new OrderProduct.SaveProdResult() {
+                                @Override
+                                public void result() {
+                                    Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
+                                    intent.putExtra("user", user);
+
+                                    startActivity(intent);
+                                }
+                            });
+
+                        }
+                    });
+                }
 
             }
         });
@@ -126,7 +153,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
         productPrice.setText(String.format(Locale.FRANCE, "%.2f €", product.getPrice()));
-        //  TODO: update Product model to have an image rsc
         productImage.setImageResource(product.getImage());
 
         quantityTextView.setText("1");
@@ -136,29 +162,25 @@ public class ProductDetailsActivity extends AppCompatActivity {
     }
 
     private void commitViews() {
-        ordProd.setProductId(product.getId());
-        ordProd.setOrderId(order.getId());
+        ordProd.setProduct(product);
+        ordProd.setOrder(order);
         ordProd.setQuantity(parseInt(quantityTextView.getText().toString()));
         ordProd.setSubTotal(Float.parseFloat(subTotalTextView.getText().toString()));
+
+        if (order.getOrdProds() != null) {
+            float total=0f;
+            for (OrderProduct ordProd : order.getOrdProds()){
+                total += ordProd.getSubTotal();
+            }
+            order.setTotal(total+ordProd.getSubTotal());
+        }
     }
 
     private void initializeNewOrder() {
-        order.setUserId(user.getId());
+        order.setUser(user);
+        order.setStatus(OrderStatus.PENDING);
+        order.setDate(LocalDate.now());
+        order.setTotal(product.getPrice() * parseInt(quantityTextView.getText().toString()));
     }
 
-    private void performAddOrderProduct() {
-        commitViews();
-        ordProd.saveProdToOrder(order.getId(), new OrderProduct.SaveProdResult() {
-            @Override
-            public void result() {
-                Intent intent = new Intent(ProductDetailsActivity.this, OrderActivity.class);
-                intent.putExtra("user", user);
-                intent.putExtra("order", order);
-                intent.putExtra("ordprod", ordProd);
-                intent.putExtra("product", product);
-
-                startActivity(intent);
-            }
-        });
-    }
 }

@@ -22,12 +22,10 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
 
     Context context;
     ArrayList<OrderProduct> orderProducts;
-    ArrayList<Product> products;
 
-    public OrdProdRowAdapter(Context context, ArrayList<OrderProduct> orderProducts, ArrayList<Product> products) {
+    public OrdProdRowAdapter(Context context, ArrayList<OrderProduct> orderProducts) {
         this.context = context;
         this.orderProducts = orderProducts;
-        this.products = products;
     }
 
 
@@ -43,11 +41,10 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull OrdProdRowAdapter.ViewHolder holder, int position) {
         OrderProduct ordProd = orderProducts.get(position);
-        Product product = products.get(position);
 
-        holder.nameTextView.setText(product.getName());
-        holder.descriptionTextView.setText(product.getDescription());
-        holder.imageView.setImageResource(product.getImage());
+        holder.nameTextView.setText(ordProd.getProduct().getName());
+        holder.descriptionTextView.setText(ordProd.getProduct().getDescription());
+        holder.imageView.setImageResource(ordProd.getProduct().getImage());
         holder.subTotalTextView.setText(String.format(Locale.ENGLISH, "%.02f", ordProd.getSubTotal()));
         holder.quantityTextView.setText(String.format(Locale.FRANCE, "%d", ordProd.getQuantity()));
 
@@ -62,20 +59,19 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
 
     private void setUpButtons(@NonNull OrdProdRowAdapter.ViewHolder holder, int position) {
         OrderProduct ordProd = orderProducts.get(position);
-        Product product = products.get(position);
 
         //  Sets up click listener to remove a product from the order
         holder.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                OrderProduct.DeleteProdFromOrder(ordProd.getId(), ordProd.getOrderId(), new OrderProduct.DeleteProdResult() {
+                ordProd.deleteProdFromOrder(new OrderProduct.DeleteProdResult() {
                     @Override
                     public void result() {
+                        orderProducts.remove(position);
                         notifyItemRemoved(position);
                     }
                 });
 
-                orderProducts.remove(position);
             }
         });
 
@@ -88,13 +84,10 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
                 int quantity = Integer.parseInt(holder.quantityTextView.getText().toString()) + 1;
                 ordProd.setQuantity(quantity);
 
-                float newSubTotal = product.getPrice() * quantity;
-                ordProd.setSubTotal(newSubTotal);
-
-                ordProd.saveProdToOrder(ordProd.getOrderId(), new OrderProduct.SaveProdResult() {
+                ordProd.saveOrdProd(new OrderProduct.SaveProdResult() {
                     @Override
                     public void result() {
-
+                        orderProducts.set(position, ordProd);
                         notifyItemChanged(position);
                     }
                 });
@@ -112,13 +105,10 @@ public class OrdProdRowAdapter extends RecyclerView.Adapter<OrdProdRowAdapter.Vi
                     quantity--;
                     ordProd.setQuantity(quantity);
 
-                    float newSubTotal = product.getPrice() * quantity;
-                    ordProd.setSubTotal(newSubTotal);
-
-                    ordProd.saveProdToOrder(ordProd.getOrderId(), new OrderProduct.SaveProdResult() {
+                    ordProd.saveOrdProd(new OrderProduct.SaveProdResult() {
                         @Override
                         public void result() {
-
+                            orderProducts.set(position, ordProd);
                             notifyItemChanged(position);
                         }
                     });

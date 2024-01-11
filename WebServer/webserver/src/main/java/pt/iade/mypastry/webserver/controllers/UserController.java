@@ -26,14 +26,14 @@ public class UserController {
     @Autowired
     private AddressRepository addressRepository;
 
-    /*
+
     @GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<User> getUsers() {
         logger.info("User-> Sending all the users.");
         return userRepository.findAll();
     }
 
-     */
+
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public User getUserByEmail(@RequestParam String email, @RequestParam String password) {
         User user = userRepository.findByEmailAndPassword(email, password);
@@ -77,6 +77,7 @@ public class UserController {
             user_.get().setPassword(updatedUser.getPassword());
             user_.get().setPoints(updatedUser.getPoints());
             user_.get().setAddress(updatedUser.getAddress());
+            user_.get().setOrders(updatedUser.getOrders());
 
             userRepository.save(user_.get());
         }

@@ -17,6 +17,7 @@ import java.util.Random;
 
 import pt.iade.mypastry.adapters.RandRowAdapter;
 import pt.iade.mypastry.enums.ProductType;
+import pt.iade.mypastry.models.Order;
 import pt.iade.mypastry.models.Product;
 import pt.iade.mypastry.models.User;
 
@@ -77,6 +78,13 @@ public class HomeActivity extends AppCompatActivity {
         randListView.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
 
         randProdList = new ArrayList<Product>();
+
+        Order.GetByUserId(user.getId(), new Order.GetByUserIdResult() {
+            @Override
+            public void result(ArrayList<Order> orders) {
+                user.setOrders(orders);
+            }
+        });
 
         Product.GetAllByType(ProductType.PRIMARY, new Product.GetByTypeResult() {
             @Override

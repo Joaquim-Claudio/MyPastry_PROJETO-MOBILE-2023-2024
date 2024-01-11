@@ -211,13 +211,11 @@ public class RegisterActivity extends AppCompatActivity {
         newUser.setBirthDate(LocalDate.now());
         newUser.setGender(genderInputText.getText().toString());
 
-        Address address = new Address();
-        address.setStreet(addressStreetInputText.getText().toString());
-        address.setPostalCode(addressPostCodeInputText.getText().toString());
-        address.setBuilding(addressBuildInputText.getText().toString());
-        address.setDoor(addressDoorInputText.getText().toString());
-        address.setCity(addressCityInputText.getText().toString());
-
-        newUser.setAddress(address);
+        newUser.getAddress().setStreet(addressStreetInputText.getText().toString());
+        newUser.getAddress().setPostalCode(addressPostCodeInputText.getText().toString());
+        newUser.getAddress().setBuilding(addressBuildInputText.getText().toString());
+        newUser.getAddress().setDoor(addressDoorInputText.getText().toString());
+        newUser.getAddress().setCity(addressCityInputText.getText().toString());
     }
+
 }

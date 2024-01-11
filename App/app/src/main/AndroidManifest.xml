@@ -19,7 +19,7 @@
             android:name=".SeeAllActivity"
             android:exported="false" />
         <activity
-            android:name=".MobileOrderActivity"
+            android:name=".OrderStatusActivity"
             android:exported="false" />
         <activity
             android:name=".AccountActivity"

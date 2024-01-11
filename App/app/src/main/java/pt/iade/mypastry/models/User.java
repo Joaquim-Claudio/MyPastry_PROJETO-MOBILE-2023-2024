@@ -7,6 +7,7 @@ import com.google.gson.annotations.JsonAdapter;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import pt.iade.mypastry.models.results.Response;
@@ -24,15 +25,16 @@ public class User implements java.io.Serializable {
     private Address address;
     private int points;
     private boolean admin;
+    private ArrayList<Order> orders;
 
 
     public User(){
         this(0, "", "", "", "N", LocalDate.now(),
-                new Address(), 0, false);
+                new Address(), 0, false, new ArrayList<Order>());
     }
 
     public User(int id, String name, String email, String password, String gender,
-                LocalDate birthDate, Address address, int points, boolean admin) {
+                LocalDate birthDate, Address address, int points, boolean admin, ArrayList<Order> orders) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -42,6 +44,7 @@ public class User implements java.io.Serializable {
         this.address = address;
         this.points = points;
         this.admin = admin;
+        this.orders = orders;
     }
 
 
@@ -111,9 +114,12 @@ public class User implements java.io.Serializable {
         thread.start();
     }
 
-
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -178,6 +184,14 @@ public class User implements java.io.Serializable {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(ArrayList<Order> orders) {
+        this.orders = orders;
     }
 
 

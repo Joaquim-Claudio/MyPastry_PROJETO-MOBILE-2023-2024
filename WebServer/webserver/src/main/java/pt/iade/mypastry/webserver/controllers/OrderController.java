@@ -1,12 +1,12 @@
 package pt.iade.mypastry.webserver.controllers;
 
-import org.aspectj.weaver.ast.Or;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pt.iade.mypastry.webserver.enums.OrderStatus;
+import pt.iade.mypastry.webserver.enums.OrderType;
 import pt.iade.mypastry.webserver.models.Order;
 import pt.iade.mypastry.webserver.models.OrderProduct;
 import pt.iade.mypastry.webserver.models.User;
@@ -15,7 +15,6 @@ import pt.iade.mypastry.webserver.models.repositories.OrderRepository;
 import pt.iade.mypastry.webserver.models.repositories.UserRepository;
 import pt.iade.mypastry.webserver.results.Response;
 
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -27,7 +26,7 @@ public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
-    private OrderProductRepository productRepository;
+    private UserRepository userRepository;
 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Order> getAll() {
@@ -37,28 +36,31 @@ public class OrderController {
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Order addOrder(@RequestBody Order order){
-        logger.info("Order-> Adding a new order to user with id="+order.getUserId()+".");
-
+        logger.info("Order-> Adding a new order to user with id="+order.getUser().getId()+".");
         return orderRepository.save(order);
     }
 
-    @PostMapping(path = "/{orderId:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response updateOrder(@PathVariable int orderId, @RequestBody Order updatedOrder) {
-        logger.info("Order-> Updating order with id="+orderId);
+    @PostMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Order updateOrder(@PathVariable int id, @RequestBody Order updatedOrder) {
+        logger.info("Order-> Updating order with id="+id);
 
-        Optional<Order> order = orderRepository.findById(orderId);
+        Optional<Order> order = orderRepository.findById(id);
+
         if (order.isPresent()){
             order.get().setStatus(updatedOrder.getStatus());
             order.get().setTotal(updatedOrder.getTotal());
+            order.get().setDeliveryCost(updatedOrder.getDeliveryCost());
+            order.get().setDeliveryAddress(updatedOrder.getDeliveryAddress());
 
-            orderRepository.save(order.get());
+            Order savedOrder = orderRepository.save(order.get());
+            logger.info("Status:"+savedOrder.getStatus().toString());
+            return savedOrder;
         }
 
-        return new Response("Order with id="+orderId+
-                " was successfully updated.", null);
+        return null;
     }
 
-    @DeleteMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response deleteOrder(@RequestParam int id){
         logger.info("Order-> Removing order with id="+id+".");
         orderRepository.deleteById(id);
@@ -66,70 +68,32 @@ public class OrderController {
         return new Response("Order with id="+id+" was successfully removed!", null);
     }
 
-    @GetMapping(path = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Order> getAllByUserId(@RequestParam int userId){
+
+
+    @GetMapping(path = "/user/{userId:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Order> getAllByUser(@PathVariable int userId){
         logger.info("Order/User-> Sending all orders of user with id="+userId+".");
+        Optional<User> user_ = userRepository.findById(userId);
 
-        return orderRepository.findAllByUserId(userId);
+        assert user_.isPresent();
+        return user_.get().getOrders();
     }
 
-    @GetMapping(path = "/user/pending", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Order getPendingOrder(@RequestParam int userId){
+    @GetMapping(path = "/user/{userId:[0-9]+}/pending", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Order getPendingOrder(@PathVariable int userId){
         logger.info("Order/User-> Sending the Pending Order of user with id="+userId+".");
+        Optional<User> user_ = userRepository.findById(userId);
 
-        return orderRepository.findByUserIdAndStatus(userId, OrderStatus.PENDING);
-    }
-
-    @GetMapping(path = "/{orderId:[0-9]+}/products", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<OrderProduct> getAllProducts(@PathVariable int orderId){
-        logger.info("Order/Product-> Sending all products from order with id="+orderId+".");
-
-        return productRepository.findAllByOrderId(orderId);
-    }
-
-    @PostMapping(path = "/{orderId:[0-9]+}/products", produces = MediaType.APPLICATION_JSON_VALUE)
-    public OrderProduct addProdToOrder(@PathVariable int orderId, @RequestBody OrderProduct orderProduct){
-        logger.info("Order/Product-> Adding a new product to the order with id="+orderId+".");
-
-        return productRepository.save(orderProduct);
-    }
-
-    @PostMapping(path = "/{orderId:[0-9]+}/products/{prodId:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response updateProdOfOrder(@PathVariable int orderId, @PathVariable int prodId, @RequestBody OrderProduct updatedProduct){
-        logger.info("Order-> Updating product with id="+prodId+" in order with id="+orderId+".");
-
-        Optional<OrderProduct> product = productRepository.findById(prodId);
-        if (product.isPresent()){
-            product.get().setQuantity(updatedProduct.getQuantity());
-            product.get().setSubTotal(updatedProduct.getSubTotal());
-
-            productRepository.save(product.get());
+        assert user_.isPresent();
+        for (Order o : user_.get().getOrders()){
+            if (o.getStatus() == OrderStatus.PENDING){
+                return o;
+            }
         }
 
-        return new Response("Product with id="+prodId+
-                " was successfully updated in order with id="+orderId+".", null);
+        return null;
     }
 
-    @DeleteMapping(path = "/{orderId:[0-9]+}/products/{prodId:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteProdFromOrder(@PathVariable int orderId, @PathVariable int prodId){
-        logger.info("Order-> Removing the order with id="+prodId+".");
-        productRepository.deleteById(prodId);
-
-        return new Response("Product with id="+prodId+
-                " was successfully removed from order with id="+orderId+".", null);
-    }
-
-
-
-    @GetMapping(path = "/kitchen", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Order> getAllKitchen() {
-        logger.info("Sending all the orders to the kitchen.");
-        ArrayList<Order> orders = orderRepository.findAllByStatus(OrderStatus.PREPARING);
-
-        orders.addAll(orderRepository.findAllByStatus(OrderStatus.DELIVERING));
-
-        return orders;
-    }
 }
 
 

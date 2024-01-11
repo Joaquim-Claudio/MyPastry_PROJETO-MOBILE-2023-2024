@@ -20,8 +20,6 @@ import pt.iade.mypastry.models.User;
 
 public class AdminHomeActivity extends AppCompatActivity {
     ArrayList<Order> orderList;
-    ArrayList<OrderProduct> orderProductList;
-    ArrayList<Product> productList;
     RecyclerView orderListView;
     AdminOrderRowAdapter adminOrderRowAdapter;
     ConstraintLayout refreshButton;
@@ -65,45 +63,22 @@ public class AdminHomeActivity extends AppCompatActivity {
 
     private void loadOrders() {
 
-        orderProductList = new ArrayList<OrderProduct>();
-        productList = new ArrayList<Product>();
-
-        ArrayList<Integer> prodIds = new ArrayList<Integer>();
-
-        Order.GetAllKitchen(new Order.GetAllKitchenResult() {
+        Order.GetAll(new Order.GetAllResult() {
             @Override
             public void result(ArrayList<Order> returnedOrders) {
                 orderList = returnedOrders;
+                adminOrderRowAdapter = new AdminOrderRowAdapter(AdminHomeActivity.this, orderList);
 
-                for (Order o : orderList){
-                    o.getOrdProducts(new Order.GetOrdProdResult() {
-                        @Override
-                        public void result(ArrayList<OrderProduct> ordProds) {
-                            orderProductList.addAll(ordProds);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        orderListView.setAdapter(adminOrderRowAdapter);
+                        adminOrderRowAdapter.notifyDataSetChanged();
+                    }
+                });
 
-                            ArrayList<Integer> prodIds = new ArrayList<Integer>();
-
-                            for (OrderProduct oP: ordProds){
-                                prodIds.add(oP.getProductId());
-                            }
-                            Product.GetAllById(prodIds, new Product.GetAllByIdResult() {
-                                @Override
-                                public void result(ArrayList<Product> products) {
-                                    productList.addAll(products);
-                                }
-                            });
-
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    adminOrderRowAdapter = new AdminOrderRowAdapter(AdminHomeActivity.this, orderList, orderProductList, productList);
-                                    orderListView.setAdapter(adminOrderRowAdapter);
-                                }
-                            });
-                        }
-                    });
-                }
             }
         });
+
     }
 }

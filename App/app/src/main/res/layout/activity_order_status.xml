@@ -5,7 +5,7 @@
     android:id="@+id/mobile_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MobileOrderActivity">
+    tools:context=".OrderStatusActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout12"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView14"
+            android:id="@+id/order_type_imageView"
             android:layout_width="59dp"
             android:layout_height="58dp"
             android:src="@drawable/fast_delivery_icon"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/order_type_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -36,7 +36,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView14"
+            app:layout_constraintStart_toEndOf="@+id/order_type_imageView"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

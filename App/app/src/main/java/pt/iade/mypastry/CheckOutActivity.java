@@ -30,16 +30,14 @@ public class CheckOutActivity extends AppCompatActivity {
     Button paymentButton;
     ConstraintLayout layout;
     RadioButton mobileRadioButton, deliveryRadioButton;
+
     User user;
     Order order;
-    String deliveryAddress;
-    double deliveryCost = 0f;
+    float deliveryCost = 0f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_out);
-
-        layout = (ConstraintLayout) findViewById(R.id.checkout_layout);
 
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("user");
@@ -49,6 +47,8 @@ public class CheckOutActivity extends AppCompatActivity {
     }
 
     private void setupComponents() {
+        layout = (ConstraintLayout) findViewById(R.id.checkout_layout);
+
         subTotalTextView = (TextView) findViewById(R.id.checkout_subtotal_textView);
         totalTextView = (TextView) findViewById(R.id.checkout_total_textView);
         deliveryCostTextView = (TextView) findViewById(R.id.checkout_delivery_cost_textView);
@@ -63,7 +63,7 @@ public class CheckOutActivity extends AppCompatActivity {
         deliveryRadioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deliveryCost = (0.1 * order.getTotal())+1;
+                deliveryCost = (float) ((0.1 * order.getTotal())+1);
                 deliveryAddressTextView.setVisibility(View.VISIBLE);
                 deliveryCostTextView.setText(String.format(Locale.ENGLISH, "%.02f €", deliveryCost));
             }
@@ -99,19 +99,7 @@ public class CheckOutActivity extends AppCompatActivity {
         populateViews();
     }
 
-    private void populateViews() {
-        subTotalTextView.setText(String.format(Locale.ENGLISH, "%.2f €", order.getTotal()));
-        deliveryCostTextView.setText(String.format(Locale.ENGLISH, "%.02f €", deliveryCost));
-        totalTextView.setText(String.format(Locale.ENGLISH, "%.2f €", order.getTotal()));
-    }
 
-    private void commitValues() {
-        user.addPoints((int) Math.floor(order.getTotal()));
-
-        order.setStatus(OrderStatus.PREPARING);
-        order.setDate(LocalDate.now());
-        order.setTotal(order.getTotal() + deliveryCost);
-    }
 
     public void throwPopUpWindow(){
 
@@ -156,15 +144,15 @@ public class CheckOutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 commitValues();
 
-                user.save();
                 order.save(new Order.SaveResult() {
                     @Override
                     public void result() {
-                        Intent intent = new Intent(CheckOutActivity.this, MobileOrderActivity.class);
+                        Intent intent = new Intent(CheckOutActivity.this, OrderStatusActivity.class);
                         intent.putExtra("user", user);
                         intent.putExtra("order", order);
 
                         startActivity(intent);
+
                     }
                 });
 
@@ -172,6 +160,22 @@ public class CheckOutActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void populateViews() {
+        subTotalTextView.setText(String.format(Locale.ENGLISH, "%.2f €", order.getTotal()));
+        deliveryCostTextView.setText(String.format(Locale.ENGLISH, "%.02f €", deliveryCost));
+        totalTextView.setText(String.format(Locale.ENGLISH, "%.2f €", order.getTotal()+deliveryCost));
+    }
+
+    private void commitValues() {
+        user.addPoints((int) Math.floor(order.getTotal()));
+
+        order.setDeliveryAddress(deliveryAddressTextView.getText().toString());
+        order.setDeliveryCost(deliveryCost);
+        order.setStatus(OrderStatus.PREPARING);
+        order.setDate(LocalDate.now());
+        order.setTotal(order.getTotal() + deliveryCost);
     }
 
     public void returnToCallingActivity(View view){

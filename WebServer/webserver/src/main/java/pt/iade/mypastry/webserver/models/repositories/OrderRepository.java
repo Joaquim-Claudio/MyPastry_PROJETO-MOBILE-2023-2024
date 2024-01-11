@@ -11,7 +11,7 @@ import pt.iade.mypastry.webserver.models.User;
 import java.util.ArrayList;
 
 public interface OrderRepository extends CrudRepository<Order, Integer> {
-    public Iterable<Order> findAllByUserId(int userId);
+    public Iterable<Order> findAllByUser(User user);
     public ArrayList<Order> findAllByStatus(OrderStatus status);
-    public Order findByUserIdAndStatus(int userId, OrderStatus status);
+    public Order findByUserAndStatus(User user, OrderStatus status);
 }
