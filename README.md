@@ -13,7 +13,7 @@
 
 - [x] Volume 1 - PROPOSTA
 - [x] Volume 2 - PROTÓTIPO
-- [ ] **Volume 3 - PRODUTO**
+- [x] **Volume 3 - PRODUTO**
 ___
 
 ## SUMÁRIO
